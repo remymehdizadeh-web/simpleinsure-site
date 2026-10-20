@@ -960,3 +960,6 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
   .client-result-grays .result-line span:last-child{border-bottom:1px solid rgba(231,238,244,.14)}
   .client-result-grays .result-line span:before{content:"";flex:none;width:16px;height:1px;transform:translateY(-6px);background:#6fa8e6}
 }
+
+/* Gray's Papaya disclaimer (compliance): always rendered, never starts at opacity 0. */
+.client-result-grays .result-foot,html.motion.js .client-result-grays .result-foot,html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in){display:block !important;visibility:visible !important;opacity:1 !important;transform:none !important;transition:none !important}

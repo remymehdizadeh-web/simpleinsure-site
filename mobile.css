@@ -1050,3 +1050,18 @@
   html.motion.js .client-result-grays .result-body { transition-delay: .38s; }
   html.motion.js .client-result-grays .result-foot { transition-delay: .44s; }
 }
+
+/* Gray's Papaya disclaimer (compliance): always rendered. No reveal start state,
+   no breakpoint or reduced-motion hide. Muted but at or above the photo credit gray. */
+.client-result-grays .result-foot,
+html.motion.js .client-result-grays .result-foot,
+html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+@media (max-width: 1023px) {
+  .client-result-grays .result-foot { color: rgba(231,238,244,.6); }
+}
