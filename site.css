@@ -953,3 +953,10 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
   html.motion.js .rise-photo.is-in img{transform:scale(1);transition:transform 1.15s var(--ease)}
   html.motion.js .slide.rise-photo.is-in:hover img,html.motion.js .slide.rise-photo.is-in:focus-within img{transform:scale(1.06)}
 }
+/* Gray's Papaya client result, desktop polish (design/menu-grays): outcomes as hairline-ruled lines. */
+@media (min-width:1024px){
+  .client-result-grays .result-line{margin-top:36px;max-width:26em}
+  .client-result-grays .result-line span{display:flex;align-items:baseline;gap:16px;margin:0;padding:14px 0;border-top:1px solid rgba(231,238,244,.14)}
+  .client-result-grays .result-line span:last-child{border-bottom:1px solid rgba(231,238,244,.14)}
+  .client-result-grays .result-line span:before{content:"";flex:none;width:16px;height:1px;transform:translateY(-6px);background:#6fa8e6}
+}
