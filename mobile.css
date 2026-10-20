@@ -674,22 +674,6 @@
     padding: 13px 0;
     border-bottom: 1px solid #e4ebf2;
   }
-  .sheet-subs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 18px;
-    padding: 2px 0 8px 14px;
-    border-bottom: 1px solid #e4ebf2;
-  }
-  .sheet .sheet-subs a.sub {
-    font-size: 15px;
-    line-height: 1.3;
-    font-weight: 500;
-    letter-spacing: 0;
-    color: #5c6b7a;
-    padding: 7px 0;
-    border-bottom: 0;
-  }
   .sheet .sheet-cta {
     flex: none;
     margin: 0;
@@ -737,7 +721,7 @@
 }
 
 /* Menu v2 (design/menu-grays): full-height navy overlay, large serif links,
-   quiet Coverage list, understated CTA, contact anchored at the bottom.
+   four links only (no Coverage sub-links), understated CTA, contact anchored at the bottom.
    Burger widths only (under 1024). Desktop is untouched. */
 @media (max-width: 1023px) {
   html.nav-open .site-header:before,
@@ -774,37 +758,17 @@
   #sheet nav { flex: none; display: flex; flex-direction: column; overflow: visible; }
   #sheet nav > a {
     display: block;
-    padding: 10px 0;
+    padding: 13px 0;
     border: 0;
     font-family: Newsreader, Georgia, serif;
     font-weight: 400;
-    font-size: 42px;
-    line-height: 1.08;
+    font-size: 44px;
+    line-height: 1.06;
     letter-spacing: -.025em;
     color: #fff;
     text-decoration: none;
   }
   #sheet nav > a:active { color: rgba(255,255,255,.7); }
-  #sheet .sheet-subs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 22px;
-    padding: 4px 0 20px;
-    border: 0;
-  }
-  #sheet .sheet-subs a.sub {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 0;
-    border: 0;
-    font-family: Franklin, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 450;
-    line-height: 1.3;
-    letter-spacing: 0;
-    color: rgba(231,238,244,.66);
-    text-decoration: none;
-  }
 
   #sheet .sheet-cta {
     flex: none;
@@ -877,7 +841,6 @@
 @media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
   #sheet:not([hidden]) { animation: sheet-fade .38s cubic-bezier(.2,.7,.2,1) both; }
   #sheet:not([hidden]) nav > a,
-  #sheet:not([hidden]) .sheet-subs,
   #sheet:not([hidden]) .sheet-cta > a {
     animation: sheet-rise .7s cubic-bezier(.2,.7,.2,1) both;
   }
