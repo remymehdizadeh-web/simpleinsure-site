@@ -484,8 +484,8 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .nav-desk>a[
 html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .drop.is-here>button{color:#fff}
 .site-footer .logo img{height:24px;width:auto;filter:brightness(0) invert(1)}
 .hero{align-items:flex-end;min-height:100svh;background:#071018}
-.hero-media{position:absolute;inset:0;overflow:hidden}
-.ken{position:absolute;inset:-8%}
+.hero-media{position:absolute;inset:0;overflow:clip}
+.ken{position:absolute;inset:0}
 .ken img,.hero-media img{width:100%;height:100%;max-width:none;object-fit:cover}
 html.motion .hero .ken{animation:ken 22s ease-out both}
 @keyframes ken{from{transform:scale(1.12)}to{transform:scale(1.04)}}
@@ -509,7 +509,7 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
 .h-intro h2{font-size:clamp(68px,5.4vw,80px);line-height:1.02;color:var(--navy);letter-spacing:-.03em}
 .h-intro p{margin:32px 0 0;color:var(--muted);max-width:16em}
 .h-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.slide{position:relative;min-width:0;height:min(64vh,600px);min-height:420px;overflow:hidden;color:#fff;text-decoration:none;display:block}
+.slide{position:relative;min-width:0;height:min(64vh,600px);min-height:420px;overflow:clip;color:#fff;text-decoration:none;display:block}
 .slide img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover}
 .slide-hospitality img{object-position:center 42%}
 .slide-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,16,24,.7),transparent 46%)}
