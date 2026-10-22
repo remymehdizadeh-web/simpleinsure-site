@@ -359,14 +359,20 @@
       });
     });
   }
+  function offForm(el, form) {
+    for (var n = el.parentNode; n && n !== form; n = n.parentNode) {
+      if (n.hasAttribute && n.hasAttribute("hidden") && !n.hasAttribute("data-step")) return true;
+    }
+    return false;
+  }
   function collect(form) {
     var lines = [];
     var label = lineLabel(form);
     if (label) lines.push("Account: " + label);
     var seen = {};
     form.querySelectorAll("input, select, textarea").forEach(function (el) {
-      if (el.disabled || el.type === "radio" || el.type === "checkbox" || el.type === "file" || !el.name) return;
-      if (el.closest("[hidden]")) return;
+      if (el.disabled || el.type === "radio" || el.type === "checkbox" || el.type === "file" || !el.name || el.name.charAt(0) === "_") return;
+      if (offForm(el, form)) return;
       var val = String(el.value || "").trim();
       if (!val) return;
       var lab = form.querySelector('label[for="' + el.id + '"]');
@@ -377,7 +383,7 @@
     });
     var boxes = [];
     form.querySelectorAll('input[type="checkbox"]').forEach(function (el) {
-      if (el.disabled || !el.checked || el.closest("[hidden]")) return;
+      if (el.disabled || !el.checked || offForm(el, form)) return;
       var lab = form.querySelector('label[for="' + el.id + '"]');
       if (lab) boxes.push(lab.textContent.replace(/\s+/g, " ").trim());
     });
@@ -414,6 +420,181 @@
     }
     location.href = href;
   }
+  var FORM_ENDPOINT = "https://formsubmit.co/377b52cf505cbfe923fcec89eeee6cae";
+  var MAX_UPLOAD = 10 * 1024 * 1024;
+  function filesOf(form) {
+    var out = [];
+    form.querySelectorAll('input[type="file"]').forEach(function (el) {
+      if (el.disabled || offForm(el, form)) return;
+      [].slice.call(el.files || []).forEach(function (f) { out.push(f); });
+    });
+    return out;
+  }
+  function addHoney(form) {
+    if (form.querySelector('input[name="_honey"]')) return;
+    var wrap = d.createElement("div");
+    wrap.setAttribute("aria-hidden", "true");
+    wrap.style.cssText = "position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden";
+    wrap.innerHTML = '<label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>';
+    form.appendChild(wrap);
+  }
+  function showState(form, which) {
+    form.querySelectorAll("[data-step]").forEach(function (p) { p.hidden = true; });
+    ["wizard-nav", "form-error", "progress", "meter"].forEach(function (c) {
+      var el = form.querySelector("." + c);
+      if (el) el.hidden = true;
+    });
+    var done = form.querySelector(".done");
+    var sent = form.querySelector(".sent");
+    if (which === "sent") {
+      if (!sent) {
+        sent = d.createElement("div");
+        sent.className = "sent done";
+        sent.setAttribute("role", "status");
+        sent.innerHTML = '<h2>Thanks. We have it.</h2><p class="lede">A broker will read what you sent and reply by phone or email. If it is urgent, call <a href="tel:+15162267969">(516) 226-7969</a>.</p>';
+        form.appendChild(sent);
+      }
+      if (done) done.hidden = true;
+      sent.hidden = false;
+      sent.setAttribute("tabindex", "-1");
+      if (sent.focus) sent.focus();
+    }
+  }
+  function sendForm(form, subject, lines) {
+    var err = form.querySelector(".form-error");
+    var btn = form.querySelector("[data-next]");
+    function fail(msg) {
+      if (btn) { btn.disabled = false; btn.textContent = form.getAttribute("data-final") || "Send"; }
+      if (err) { err.textContent = msg; err.hidden = false; }
+    }
+    var honey = form.querySelector('input[name="_honey"]');
+    if (honey && honey.value) { showState(form, "sent"); return; }
+    var files = filesOf(form);
+    var total = files.reduce(function (n, f) { return n + f.size; }, 0);
+    if (total > MAX_UPLOAD) {
+      fail("Those files are over 10 MB together. Send fewer or smaller files, or email them to info@simpleinsure.co.");
+      return;
+    }
+    var need = form.querySelector("[data-upload-for]");
+    if (need) {
+      var sel = form.querySelector("#" + need.getAttribute("data-upload-for"));
+      if (sel && /upload/i.test(sel.value) && !(need.files && need.files.length)) {
+        fail("Choose a file to upload, or pick \u201cI'll email it later.\u201d");
+        if (need.focus) need.focus();
+        return;
+      }
+    }
+    var fields = [
+      ["_subject", "Website: " + subject],
+      ["_template", "table"],
+      ["_captcha", "false"],
+      ["_next", location.origin + "/form-sent/"],
+      ["Form", subject]
+    ];
+    var used = {};
+    fields.forEach(function (f) { used[f[0]] = 1; });
+    var email = form.querySelector('input[type="email"]');
+    if (email && String(email.value || "").trim()) fields.push(["_replyto", String(email.value).trim()]);
+    lines.forEach(function (line, i) {
+      var k = line.indexOf(": ");
+      var key = k > 0 ? line.slice(0, k) : "Item " + (i + 1);
+      var val = k > 0 ? line.slice(k + 2) : line;
+      if (used[key]) key = key + " (" + (i + 1) + ")";
+      used[key] = 1;
+      fields.push([key, val]);
+    });
+    if (files.length) fields.push(["Files attached", files.map(function (f) { return f.name; }).join(", ")]);
+    var name = "fs" + Date.now();
+    var frame = d.createElement("iframe");
+    frame.name = name;
+    frame.title = "Form transport";
+    frame.setAttribute("aria-hidden", "true");
+    frame.tabIndex = -1;
+    frame.style.cssText = "position:absolute;width:0;height:0;border:0;left:-10000px";
+    var post = d.createElement("form");
+    post.method = "POST";
+    post.enctype = "multipart/form-data";
+    post.action = FORM_ENDPOINT;
+    post.target = name;
+    post.hidden = true;
+    fields.forEach(function (f) {
+      var input = d.createElement("input");
+      input.type = "hidden";
+      input.name = f[0];
+      input.value = f[1];
+      post.appendChild(input);
+    });
+    var attached = 0;
+    try {
+      files.forEach(function (f, i) {
+        var dt = new DataTransfer();
+        dt.items.add(f);
+        var input = d.createElement("input");
+        input.type = "file";
+        input.name = i === 0 ? "attachment" : "attachment" + (i + 1);
+        input.files = dt.files;
+        post.appendChild(input);
+        attached++;
+      });
+    } catch (e) {
+      attached = 0;
+    }
+    if (files.length && !attached) {
+      [].slice.call(post.querySelectorAll('input[type="file"]')).forEach(function (el) { el.remove(); });
+      form.querySelectorAll('input[type="file"]').forEach(function (orig, i) {
+        if (!orig.files || !orig.files.length || offForm(orig, form)) return;
+        var input = d.createElement("input");
+        input.type = "file";
+        input.name = attached === 0 ? "attachment" : "attachment" + (attached + 1);
+        try { input.files = orig.files; post.appendChild(input); attached++; } catch (e) {}
+      });
+    }
+    if (files.length && !attached) {
+      fail("This browser could not attach your files. Please email them to info@simpleinsure.co or call (516) 226-7969.");
+      return;
+    }
+    if (btn) { btn.disabled = true; btn.textContent = files.length ? "Uploading\u2026" : "Sending\u2026"; }
+    if (err) err.hidden = true;
+    var settled = false;
+    function cleanup() {
+      setTimeout(function () { frame.remove(); post.remove(); }, 1000);
+    }
+    function onFail() {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      fail("We could not send this just now. Please try again, call (516) 226-7969, or use the email draft below.");
+      var mail = form.querySelector("[data-mailto]");
+      var summary = form.querySelector(".summary");
+      var done = form.querySelector(".done:not(.sent)");
+      if (mail) mail.href = mailtoHref(subject, lines);
+      if (summary) summary.textContent = lines.join("\n");
+      if (done) {
+        done.hidden = false;
+        var h = done.querySelector("h2");
+        if (h) h.hidden = true;
+      }
+    }
+    var timer = setTimeout(onFail, 150000);
+    frame.addEventListener("load", function () {
+      if (settled) return;
+      var path;
+      try { path = frame.contentWindow.location.pathname; } catch (e) { path = null; }
+      if (path === "blank") return;
+      clearTimeout(timer);
+      if (path === "/form-sent/") {
+        settled = true;
+        cleanup();
+        showState(form, "sent");
+        if (window.gtag) window.gtag("event", "generate_lead", { form_name: form.getAttribute("data-subject") || "form" });
+      } else {
+        onFail();
+      }
+    });
+    d.body.appendChild(frame);
+    d.body.appendChild(post);
+    post.submit();
+  }
   d.querySelectorAll("form.wizard").forEach(function (form) {
     var panes = [].slice.call(form.querySelectorAll("[data-step]"));
     var total = panes.length;
@@ -424,6 +605,7 @@
     var meter = form.querySelector(".meter i");
     var count = form.querySelector("[data-stepcount]");
     var label = form.querySelector("[data-steplabel]");
+    addHoney(form);
     function show(n) {
       step = n;
       panes.forEach(function (p) { p.hidden = Number(p.getAttribute("data-step")) !== n; });
@@ -471,7 +653,7 @@
       if (!validate(pane)) return;
       if (step < total) { show(step + 1); return; }
       var subject = (form.getAttribute("data-subject") || "Request") + (lineLabel(form) ? ": " + lineLabel(form) : "");
-      openMail(subject, collect(form), form);
+      sendForm(form, subject, collect(form));
     });
     if (total === 1) {
       var prog = form.querySelector(".progress");
