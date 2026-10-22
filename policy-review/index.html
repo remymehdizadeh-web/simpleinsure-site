@@ -77,17 +77,18 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 </div>
 <main id="main"><header class="page-head policy-head"><div class="wrap"><p class="kicker m-only">Policy review</p><h1 class="rise"><span class="line"><span>Send the policy you have.</span></span></h1><p class="lede hide-1024">We read it first. If it&#x27;s right, we say so.</p></div></header>
 <section class="section desk-sheet only-1024"><div class="wrap">
-  <form class="wizard" method="post" data-subject="Policy review" data-final="Email this review" novalidate>
+  <form class="wizard" method="post" data-subject="Policy review" data-final="Send this review" novalidate>
       <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
       <div class="meter" aria-hidden="true"><i></i></div>
       
 <div data-step="1" data-label="Account" data-error="Choose what the policy covers.">
-  <p class="quiet">Nothing on this form is stored on the website.</p>
+  <p class="quiet">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
   <div class="fields">
     <div class="field full"><label for="dcover">What does the current policy cover?</label><select id="dcover" name="dcover" required><option value="">Select</option><option>A building or a real estate schedule</option><option>A restaurant, bar, or cafe</option><option>A contracting or trade business</option><option>An office, retail, or professional firm</option><option>Home, auto, or an umbrella</option><option>I am not sure yet</option></select></div>
     <div class="field"><label for="dcarrier">Current carrier, if you want to say</label><input id="dcarrier" name="dcarrier" type="text" ></div>
     <div class="field"><label for="drenew">Renewal or expiration date</label><input id="drenew" name="drenew" type="date" ></div>
-    <div class="field full"><label for="ddeliver">The policy</label><select id="ddeliver" name="ddeliver" required><option value="">Select</option><option>I&#x27;ll attach it to the email</option><option>Email it to us</option></select></div>
+    <div class="field full"><label for="ddeliver">The policy</label><select id="ddeliver" name="ddeliver" required><option value="">Select</option><option>I&#x27;ll upload it here</option><option>I&#x27;ll email it later</option></select></div>
+    <div class="field full"><label for="dfile">Declarations page or policy</label><input id="dfile" name="dfile" type="file" data-upload-for="ddeliver" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/*" multiple><p class="quiet">PDF, JPG, PNG, or HEIC, up to 10 MB in total. Black out Social Security, driver&#x27;s license, birth date, and bank or card numbers first. Don&#x27;t upload claims, medical, or bank documents.</p></div>
   </div>
 </div>
 <div data-step="2" data-label="Contact" data-error="Add your name, and an email or a phone number." hidden>
@@ -119,13 +120,13 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       <button type="button" role="tab" data-tab="read">Read a current policy</button>
       <button type="button" role="tab" data-tab="account">Start from the account</button>
     </div>
-    <div class="tab-panel is-on" id="panel-read" role="tabpanel"><div class="layout"><form class="wizard" method="post" data-subject="Policy review" data-final="Email this review" novalidate>
+    <div class="tab-panel is-on" id="panel-read" role="tabpanel"><div class="layout"><form class="wizard" method="post" data-subject="Policy review" data-final="Send this review" novalidate>
       <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
       <div class="meter" aria-hidden="true"><i></i></div>
       
 <div data-step="1" data-label="Account" data-error="Choose what the policy covers.">
   <h2 style="font-size:32px;margin-bottom:8px">What does the current policy cover?</h2>
-  <p class="quiet">Nothing on this form is stored on the website.</p>
+  <p class="quiet">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
   <div style="margin-top:16px"><label class="choice" for="line-real-estate"><input id="line-real-estate" type="radio" name="line" value="real-estate" required><span>A building or a real estate schedule</span></label><label class="choice" for="line-hospitality"><input id="line-hospitality" type="radio" name="line" value="hospitality" required><span>A restaurant, bar, or cafe</span></label><label class="choice" for="line-construction"><input id="line-construction" type="radio" name="line" value="construction" required><span>A contracting or trade business</span></label><label class="choice" for="line-professional"><input id="line-professional" type="radio" name="line" value="professional" required><span>An office, retail, or professional firm</span></label><label class="choice" for="line-personal"><input id="line-personal" type="radio" name="line" value="personal" required><span>Home, auto, or an umbrella</span></label><label class="choice" for="line-unsure"><input id="line-unsure" type="radio" name="line" value="unsure" required><span>I am not sure yet</span></label></div>
 </div>
 <div data-step="2" data-label="The policy" hidden>
@@ -137,6 +138,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div class="field"><label for="carrier">Current carrier, if you want to say</label><input id="carrier" name="carrier" type="text" ></div>
     <div class="field"><label for="renew">Renewal or expiration date</label><input id="renew" name="renew" type="date" ></div>
     <div class="field full"><label for="worry">What concerns you</label><textarea id="worry" name="worry"></textarea></div>
+    <div class="field full"><label for="pfile">Declarations page or policy, if you have it</label><input id="pfile" name="pfile" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/*" multiple><p class="quiet">PDF, JPG, PNG, or HEIC, up to 10 MB in total. Black out Social Security, driver&#x27;s license, birth date, and bank or card numbers first. Don&#x27;t upload claims, medical, or bank documents.</p></div>
   </div>
 </div>
 <div data-step="3" data-label="Contact" data-error="Add your name, and an email or a phone number." hidden>
@@ -162,13 +164,13 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
         <div class="row"><span>Email</span><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
       </div>
     </aside></div></div>
-    <div class="tab-panel" id="panel-account" role="tabpanel"><form class="wizard" method="post" data-subject="Coverage review" data-final="Email this request" novalidate>
+    <div class="tab-panel" id="panel-account" role="tabpanel"><form class="wizard" method="post" data-subject="Coverage review" data-final="Send this request" novalidate>
       <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
       <div class="meter" aria-hidden="true"><i></i></div>
       
 <div data-step="1" data-label="Account" data-error="Choose what you want us to look at.">
   <h2 style="font-size:32px;margin-bottom:8px">What should we look at?</h2>
-  <p class="quiet">Nothing on this form is stored on the website.</p>
+  <p class="quiet">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
   <div style="margin-top:16px"><label class="choice" for="qline-real-estate"><input id="qline-real-estate" type="radio" name="line" value="real-estate" required><span>A building or a real estate schedule</span></label><label class="choice" for="qline-hospitality"><input id="qline-hospitality" type="radio" name="line" value="hospitality" required><span>A restaurant, bar, or cafe</span></label><label class="choice" for="qline-construction"><input id="qline-construction" type="radio" name="line" value="construction" required><span>A contracting or trade business</span></label><label class="choice" for="qline-professional"><input id="qline-professional" type="radio" name="line" value="professional" required><span>An office, retail, or professional firm</span></label><label class="choice" for="qline-personal"><input id="qline-personal" type="radio" name="line" value="personal" required><span>Home, auto, or an umbrella</span></label><label class="choice" for="qline-unsure"><input id="qline-unsure" type="radio" name="line" value="unsure" required><span>I am not sure yet</span></label></div>
 </div>
 <div data-step="2" data-label="Details" hidden>
@@ -183,6 +185,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div class="field full" data-for="professional"><label for="pr-does">What the business does</label><textarea id="pr-does" name="pr-does"></textarea></div>
     <div class="field" data-for="personal"><label for="pe-what">What to cover</label><select id="pe-what" name="pe-what"><option value="">Select</option><option>Home</option><option>Auto</option><option>Home and auto</option><option>Umbrella</option><option>Rental property</option></select></div>
     <div class="field full" data-for="unsure"><label for="un-about">Describe what you want insured</label><textarea id="un-about" name="un-about"></textarea></div>
+    <div class="field full"><label for="qfile">Current policy or schedule, if you have it</label><input id="qfile" name="qfile" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/*" multiple><p class="quiet">PDF, JPG, PNG, or HEIC, up to 10 MB in total. Black out Social Security, driver&#x27;s license, birth date, and bank or card numbers first. Don&#x27;t upload claims, medical, or bank documents.</p></div>
   </div>
 </div>
 <div data-step="3" data-label="Contact" data-error="Add your name, and an email or a phone number." hidden>
@@ -256,6 +259,6 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     </div>
   </div>
 </footer>
-<script src="../site.js?v=15" defer></script>
+<script src="../site.js?v=17" defer></script>
 </body>
 </html>
