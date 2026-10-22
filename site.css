@@ -963,3 +963,40 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
 
 /* Gray's Papaya disclaimer (compliance): always rendered, never starts at opacity 0. */
 .client-result-grays .result-foot,html.motion.js .client-result-grays .result-foot,html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in){display:block !important;visibility:visible !important;opacity:1 !important;transform:none !important;transition:none !important}
+
+/* Solid edges instead of soft fades. The fades over photos read as blurred bands. */
+html:not(.scrolled) body.page-home:not(.nav-open) .bar,
+html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{background:rgba(6,24,47,.82);border-color:rgba(255,255,255,.16)}
+.bar{backdrop-filter:none;-webkit-backdrop-filter:none}
+@media (min-width:1024px){
+  body.page-home .h-pin:before,.page-home .work:before,.close:before,.contact-visual:before{content:none}
+  body.page-home .hero-shade{background:linear-gradient(90deg,rgba(6,24,47,.96) 0%,rgba(6,24,47,.9) 28%,rgba(6,24,47,.72) 46%,rgba(6,24,47,.28) 62%,rgba(6,24,47,0) 76%)}
+  .close .hero-shade{background:linear-gradient(90deg,#06182f 0%,rgba(6,24,47,.97) 26%,rgba(6,24,47,.9) 44%,rgba(6,24,47,.62) 62%,rgba(6,24,47,.18) 80%)}
+  .client-result-grays .result-photo:after{background:linear-gradient(90deg,rgba(6,24,47,0) 42%,rgba(6,24,47,.45) 74%,#06182f 97%)}
+  .client-result-grays .result-rep{padding:6px 10px;background:rgba(6,24,47,.86)}
+}
+
+/* Practices card rail, restored from the Railway build (a457508). The section pins with
+   native position:sticky and site.js slides the cards sideways one to one with the scroll.
+   No smooth scroll library and no scroll hijacking. Desktop with motion only; reduced
+   motion, phones, and no JS keep the static grid above. */
+@media (min-width:1024px){
+  html.rail body.page-home .h-pin{height:auto !important;padding:0;background:#fff;overflow:visible}
+  html.rail .h-sticky{position:sticky;top:0;width:100%;height:100vh;height:100dvh;margin:0;display:flex;align-items:stretch;overflow:hidden;background:#fff}
+  html.rail .h-intro{position:relative;z-index:2;flex:none;width:min(500px,36vw);height:auto;margin:0;padding:0 40px 72px max(32px,calc((100vw - var(--wrap)) / 2));clip:auto;overflow:visible;white-space:normal;display:flex;flex-direction:column;justify-content:flex-end;background:#fff;box-shadow:24px 0 0 #fff}
+  html.rail .h-intro h2{font-size:clamp(64px,5.4vw,84px)}
+  html.rail .h-meta{display:flex;align-items:center;gap:16px;margin-top:36px;font-family:var(--sans);font-size:12px;font-weight:560;letter-spacing:.2em;color:var(--soft)}
+  html.rail .h-meta b{font-weight:560;color:var(--navy)}
+  html.rail .h-bar{position:relative;flex:none;width:120px;height:1px;background:rgba(27,54,93,.18);overflow:hidden}
+  html.rail .h-bar i{position:absolute;inset:0;background:var(--navy);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+  html.rail .h-track{display:flex;flex:none;height:100%;gap:12px;padding:12vh 0;box-sizing:border-box;will-change:transform}
+  html.rail .slide{flex:0 0 40vw;height:100%;min-height:0;box-shadow:none;overflow:hidden}
+  html.rail .slide img{left:-6%;width:112%;transition:none !important;will-change:transform}
+  html.rail .slide-shade{background:linear-gradient(to top,rgba(6,24,47,.92) 0%,rgba(6,24,47,.6) 30%,rgba(6,24,47,0) 60%)}
+  html.rail .slide-copy{left:36px;right:36px;bottom:36px;height:auto}
+  html.rail .slide-copy em,html.rail .slide-copy strong,html.rail .slide-copy small{position:static;transform:none !important;opacity:1 !important}
+  html.rail .slide-copy em{display:block;margin-bottom:14px}
+  html.rail .slide-copy strong{font-size:clamp(40px,3.6vw,60px);line-height:1;white-space:normal}
+  html.rail .slide-copy small{margin-top:12px;font-size:16px}
+}
+.h-meta{display:none}
