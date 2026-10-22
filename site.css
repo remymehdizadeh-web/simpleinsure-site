@@ -1007,3 +1007,4 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
 .result-stats dt{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin:0 0 .3rem}
 .result-stats dd{margin:0;font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums}
 .result-stats dd i{font-style:normal;font-weight:400;font-size:.7em;opacity:.75}
+.result-stats dd.pct{font-size:.78rem;font-weight:500;letter-spacing:.02em;opacity:.8;margin-top:.35rem;line-height:1.3}
