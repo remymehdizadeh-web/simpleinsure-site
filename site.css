@@ -1000,3 +1000,12 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
   html.rail .slide-copy small{margin-top:12px;font-size:16px}
 }
 .h-meta{display:none}
+
+/* Gray's Papaya figures (pending Carter clearance) */
+.result-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:24px 0 20px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18);max-width:36rem;color:#f4f1ea}
+.result-stats>div{background:#06182f;padding:14px 16px}
+.result-stats dt{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin:0 0 .3rem}
+.result-stats dd{margin:0;font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums}
+.result-stats dd i{font-style:normal;font-weight:400;font-size:.7em;opacity:.75}
+.result-stats dd.pct{font-size:.78rem;font-weight:500;letter-spacing:.02em;opacity:.8;margin-top:.35rem;line-height:1.3}
+.result-stats>div.wide{grid-column:1/-1}
