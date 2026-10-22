@@ -816,5 +816,73 @@
     });
   });
 
-  // Native scrolling only. No scroll library, no pinning, no scroll-linked transforms.
+  // Practices card rail, restored from the Railway build (a457508) without GSAP or Lenis.
+  // The section is pinned with position:sticky and the cards move one to one with the
+  // native scroll, so the wheel and trackpad never feel stuck. Desktop with motion only.
+  (function () {
+    var pin = d.querySelector(".h-pin");
+    var sticky = pin && pin.querySelector(".h-sticky");
+    var track = pin && pin.querySelector(".h-track");
+    if (!pin || !sticky || !track) return;
+    var root = d.documentElement;
+    var deskQ = matchMedia("(min-width: 1024px)");
+    var slides = Array.prototype.slice.call(track.querySelectorAll(".slide"));
+    var imgs = slides.map(function (s) { return s.querySelector("img"); });
+    var now = pin.querySelector(".h-now");
+    var bar = pin.querySelector(".h-bar");
+    var on = false, dist = 0, top = 0, cur = 0, target = 0, ticking = 0;
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function paint() {
+      ticking = 0;
+      var diff = target - cur;
+      cur = Math.abs(diff) < 0.5 ? target : cur + diff * 0.22;
+      track.style.transform = "translate3d(" + (-cur).toFixed(1) + "px,0,0)";
+      var vw = innerWidth, p = dist ? cur / dist : 0, best = 0, bestD = 1e9;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var c = (r.left + r.width / 2 - vw / 2) / vw;
+        if (imgs[i]) imgs[i].style.transform = "translate3d(" + (c * -5).toFixed(2) + "%,0,0)";
+        var dd = Math.abs(r.left + r.width / 2 - vw * 0.62);
+        if (dd < bestD) { bestD = dd; best = i; }
+      });
+      if (bar) bar.style.setProperty("--p", p.toFixed(3));
+      if (now) now.textContent = pad(best + 1);
+      if (cur !== target) ticking = requestAnimationFrame(paint);
+    }
+    function onScroll() {
+      if (!on) return;
+      var y = window.scrollY || 0;
+      target = Math.min(dist, Math.max(0, y - top));
+      if (!ticking) ticking = requestAnimationFrame(paint);
+    }
+    function measure() {
+      var want = deskQ.matches && !reduce;
+      root.classList.toggle("rail", want);
+      on = want;
+      if (!on) {
+        pin.style.removeProperty("height");
+        track.style.transform = "";
+        imgs.forEach(function (im) { if (im) im.style.transform = ""; });
+        return;
+      }
+      dist = Math.max(0, track.offsetLeft + track.scrollWidth - sticky.clientWidth + 48);
+      pin.style.setProperty("height", (sticky.clientHeight + dist) + "px", "important");
+      top = pin.getBoundingClientRect().top + (window.scrollY || 0);
+      cur = target = Math.min(dist, Math.max(0, (window.scrollY || 0) - top));
+      paint();
+    }
+    measure();
+    addEventListener("scroll", onScroll, { passive: true });
+    addEventListener("resize", measure);
+    addEventListener("load", measure);
+    if (deskQ.addEventListener) deskQ.addEventListener("change", measure);
+    slides.forEach(function (s) {
+      var a = s.querySelector("a");
+      if (a) a.addEventListener("focus", function () {
+        if (!on) return;
+        var want = top + Math.min(dist, Math.max(0, s.offsetLeft - track.offsetLeft - 48));
+        window.scrollTo(0, want);
+      });
+    });
+  })();
 })();
