@@ -422,6 +422,10 @@
   }
   var FORM_ENDPOINT = "https://formsubmit.co/377b52cf505cbfe923fcec89eeee6cae";
   var MAX_UPLOAD = 10 * 1024 * 1024;
+  // FormSubmit reCAPTCHA. Off: the post goes through a hidden frame, the page shows its own
+  // confirmation, and a failure offers the email draft. On: the visitor is sent to FormSubmit's
+  // captcha page (it cannot load in a frame), then lands on /form-sent/.
+  var USE_CAPTCHA = false;
   function filesOf(form) {
     var out = [];
     form.querySelectorAll('input[type="file"]').forEach(function (el) {
@@ -487,10 +491,11 @@
     var fields = [
       ["_subject", "Website: " + subject],
       ["_template", "table"],
-      ["_captcha", "false"],
+      ["_honey", ""],
       ["_next", location.origin + "/form-sent/"],
       ["Form", subject]
     ];
+    if (!USE_CAPTCHA) fields.splice(2, 0, ["_captcha", "false"]);
     var used = {};
     fields.forEach(function (f) { used[f[0]] = 1; });
     var email = form.querySelector('input[type="email"]');
@@ -555,6 +560,12 @@
     }
     if (btn) { btn.disabled = true; btn.textContent = files.length ? "Uploading\u2026" : "Sending\u2026"; }
     if (err) err.hidden = true;
+    if (USE_CAPTCHA) {
+      post.target = "_self";
+      d.body.appendChild(post);
+      post.submit();
+      return;
+    }
     var settled = false;
     function cleanup() {
       setTimeout(function () { frame.remove(); post.remove(); }, 1000);
