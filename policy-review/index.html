@@ -3,262 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#061018" media="(max-width: 1023px)">
 <title>Policy Review | SimpleINSURE</title>
-<meta name="description" content="Send a current policy for a second reading, or start a review from the account. The form opens an email. Nothing is stored on the website.">
+<meta name="description" content="Send a current policy for a second reading. A licensed New York broker reads the declarations and forms and tells you what we see.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.simpleinsure.co/policy-review/">
-<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="theme-color" content="#0A2540">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="SimpleINSURE">
 <meta property="og:title" content="Policy Review | SimpleINSURE">
-<meta property="og:description" content="Send a current policy for a second reading, or start a review from the account. The form opens an email. Nothing is stored on the website.">
+<meta property="og:description" content="Send a current policy for a second reading. A licensed New York broker reads the declarations and forms and tells you what we see.">
 <meta property="og:url" content="https://www.simpleinsure.co/policy-review/">
 <meta property="og:image" content="https://www.simpleinsure.co/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <link rel="preload" href="../fonts/franklin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../site.css?v=30">
-<style>
-.m-only{display:none}
-@media (max-width:980px){
-  .site-header{position:fixed !important;top:calc(12px + env(safe-area-inset-top)) !important;left:0 !important;right:0 !important;padding-top:0 !important;z-index:80 !important;transform:translate3d(0,var(--header-shift,0px),0)}
-  .site-header:before{content:"";position:absolute;left:0;right:0;bottom:100%;height:calc(12px + env(safe-area-inset-top));background:transparent;pointer-events:none}
-  html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
-  .h-pin{height:auto !important}
-  .h-sticky{position:static !important;height:auto !important;display:block !important;overflow:visible !important}
-  .h-intro{width:auto !important;display:block !important;padding:48px 20px 16px !important;box-sizing:border-box !important}
-  .h-track{display:block !important;transform:none !important;height:auto !important;width:auto !important}
-  .slide{position:relative !important;display:block !important;width:100% !important;height:72vh !important;min-height:420px !important;overflow:hidden !important;color:#fff !important;flex:none !important}
-  .slide img{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;max-width:none !important;object-fit:cover !important}
-  .slide-shade{position:absolute !important;inset:0 !important}
-  .slide-copy{position:absolute !important;left:20px !important;right:20px !important;bottom:22px !important;z-index:2 !important;color:#fff !important}
-  .slide-copy strong,.slide-copy small{display:block !important;color:#fff !important}
-  .slide-copy small{margin-top:8px !important}
-}
-</style>
-<link rel="stylesheet" href="../mobile.css?v=15">
-<script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
-<link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "InsuranceAgency", "name": "SimpleINSURE Brokerage LLC", "alternateName": "SimpleINSURE", "url": "https://www.simpleinsure.co/", "logo": "https://www.simpleinsure.co/img/simpleinsure-wordmark.png", "image": "https://www.simpleinsure.co/img/og.png", "telephone": "+1-516-226-7969", "email": "info@simpleinsure.co", "address": {"@type": "PostalAddress", "streetAddress": "900 Stewart Ave Ste 210", "addressLocality": "Garden City", "addressRegion": "NY", "postalCode": "11530", "addressCountry": "US"}}</script>
-
+<link rel="stylesheet" href="../assets/site.css?v=r2">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "InsuranceAgency", "@id": "https://www.simpleinsure.co/#agency", "name": "SimpleINSURE Brokerage LLC", "alternateName": "SimpleINSURE", "url": "https://www.simpleinsure.co/", "logo": "https://www.simpleinsure.co/img/simpleinsure-logo-600.png", "image": "https://www.simpleinsure.co/img/og.png", "telephone": "+1-516-226-7969", "email": "info@simpleinsure.co", "address": {"@type": "PostalAddress", "streetAddress": "900 Stewart Ave Ste 210", "addressLocality": "Garden City", "addressRegion": "NY", "postalCode": "11530", "addressCountry": "US"}, "areaServed": {"@type": "State", "name": "New York"}, "description": "Independent New York property and casualty insurance brokerage in Garden City, NY. Commercial, contractor, restaurant, real estate, and personal insurance."}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQH2G4PPLQ"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personalization_signals: false });
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZQH2G4PPLQ',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+
 </head>
-<body class="page-inner">
+<body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="bar">
-    <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-    <nav class="nav-desk" aria-label="Primary">
-      <a href="../coverage/">Coverage</a>
-      <a href="../client-center/">Client Center</a>
-      <a href="../about/">Firm</a>
-      <a href="../contact/">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="phone-full" href="tel:+15162267969">(516) 226-7969</a>
-      <a class="btn btn-sm" href="../policy-review/">Request a review</a>
-      <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button>
-    </div>
+<div class="topbar"><div class="wrap"><span>Independent insurance broker &middot; 900 Stewart Ave, Garden City, NY</span><a href="tel:+15162267969">Call (516) 226-7969</a></div></div>
+<header class="hdr">
+ <div class="wrap">
+  <a class="brand" href="../" aria-label="SimpleINSURE Brokerage home"><img src="../img/simpleinsure-logo-600.png" alt="SimpleINSURE Brokerage" width="600" height="176"></a>
+  <nav class="nav" aria-label="Main"><a href="../commercial/">Commercial</a><a href="../contractors/">Contractors</a><a href="../restaurants/">Restaurants</a><a href="../real-estate/">Real Estate</a><a href="../personal/">Personal</a><a href="../client-center/">Client Center</a></nav>
+  <div class="hdr-actions">
+   <a class="phone" href="tel:+15162267969">(516) 226-7969</a>
+   <a class="btn btn-primary" href="../quote/">Get a quote</a>
+   <a class="call-icon" href="tel:+15162267969" aria-label="Call (516) 226-7969"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></a>
+   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
   </div>
+ </div>
+ <nav class="mnav" id="mnav" aria-label="Mobile"><a href="../commercial/">Commercial</a><a href="../contractors/">Contractors</a><a href="../restaurants/">Restaurants</a><a href="../real-estate/">Landlords and real estate</a><a href="../personal/">Personal</a><a href="../policy-review/">Policy review</a><a href="../client-center/">Client Center</a><a href="../about/">About</a><a href="../contact/">Contact</a><a class="btn btn-primary" href="../quote/">Get a quote</a></nav>
 </header>
-<div class="sheet" id="sheet" hidden>
-  <nav aria-label="Mobile"><a href="../coverage/">Coverage</a><a href="../client-center/">Client Center</a><a href="../about/">Firm</a><a href="../contact/">Contact</a></nav>
-  <div class="sheet-cta"><a class="btn" href="../policy-review/">Request a review</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
-  <p class="sheet-meta"><span>Garden City, New York</span><span>NY License BR-1984615</span></p>
-</div>
-<main id="main"><header class="page-head policy-head"><div class="wrap"><p class="kicker m-only">Policy review</p><h1 class="rise"><span class="line"><span>Send the policy you have.</span></span></h1><p class="lede hide-1024">We read it first. If it&#x27;s right, we say so.</p></div></header>
-<section class="section desk-sheet only-1024"><div class="wrap">
-  <form class="wizard" method="post" data-subject="Policy review" data-final="Send this review" novalidate>
-      <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
-      <div class="meter" aria-hidden="true"><i></i></div>
-      
-<div data-step="1" data-label="Account" data-error="Choose what the policy covers.">
-  <p class="quiet">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
-  <div class="fields">
-    <div class="field full"><label for="dcover">What does the current policy cover?</label><select id="dcover" name="dcover" required><option value="">Select</option><option>A building or a real estate schedule</option><option>A restaurant, bar, or cafe</option><option>A contracting or trade business</option><option>An office, retail, or professional firm</option><option>Home, auto, or an umbrella</option><option>I am not sure yet</option></select></div>
-    <div class="field"><label for="dcarrier">Current carrier, if you want to say</label><input id="dcarrier" name="dcarrier" type="text" ></div>
-    <div class="field"><label for="drenew">Renewal or expiration date</label><input id="drenew" name="drenew" type="date" ></div>
-    <div class="field full"><label for="ddeliver">The policy</label><select id="ddeliver" name="ddeliver" required><option value="">Select</option><option>I&#x27;ll upload it here</option><option>I&#x27;ll email it later</option></select></div>
-    <div class="field full"><label for="dfile">Declarations page or policy</label><input id="dfile" name="dfile" type="file" data-upload-for="ddeliver" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/*" multiple><p class="quiet">PDF, JPG, PNG, or HEIC, up to 10 MB in total. Black out Social Security, driver&#x27;s license, birth date, and bank or card numbers first. Don&#x27;t upload claims, medical, or bank documents.</p></div>
+<main id="main">
+
+<section class="sec" style="padding-top:40px">
+ <div class="wrap">
+  <div class="page-head"><h1>Send a policy for a second reading.</h1><p class="lede">Upload the declarations page or the full policy. A licensed broker reads it and tells you what we see, even if the answer is to keep it.</p></div>
+  <div class="form-layout">
+   <div class="fbox"><form class="fs" data-subject="Policy review" method="post" novalidate>
+<div class="fields"><div class="field full"><label for="r-cover">What does the current policy cover?</label><select id="r-cover" name="r-cover" required data-key="Policy covers"><option value="">Select</option><option>A building or a real estate schedule</option><option>A restaurant or cafe</option><option>A contracting or trade business</option><option>An office, retail, or professional firm</option><option>A home or a personal umbrella</option><option>I am not sure yet</option></select></div><fieldset class="field full"><legend>What concerns you <span class="opt">(optional)</span></legend><div class="chips"><label for="r-c0"><input id="r-c0" name="r-c0" type="checkbox" value="The price" data-group="Concerns"> The price</label><label for="r-c1"><input id="r-c1" name="r-c1" type="checkbox" value="The limits" data-group="Concerns"> The limits</label><label for="r-c2"><input id="r-c2" name="r-c2" type="checkbox" value="An exclusion or a sublimit" data-group="Concerns"> An exclusion or a sublimit</label><label for="r-c3"><input id="r-c3" name="r-c3" type="checkbox" value="A certificate or a contract" data-group="Concerns"> A certificate or a contract</label><label for="r-c4"><input id="r-c4" name="r-c4" type="checkbox" value="A renewal that is coming up" data-group="Concerns"> A renewal that is coming up</label><label for="r-c5"><input id="r-c5" name="r-c5" type="checkbox" value="A claim" data-group="Concerns"> A claim</label><label for="r-c6"><input id="r-c6" name="r-c6" type="checkbox" value="I am not sure" data-group="Concerns"> I am not sure</label></div></fieldset><div class="field"><label for="r-carrier">Current carrier <span class="opt">(optional)</span></label><input id="r-carrier" name="r-carrier" type="text" data-key="Current carrier"></div><div class="field"><label for="r-renew">Renewal or expiration date <span class="opt">(optional)</span></label><input id="r-renew" name="r-renew" type="date" data-key="Renewal date"></div><div class="field"><label for="r-prem">Current annual premium, if you know it <span class="opt">(optional)</span></label><input id="r-prem" name="r-prem" type="text" data-key="Current premium"></div><div class="field"><label for="r-deliver">The policy</label><select id="r-deliver" name="r-deliver" data-key="Policy delivery"><option value="">Select</option><option>I&#x27;ll upload it here</option><option>I&#x27;ll email it later</option></select></div><div class="field full"><label for="r-file">Declarations page or policy <span class="opt">(optional)</span></label><input id="r-file" name="r-file" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/*" multiple aria-describedby="r-file-h"><p class="help" id="r-file-h">PDF, JPG, PNG, or HEIC, up to 10 MB in total. Black out Social Security, driver&#x27;s license, birth date, and bank or card numbers first. Don&#x27;t upload claims, medical, or bank documents.</p></div><div class="field"><label for="r-name">Full name</label><input id="r-name" name="r-name" type="text" required autocomplete="name" data-key="Name"></div><div class="field"><label for="r-biz">Business or named insured <span class="opt">(optional)</span></label><input id="r-biz" name="r-biz" type="text" autocomplete="organization" data-key="Business"></div><div class="field"><label for="r-email">Email</label><input id="r-email" name="r-email" type="email" autocomplete="email" data-need="email" data-key="Email"></div><div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" data-need="phone" data-key="Phone"></div><div class="field full"><label for="r-notes">Anything we should know <span class="opt">(optional)</span></label><textarea id="r-notes" name="r-notes" data-key="Notes"></textarea></div></div>
+
+<p class="disclose">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
+<p class="disclose">By sending this, you agree that SimpleINSURE Brokerage LLC may contact you by phone, text, or email about this request. Your consent is not a condition of any purchase. Message and data rates may apply. There is no obligation, and sending this does not bind, change, or cancel coverage. See our <a href="../legal/#privacy">Privacy notice</a>.</p>
+<p class="form-error" role="alert" hidden></p>
+<div class="form-actions"><button class="btn btn-primary" type="submit">Send this review</button><span class="fine">Or call <a href="tel:+15162267969">(516) 226-7969</a></span></div>
+</form></div>
+   <aside class="aside">
+    <div class="card"><h3>What we look at</h3><ol><li>Limits and deductibles.</li><li>Forms, endorsements, and exclusions.</li><li>What your contracts and leases ask for.</li><li>Renewal timing.</li></ol></div>
+    <div class="card"><h3>Prefer to talk?</h3><p><a class="big-phone" href="tel:+15162267969">(516) 226-7969</a></p></div>
+   </aside>
   </div>
-</div>
-<div data-step="2" data-label="Contact" data-error="Add your name, and an email or a phone number." hidden>
-  <h2 class="desk-h">Where should we reply?</h2>
-  <div class="fields">
-    <div class="field full"><label for="dname">Full name</label><input id="dname" name="dname" type="text" required autocomplete="name"></div>
-    <div class="field"><label for="demail">Email</label><input id="demail" name="demail" type="email" data-need="email" autocomplete="email"></div>
-    <div class="field"><label for="dphone">Phone</label><input id="dphone" name="dphone" type="tel" data-need="phone" autocomplete="tel"></div>
+ </div>
+</section></main>
+<footer class="ftr">
+ <div class="wrap">
+  <div class="ftr-grid">
+   <div>
+    <img class="flogo" src="../img/simpleinsure-logo-600.png" alt="SimpleINSURE Brokerage" width="600" height="176" loading="lazy">
+    <p>Independent insurance brokerage in Garden City, Long Island. Businesses, buildings, and homes in Nassau County, across Long Island, and in New York City.</p>
+    <p><a href="tel:+15162267969">(516) 226-7969</a><br><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a><br>900 Stewart Ave Ste 210, Garden City, NY 11530</p>
+   </div>
+   <div><h2>Insurance</h2><ul><li><a href="../commercial/">Commercial</a></li><li><a href="../contractors/">Contractors</a></li><li><a href="../restaurants/">Restaurants</a></li><li><a href="../real-estate/">Landlords and real estate</a></li><li><a href="../personal/">Personal</a></li></ul></div>
+   <div><h2>Clients</h2><ul><li><a href="../quote/">Get a quote</a></li><li><a href="../policy-review/">Policy review</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../client-center/#claim">Report a claim</a></li></ul></div>
+   <div><h2>Firm</h2><ul><li><a href="../about/">About</a></li><li><a href="../contact/">Contact</a></li><li><a href="../legal/">Licenses and disclosures</a></li><li><a href="../legal/#privacy">Privacy</a></li><li><a href="../photo-credits/">Photo credits</a></li></ul></div>
   </div>
-</div>
-      <p class="form-error" role="alert" hidden></p>
-      <div class="wizard-nav"><button type="button" class="btn-ghost" data-back hidden>Back</button><button type="submit" class="btn" data-next>Continue</button></div>
-      <div class="done" hidden>
-      <h2>Your note is ready to send.</h2>
-      <p class="lede">An email draft to <a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a> should be open. If not, use the button below. Email is not encrypted, so leave out Social Security, driver's license, birth date, and bank or card numbers, including in attachments, or call (516) 226-7969.</p>
-      <div class="summary"></div>
-      <div class="done-actions">
-        <a class="btn" data-mailto href="mailto:info@simpleinsure.co">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
-        <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
-        <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
-      </div>
-    </div>
-    </form>
-  <p class="quiet desk-bor">A broker of record letter changes who services your policy, if the insurer accepts it.</p>
-</div></section>
-<section class="section hide-1024" id="read" style="padding-top:36px"><div class="wrap">
-  <div class="path-tabs" data-tabs>
-    <div class="path-bar" role="tablist" aria-label="How to start">
-      <button type="button" role="tab" data-tab="read">Read a current policy</button>
-      <button type="button" role="tab" data-tab="account">Start from the account</button>
-    </div>
-    <div class="tab-panel is-on" id="panel-read" role="tabpanel"><div class="layout"><form class="wizard" method="post" data-subject="Policy review" data-final="Send this review" novalidate>
-      <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
-      <div class="meter" aria-hidden="true"><i></i></div>
-      
-<div data-step="1" data-label="Account" data-error="Choose what the policy covers.">
-  <h2 style="font-size:32px;margin-bottom:8px">What does the current policy cover?</h2>
-  <p class="quiet">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
-  <div style="margin-top:16px"><label class="choice" for="line-real-estate"><input id="line-real-estate" type="radio" name="line" value="real-estate" required><span>A building or a real estate schedule</span></label><label class="choice" for="line-hospitality"><input id="line-hospitality" type="radio" name="line" value="hospitality" required><span>A restaurant, bar, or cafe</span></label><label class="choice" for="line-construction"><input id="line-construction" type="radio" name="line" value="construction" required><span>A contracting or trade business</span></label><label class="choice" for="line-professional"><input id="line-professional" type="radio" name="line" value="professional" required><span>An office, retail, or professional firm</span></label><label class="choice" for="line-personal"><input id="line-personal" type="radio" name="line" value="personal" required><span>Home, auto, or an umbrella</span></label><label class="choice" for="line-unsure"><input id="line-unsure" type="radio" name="line" value="unsure" required><span>I am not sure yet</span></label></div>
-</div>
-<div data-step="2" data-label="The policy" hidden>
-  <h2 style="font-size:32px;margin-bottom:8px">What should we check?</h2>
-  <p class="quiet">Pick any. Estimates are fine.</p>
-  <div class="chips" style="margin:16px 0"><label for="concern-0"><input id="concern-0" name="concern-0" type="checkbox"> The price</label><label for="concern-1"><input id="concern-1" name="concern-1" type="checkbox"> The limits</label><label for="concern-2"><input id="concern-2" name="concern-2" type="checkbox"> An exclusion or a sublimit</label><label for="concern-3"><input id="concern-3" name="concern-3" type="checkbox"> A certificate or a contract</label><label for="concern-4"><input id="concern-4" name="concern-4" type="checkbox"> A renewal that is coming up</label><label for="concern-5"><input id="concern-5" name="concern-5" type="checkbox"> A claim</label><label for="concern-6"><input id="concern-6" name="concern-6" type="checkbox"> I am not sure</label></div>
-  <div class="fields">
-    <div class="field"><label for="prem">Current annual premium, if you know it</label><input id="prem" name="prem" type="text" ></div>
-    <div class="field"><label for="carrier">Current carrier, if you want to say</label><input id="carrier" name="carrier" type="text" ></div>
-    <div class="field"><label for="renew">Renewal or expiration date</label><input id="renew" name="renew" type="date" ></div>
-    <div class="field full"><label for="worry">What concerns you</label><textarea id="worry" name="worry"></textarea></div>
-    <div class="field full"><label for="pfile">Declarations page or policy, if you have it</label><input id="pfile" name="pfile" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/*" multiple><p class="quiet">PDF, JPG, PNG, or HEIC, up to 10 MB in total. Black out Social Security, driver&#x27;s license, birth date, and bank or card numbers first. Don&#x27;t upload claims, medical, or bank documents.</p></div>
+  <div class="ftr-legal">
+   <p><strong>SimpleINSURE Brokerage LLC, NY DFS License BR-1984615.</strong></p>
+   <p>&copy; 2026 SimpleINSURE Brokerage LLC, licensed New York property and casualty insurance broker, NY DFS License No. BR-1984615. Coverage descriptions are general summaries. The issued policy governs. <a href="../legal/">Licenses and disclosures</a>.</p>
   </div>
-</div>
-<div data-step="3" data-label="Contact" data-error="Add your name, and an email or a phone number." hidden>
-  <h2 style="font-size:32px;margin-bottom:14px">Where should we reply?</h2>
-  <div class="fields"><div class="field full"><label for="pname">Full name</label><input id="pname" name="pname" type="text" required autocomplete="name"></div><div class="field"><label for="pbiz">Business or named insured</label><input id="pbiz" name="pbiz" type="text" autocomplete="organization"></div><div class="field"><label for="pemail">Email</label><input id="pemail" name="pemail" type="email" data-need="email" autocomplete="email"></div><div class="field"><label for="pphone">Phone</label><input id="pphone" name="pphone" type="tel" data-need="phone" autocomplete="tel"></div><div class="field"><label for="preach">Best way to reply</label><select id="preach" name="preach"><option value="">Select</option><option>Phone</option><option>Email</option><option>Either</option></select></div><div class="field full"><label for="pnotes">Anything we should know</label><textarea id="pnotes" name="pnotes"></textarea></div></div>
-</div>
-      <p class="form-error" role="alert" hidden></p>
-      <div class="wizard-nav"><button type="button" class="btn-ghost" data-back hidden>Back</button><button type="submit" class="btn" data-next>Continue</button></div>
-      <div class="done" hidden>
-      <h2>Your note is ready to send.</h2>
-      <p class="lede">An email draft to <a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a> should be open. If not, use the button below. Email is not encrypted, so leave out Social Security, driver's license, birth date, and bank or card numbers, including in attachments, or call (516) 226-7969.</p>
-      <div class="summary"></div>
-      <div class="done-actions">
-        <a class="btn" data-mailto href="mailto:info@simpleinsure.co">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
-        <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
-        <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
-      </div>
-    </div>
-    </form><aside class="aside">
-      <div class="panel"><h2>What happens next</h2>
-        <p>A broker reads what you sent and replies by phone or email.</p>
-        <div class="row"><span>Call</span><a href="tel:+15162267969">(516) 226-7969</a></div>
-        <div class="row"><span>Email</span><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
-      </div>
-    </aside></div></div>
-    <div class="tab-panel" id="panel-account" role="tabpanel"><form class="wizard" method="post" data-subject="Coverage review" data-final="Send this request" novalidate>
-      <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
-      <div class="meter" aria-hidden="true"><i></i></div>
-      
-<div data-step="1" data-label="Account" data-error="Choose what you want us to look at.">
-  <h2 style="font-size:32px;margin-bottom:8px">What should we look at?</h2>
-  <p class="quiet">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
-  <div style="margin-top:16px"><label class="choice" for="qline-real-estate"><input id="qline-real-estate" type="radio" name="line" value="real-estate" required><span>A building or a real estate schedule</span></label><label class="choice" for="qline-hospitality"><input id="qline-hospitality" type="radio" name="line" value="hospitality" required><span>A restaurant, bar, or cafe</span></label><label class="choice" for="qline-construction"><input id="qline-construction" type="radio" name="line" value="construction" required><span>A contracting or trade business</span></label><label class="choice" for="qline-professional"><input id="qline-professional" type="radio" name="line" value="professional" required><span>An office, retail, or professional firm</span></label><label class="choice" for="qline-personal"><input id="qline-personal" type="radio" name="line" value="personal" required><span>Home, auto, or an umbrella</span></label><label class="choice" for="qline-unsure"><input id="qline-unsure" type="radio" name="line" value="unsure" required><span>I am not sure yet</span></label></div>
-</div>
-<div data-step="2" data-label="Details" hidden>
-  <h2 style="font-size:32px;margin-bottom:14px">About the account</h2>
-  <div class="fields">
-    <div class="field"><label for="city">City or ZIP</label><input id="city" name="city" type="text" autocomplete="postal-code"></div>
-    <div class="field"><label for="timing">Timing</label><select id="timing" name="timing"><option value="">Select</option><option>Renewal coming up</option><option>New purchase or opening</option><option>Mid-term</option><option>Not sure</option></select></div>
-    <div class="field"><label for="insured">Currently insured?</label><select id="insured" name="insured"><option value="">Select</option><option>Yes</option><option>No</option><option>Not sure</option></select></div>
-    <div class="field full" data-for="real-estate"><label for="re-desc">Property or portfolio</label><textarea id="re-desc" name="re-desc"></textarea></div>
-    <div class="field" data-for="hospitality"><label for="ho-concept">Concept</label><input id="ho-concept" name="ho-concept" type="text" ></div>
-    <div class="field" data-for="construction"><label for="co-trade">Trade</label><input id="co-trade" name="co-trade" type="text" ></div>
-    <div class="field full" data-for="professional"><label for="pr-does">What the business does</label><textarea id="pr-does" name="pr-does"></textarea></div>
-    <div class="field" data-for="personal"><label for="pe-what">What to cover</label><select id="pe-what" name="pe-what"><option value="">Select</option><option>Home</option><option>Auto</option><option>Home and auto</option><option>Umbrella</option><option>Rental property</option></select></div>
-    <div class="field full" data-for="unsure"><label for="un-about">Describe what you want insured</label><textarea id="un-about" name="un-about"></textarea></div>
-    <div class="field full"><label for="qfile">Current policy or schedule, if you have it</label><input id="qfile" name="qfile" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/*" multiple><p class="quiet">PDF, JPG, PNG, or HEIC, up to 10 MB in total. Black out Social Security, driver&#x27;s license, birth date, and bank or card numbers first. Don&#x27;t upload claims, medical, or bank documents.</p></div>
-  </div>
-</div>
-<div data-step="3" data-label="Contact" data-error="Add your name, and an email or a phone number." hidden>
-  <h2 style="font-size:32px;margin-bottom:14px">Where should we reply?</h2>
-  <div class="fields"><div class="field full"><label for="qname">Full name</label><input id="qname" name="qname" type="text" required autocomplete="name"></div><div class="field"><label for="qbiz">Business or named insured</label><input id="qbiz" name="qbiz" type="text" autocomplete="organization"></div><div class="field"><label for="qemail">Email</label><input id="qemail" name="qemail" type="email" data-need="email" autocomplete="email"></div><div class="field"><label for="qphone">Phone</label><input id="qphone" name="qphone" type="tel" data-need="phone" autocomplete="tel"></div><div class="field"><label for="qreach">Best way to reply</label><select id="qreach" name="qreach"><option value="">Select</option><option>Phone</option><option>Email</option><option>Either</option></select></div><div class="field full"><label for="qnotes">Anything we should know</label><textarea id="qnotes" name="qnotes"></textarea></div></div>
-  <p class="quiet">By sending this you agree that a broker may contact you about the request. There is no obligation.</p>
-</div>
-      <p class="form-error" role="alert" hidden></p>
-      <div class="wizard-nav"><button type="button" class="btn-ghost" data-back hidden>Back</button><button type="submit" class="btn" data-next>Continue</button></div>
-      <div class="done" hidden>
-      <h2>Your note is ready to send.</h2>
-      <p class="lede">An email draft to <a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a> should be open. If not, use the button below. Email is not encrypted, so leave out Social Security, driver's license, birth date, and bank or card numbers, including in attachments, or call (516) 226-7969.</p>
-      <div class="summary"></div>
-      <div class="done-actions">
-        <a class="btn" data-mailto href="mailto:info@simpleinsure.co">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
-        <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
-        <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
-      </div>
-    </div>
-    </form></div>
-  </div>
-  <div class="prose handover" id="handover">
-    <h2>How switching works</h2>
-    <p>A broker of record letter changes who services your policy, if the insurer accepts it.</p>
-  </div>
-</div></section></main>
-<footer class="site-footer">
-  <div class="wrap foot-grid">
-    <div>
-      <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-      <p class="addr">Commercial and personal insurance.</p>
-      <p class="addr">900 Stewart Ave Ste 210, Garden City, NY 11530</p>
-    </div>
-    <div><h2>Coverage</h2><ul><li><a href="../coverage/#real-estate">Real estate</a></li><li><a href="../coverage/#hospitality">Hospitality</a></li><li><a href="../coverage/#construction">Contractors</a></li><li><a href="../coverage/#professional">Offices</a></li><li><a href="../coverage/#personal">Personal</a></li></ul></div>
-    <div><h2>Advisory</h2><ul>
-      <li><a href="../policy-review/">Policy review</a></li>
-      <li><a href="../client-center/">Client Center</a></li>
-      <li><a href="../contact/">Contact</a></li>
-    </ul></div>
-    <div><h2>Firm</h2><ul>
-      <li><a href="../about/">The firm</a></li>
-    </ul></div>
-    <div><h2>Office</h2><ul>
-      <li><a href="tel:+15162267969">(516) 226-7969</a></li>
-      <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
-    </ul></div>
-  </div>
-  <div class="wrap legal-line">
-    <span>© 2026 SimpleINSURE Brokerage LLC, licensed New York property and casualty insurance broker, NY DFS License No. BR-1984615. Coverage descriptions are general summaries. The issued policy governs. <a href="../legal/">Licenses and disclosures</a>.</span>
-  </div>
-  <div class="m-foot m-only">
-    <div class="wrap">
-      <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-      <div class="m-foot-cols">
-        <div><h2>Coverage</h2><ul><li><a href="../coverage/#real-estate">Real estate</a></li><li><a href="../coverage/#hospitality">Hospitality</a></li><li><a href="../coverage/#construction">Contractors</a></li><li><a href="../coverage/#professional">Offices</a></li><li><a href="../coverage/#personal">Personal</a></li></ul></div>
-        <div><h2>Advisory</h2><ul>
-          <li><a href="../policy-review/">Policy review</a></li>
-          <li><a href="../client-center/">Client Center</a></li>
-          <li><a href="../contact/">Contact</a></li>
-        </ul></div>
-        <div><h2>Firm</h2><ul>
-          <li><a href="../about/">The firm</a></li>
-        </ul></div>
-        <div><h2>Office</h2><ul>
-          <li><a href="tel:+15162267969">(516) 226-7969</a></li>
-          <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
-          <li>900 Stewart Ave Ste 210, Garden City, NY 11530</li>
-        </ul></div>
-      </div>
-      <p class="m-legal">© 2026 SimpleINSURE Brokerage LLC, licensed New York property and casualty insurance broker, NY DFS License No. BR-1984615. Coverage descriptions are general summaries. The issued policy governs. <a href="../legal/">Licenses and disclosures</a>.</p>
-    </div>
-  </div>
+ </div>
 </footer>
-<script src="../site.js?v=18" defer></script>
+<div class="mbar"><a class="btn btn-outline" href="tel:+15162267969"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> Call (516) 226-7969</a><a class="btn btn-primary" href="../quote/">Get a quote</a></div>
+<script src="../assets/site.js?v=r2" defer></script>
 </body>
 </html>
