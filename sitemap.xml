@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.simpleinsure.co/</loc></url>
-  <url><loc>https://www.simpleinsure.co/coverage/</loc></url>
-  <url><loc>https://www.simpleinsure.co/policy-review/</loc></url>
-  <url><loc>https://www.simpleinsure.co/client-center/</loc></url>
-  <url><loc>https://www.simpleinsure.co/about/</loc></url>
-  <url><loc>https://www.simpleinsure.co/contact/</loc></url>
-  <url><loc>https://www.simpleinsure.co/legal/</loc></url>
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.simpleinsure.co/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url><url><loc>https://www.simpleinsure.co/commercial/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/contractors/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/restaurants/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/real-estate/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/personal/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/quote/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/policy-review/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/client-center/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/coverage/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/legal/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url><url><loc>https://www.simpleinsure.co/photo-credits/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url></urlset>
