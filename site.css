@@ -62,7 +62,7 @@ a:hover .arr,button:hover .arr{transform:translateX(4px)}
 .scroll-progress{display:none !important}
 .site-header{position:fixed;top:14px;left:0;right:0;z-index:50;height:auto;background:transparent;border:0;color:var(--ink)}
 body.page-inner{padding-top:0;background:#fff}
-.bar{height:68px;width:min(1180px,calc(100% - 28px));margin:0 auto;display:flex;align-items:center;gap:18px;padding:0 10px 0 22px;border-radius:999px;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.94);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 12px 34px rgba(6,24,47,.16)}
+.bar{height:68px;width:min(1180px,calc(100% - 28px));margin:0 auto;display:flex;align-items:center;gap:18px;padding:0 10px 0 22px;border-radius:999px;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.94);box-shadow:0 12px 34px rgba(6,24,47,.16)}
 .logo{display:flex;align-items:center;flex:none}
 .logo img{width:148px;height:32px}
 .logo-light{display:none}
@@ -284,7 +284,7 @@ button.choice{width:100%;text-align:left;background:#fff;cursor:pointer}
 .summary{background:var(--paper);padding:16px;font-size:14.5px;white-space:pre-wrap;line-height:1.5;margin:0 0 16px}
 .done-actions{display:flex;flex-wrap:wrap;gap:10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{display:flex;gap:8px;align-items:center;border:1px solid var(--line);padding:8px 12px;min-height:42px;cursor:pointer}
+.chips label{display:flex;gap:8px;align-items:center;border:1px solid var(--line);padding:8px 12px;min-height:44px;cursor:pointer}
 .chips label:has(input:checked){background:var(--deep);color:#F7F5F0;border-color:var(--deep)}
 .chips input{accent-color:var(--sky)}
 
@@ -428,7 +428,7 @@ html.motion .marquee-track{animation:marquee 32s linear infinite}
 .next a:hover b{color:#2d7dd2}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.4s}
 .entry{display:flex;flex-direction:column;gap:14px}
-.glass{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:92px;padding:18px 20px;border-radius:18px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);color:#fff;text-decoration:none;backdrop-filter:blur(16px);transition:transform .45s var(--ease),border-color .3s,background .3s}
+.glass{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:92px;padding:18px 20px;border-radius:18px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);color:#fff;text-decoration:none;transition:transform .45s var(--ease),border-color .3s,background .3s}
 .glass b{display:block;font-size:22px;font-weight:600;letter-spacing:-.03em}
 .glass em{display:block;margin-top:4px;font-style:normal;font-size:14.5px;color:#D5E4F2}
 .glass .ico{transition:transform .35s var(--ease)}
@@ -458,18 +458,18 @@ h1,h2,.slide-copy strong,.index-list strong,.work-steps h3,.next b{font-family:v
 .btn,.btn-ghost,.btn-light,.btn-line{border-radius:0;font-weight:500}
 .site-header{position:fixed;top:0;padding-top:16px;left:0;right:0;z-index:80;height:auto;background:transparent;border:0;color:var(--navy);pointer-events:none}
 .site-header:after{content:none}
-.bar{pointer-events:auto;width:min(1376px,calc(100% - 64px));height:68px;border-radius:999px;border:1px solid rgba(27,54,93,.1);background:rgba(255,255,255,.94);box-shadow:0 12px 32px rgba(10,37,64,.16);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:0 12px 0 22px;gap:8px;color:var(--navy);transition:background .3s ease,border-color .3s ease,color .3s ease,box-shadow .3s ease}
+.bar{pointer-events:auto;width:min(1376px,calc(100% - 64px));height:68px;border-radius:999px;border:1px solid rgba(27,54,93,.1);background:rgba(255,255,255,.94);box-shadow:0 12px 32px rgba(10,37,64,.16);padding:0 12px 0 22px;gap:8px;color:var(--navy);transition:background .3s ease,border-color .3s ease,color .3s ease,box-shadow .3s ease}
 html.veil .site-header:before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:#fff;pointer-events:none}
 body.page-inner .page-head{position:relative;top:auto;z-index:1;overflow:visible}
 body.page-inner .site-footer{position:relative;z-index:1}
 .logo img{width:auto;height:34px;max-width:none;transition:filter .3s ease}
 .nav-desk{flex:1;justify-content:center;gap:2px;margin-left:0}
-.nav-desk>a,.drop>button{padding:8px 12px;height:auto;display:inline-flex;align-items:center;font-size:14.5px;font-weight:500;letter-spacing:0;color:inherit}
+.nav-desk>a,.drop>button{padding:8px 12px;min-height:44px;height:auto;display:inline-flex;align-items:center;font-size:14.5px;font-weight:500;letter-spacing:0;color:inherit}
 .nav-desk>a:hover,.drop>button:hover,.nav-desk>a[aria-current="page"],.drop.is-here>button{color:#2D7DD2}
 .nav-actions{gap:16px}
-.nav-actions .btn{min-height:42px;height:42px;padding:0 18px;border-radius:999px;background:#1F6FC4;color:#fff;border:0;font-size:14px;font-weight:560;letter-spacing:0}
+.nav-actions .btn{min-height:44px;height:44px;padding:0 18px;border-radius:999px;background:#1A6EC8;color:#fff;border:0;font-size:14px;font-weight:650;letter-spacing:0}
 .nav-actions .btn:hover{background:#185fa8;color:#fff;border-color:transparent}
-.phone-full{font-size:14px;font-weight:500;letter-spacing:0;color:inherit}
+.phone-full{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:500;letter-spacing:0;color:inherit}
 .drop-panel{top:calc(100% + 10px);border-radius:16px;border-color:rgba(27,54,93,.08);box-shadow:0 16px 40px rgba(10,37,64,.12)}
 html:not(.scrolled) body.page-home:not(.nav-open) .bar,
 html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);color:#fff;box-shadow:none}
@@ -831,7 +831,7 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
   .cc-item,.cc-item:last-child{border:0;border-bottom:1px solid rgba(255,255,255,.2);background:transparent}
   .cc-item summary,.cc-claim summary{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;min-height:0;padding:11px 4px;box-sizing:border-box;background:transparent;color:#fff}
   .cc-item summary:hover,.cc-claim summary:hover{background:rgba(255,255,255,.06)}
-  .cc-n{flex:0 0 28px;font-size:18px;color:rgba(255,255,255,.55);width:28px}
+  .cc-n{flex:0 0 28px;font-size:18px;color:rgba(255,255,255,.88);width:28px}
   .cc-item summary b,.cc-claim summary b{font-size:clamp(24px,1.7vw,30px);color:#fff}
   .cc-item summary em{color:rgba(255,255,255,.74);font-size:14px}
   .cc-go{margin-top:0;margin-left:auto;color:#fff}
@@ -934,7 +934,7 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
   .contact-form .meter i{background:#fff}
   .contact-form .field input,.contact-form .field select,.contact-form .field textarea{background:transparent;color:#fff;border:0;border-bottom:1px solid rgba(255,255,255,.38);border-radius:0;min-height:52px;padding:12px 0}
   .contact-form .field textarea{min-height:96px}
-  .contact-form .field input:focus,.contact-form .field select:focus,.contact-form .field textarea:focus{outline:none;border-bottom-color:#fff}
+  .contact-form .field input:focus,.contact-form .field select:focus,.contact-form .field textarea:focus{outline:2px solid #fff;outline-offset:4px;border-bottom-color:#fff}
   .contact-form .btn{background:#fff;color:#06182f;border-color:#fff}
   .contact-form .btn:hover{background:#f4f7fb;color:#06182f}
   .contact-visual{min-height:100%}

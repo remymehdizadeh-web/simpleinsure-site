@@ -1154,3 +1154,218 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
 @keyframes mv5-drift { from { transform: scale(1.06) translate3d(0,0,0); } to { transform: scale(1.16) translate3d(-2.5%,-2%,0); } }
 @keyframes mv5-arrow { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
 @keyframes mv5-rule { from { transform: scaleY(0); } to { transform: none; } }
+
+/* Phone and tablet polish. Desktop at 1024px and up is unchanged.
+   Readable type, 44px targets, the same serif and photo language as desktop,
+   and no blur. */
+@media (max-width: 1023px) {
+  html { scroll-padding-top: 96px; }
+  body { overflow-x: clip; }
+  h1, h2, .result-line span { text-wrap: balance; }
+
+  .logo { min-height: 44px; }
+  .nav-btn { width: 44px; height: 44px; }
+
+  .btn { background: #1A6EC8; border-color: #1A6EC8; color: #fff; font-weight: 650; font-size: 16px; }
+  .hero .btn-light, .close .btn-light { background: #fff; color: #06182f; border-color: #fff; }
+  .hero .btn-line, .close .btn-line { background: transparent; color: #fff; border-color: rgba(255,255,255,.75); }
+  .hero .cta-row .btn, .close .cta-row .btn { min-height: 48px; padding: 0 22px; }
+
+  p, li, .lede, .quiet, .prose p, .prose li, .field label, .form-error,
+  .m-foot li, .m-legal, .result-body, .result-foot, .cc-note, .cc-item summary em,
+  .m-num em, .callout, .firm-office, .firm-reach, .reach-addr, .reach-mail {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .field label { font-weight: 600; color: #0a2540; }
+  .quiet, .form-error { color: #3e4854; }
+  .field input, .field select, .field textarea, input[type="file"] {
+    font-size: 16px;
+    border-radius: 0;
+    min-height: 48px;
+  }
+  .field textarea { min-height: 120px; }
+  .choice { border-radius: 0; min-height: 52px; }
+  .wizard-nav, .done-actions { flex-direction: column; align-items: stretch; }
+  .wizard-nav .btn, .wizard-nav .btn-ghost, .done-actions .btn, .done-actions .btn-ghost {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .m-num strong {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -.02em;
+  }
+  .m-num span { color: #143864; font-size: 15px; }
+  .m-num a, .m-num li > div { padding: 20px 0; }
+
+  .m-foot li { margin: 0; }
+  .m-foot a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 0;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  .m-legal { font-size: 16px; line-height: 1.5; color: #d5e2ef; }
+  .m-foot .m-legal a { color: #fff; text-decoration: underline; text-underline-offset: 3px; display: inline; min-height: 0; padding: 0; }
+
+  .stage-photo {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
+  .stage-copy { padding-top: 22px; padding-bottom: 40px; }
+  .stage .more { min-height: 44px; display: inline-flex; align-items: center; }
+
+  .cc-n { color: #4e6278; }
+  .cc-claim .cc-n, .cc-claim summary b, .cc-claim .cc-go { color: #fff; }
+  .cc-item summary { position: relative; align-items: center; min-height: 72px; padding-right: 28px; }
+  .cc-go { display: none; }
+  .cc-item summary:after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    text-align: center;
+    font-family: Franklin, Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    color: #1B365D;
+  }
+  .cc-item[open] summary:after { content: "-"; }
+  .cc-claim summary:after { color: #fff; }
+  .cc-claim summary { grid-template-columns: 36px minmax(0, 1fr); padding: 18px 40px 18px 16px; }
+  .cc-hot {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 6px;
+    font-size: 18px;
+    white-space: normal;
+  }
+
+  .client-result-grays .wrap:before {
+    height: 140px;
+    top: -88px;
+    background: linear-gradient(to bottom, rgba(6,24,47,0) 0%, #06182f 58%);
+  }
+  .client-result-grays .result-foot { color: #d5e2ef; font-size: 16px; }
+  .client-result-grays .result-body { color: #e7eef4; font-size: 16px; }
+  .client-result-grays .result-rep { color: #d5e2ef; font-size: 13px; line-height: 1.45; }
+  .client-result-grays .result-rep a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+  .client-result-grays .result-line { font-size: 20px; }
+  .client-result.client-result-grays { padding-bottom: 112px; }
+  .cc-claim summary:after { top: 28px; transform: none; }
+
+  body.page-home .close {
+    display: flex !important;
+    position: relative;
+    min-height: 560px;
+    align-items: flex-end;
+    padding: 0;
+    overflow: hidden;
+  }
+  body.page-home .close .hero-media { display: block; }
+  body.page-home .close-inner { position: relative; z-index: 1; padding: 0 0 36px; }
+  body.page-home .close h2 { font-size: 46px; }
+  body.page-home .close .cta-row { flex-direction: column; align-items: stretch; gap: 12px; }
+  body.page-home .close .cta-row .btn { width: 100%; }
+
+  .path-bar { flex-direction: column; align-items: stretch; gap: 0; margin-bottom: 18px; }
+  .path-bar button {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 0;
+    text-align: left;
+    font-size: 22px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .contact-desk.only-1024 { display: block; background: #06182f; }
+  .contact-desk .contact-form { display: none; }
+  .contact-split { display: block; width: 100%; min-height: 0; margin: 0; }
+  .contact-visual { position: relative; display: block; height: 78vw; min-height: 320px; max-height: 520px; margin: 0; overflow: hidden; }
+  .contact-visual img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+  .contact-visual figcaption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    margin: 0;
+    padding: 88px 24px 28px;
+    background: linear-gradient(to top, #06182f 0%, rgba(6,24,47,.94) 46%, rgba(6,24,47,0) 100%);
+    color: #fff;
+  }
+  .contact-visual .reach-call {
+    display: block;
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(32px, 8vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -.03em;
+    color: #fff;
+    text-decoration: none;
+  }
+  .contact-visual .reach-mail {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 6px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .contact-visual .reach-addr { margin-top: 4px; color: #e7eef4; font-size: 16px; max-width: 18em; }
+
+  .about-principal .kicker { color: #1B365D; }
+  .about-principal h2 { font-size: 40px; margin-bottom: 8px; }
+  .about-principal h2::before { content: none; }
+  .m-block h2 .b { color: inherit; }
+  .field input[type="file"]::file-selector-button,
+  .field input[type="file"]::-webkit-file-upload-button {
+    min-height: 44px;
+    margin: 8px 12px 8px 0;
+    padding: 0 14px;
+    border: 0;
+    background: #06182f;
+    color: #fff;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .panel .row a, .cc-disclose a, .contact-visual .reach-call {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .client-result-grays .result-rep a { padding: 6px 2px; }
+  .firm-reach a { display: inline-flex; align-items: center; min-height: 44px; }
+
+  #sheet .sheet-cta a[href^="tel:"] { min-height: 44px; display: flex; align-items: center; }
+  #sheet .sheet-cta a[href^="mailto:"] {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    color: rgba(231,238,244,.92);
+    font-size: 16px;
+  }
+  #sheet .sheet-meta { color: rgba(231,238,244,.82); font-size: 12px; letter-spacing: .12em; }
+  #sheet .sheet-cta a.btn { min-height: 48px; height: 48px; font-size: 16px; }
+}
+
+@media (max-width: 1023px) and (max-height: 740px) {
+  #sheet { padding-top: calc(env(safe-area-inset-top) + 72px); }
+  #sheet nav > a { padding: 12px 2px 11px 0; font-size: 26px; }
+  #sheet .sheet-cta { padding-top: 16px; }
+  #sheet .sheet-meta { margin-top: 10px; }
+}
