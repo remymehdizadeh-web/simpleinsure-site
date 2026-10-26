@@ -210,8 +210,11 @@ html.motion .money.is-in .track i{transform:scaleX(1);transition:transform 1.15s
 .site-footer .logo img{width:132px;height:28px}
 .legal-line{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:#B7C5D6;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .keep-line{white-space:nowrap}
-#photo-credits{font-size:22px;margin-top:36px}
-.photo-credits{font-size:15px;line-height:1.5;color:#3e4854;max-width:40em}
+.prose p.photo-credits{margin:28px 0 0;font-size:13px;line-height:1.45;color:var(--soft);max-width:none}
+.prose p.photo-credits a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media (min-width:900px){
+  .prose p.photo-credits{white-space:nowrap}
+}
 .legal-line a{color:#D5DDE6}
 
 .page-head{position:relative;overflow:hidden;background:var(--deep);color:#F4F7FB;padding:calc(var(--header) + 48px) 0 64px}

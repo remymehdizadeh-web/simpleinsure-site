@@ -1258,6 +1258,7 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
   .client-result-grays .result-line { font-size: 20px; }
   .client-result.client-result-grays { padding-bottom: 48px; }
   .result-rep { display: none !important; }
+  .prose p.photo-credits, .prose p.photo-credits a { font-size: 13px; line-height: 1.45; color: #5A6572; }
   .cc-claim summary:after { top: 28px; transform: none; }
 
   body.page-home .close {
