@@ -890,8 +890,8 @@
     width: auto;
     max-width: 640px;
     margin: -92px 0 0;
-    padding: 0 32px;
-    background: transparent;
+    padding: 20px 32px 0;
+    background: #06182f;
     border: 0;
   }
   .client-result-grays .wrap:before {
@@ -899,15 +899,10 @@
     position: absolute;
     z-index: -1;
     left: 0; right: 0;
-    top: -150px;
-    height: 300px;
+    top: -120px;
+    height: 120px;
     pointer-events: none;
-    background: linear-gradient(to bottom,
-      rgba(6,24,47,0) 0%,
-      rgba(6,24,47,.3) 24%,
-      rgba(6,24,47,.86) 40%,
-      rgba(6,24,47,.94) 52%,
-      #06182f 62%);
+    background: linear-gradient(to bottom, rgba(6,24,47,0) 0%, #06182f 100%);
   }
   .client-result-grays .result-label {
     margin: 0 0 14px;
@@ -1276,9 +1271,9 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
   }
 
   .client-result-grays .wrap:before {
-    height: 140px;
-    top: -88px;
-    background: linear-gradient(to bottom, rgba(6,24,47,0) 0%, #06182f 58%);
+    top: -120px;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(6,24,47,0) 0%, #06182f 100%);
   }
   .client-result-grays .result-foot { color: #a8bdd4; font-size: 13px; line-height: 1.5; }
   .client-result-grays .result-body { color: #e7eef4; font-size: 16px; }
