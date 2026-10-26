@@ -958,10 +958,17 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
 }
 /* Gray's Papaya client result, desktop polish (design/menu-grays): outcomes as hairline-ruled lines. */
 @media (min-width:1024px){
-  .client-result-grays .result-line{margin-top:36px;max-width:26em}
-  .client-result-grays .result-line span{display:flex;align-items:baseline;gap:16px;margin:0;padding:14px 0;border-top:1px solid rgba(231,238,244,.14)}
-  .client-result-grays .result-line span:last-child{border-bottom:1px solid rgba(231,238,244,.14)}
-  .client-result-grays .result-line span:before{content:"";flex:none;width:16px;height:1px;transform:translateY(-6px);background:#6fa8e6}
+  .client-result-grays .result-headline{margin:28px 0 0;max-width:14em;color:#fff;font-family:var(--serif);font-weight:500;font-size:clamp(26px,2vw,34px);line-height:1.15;letter-spacing:-.02em;text-wrap:balance}
+  .client-result-grays .result-line{margin-top:22px;max-width:26em}
+  .client-result-grays .result-line>span{display:flex;align-items:baseline;gap:16px;margin:0;padding:14px 0;border:0;border-top:1px solid rgba(231,238,244,.14);white-space:normal}
+  .client-result-grays .result-line>span:last-child{border-bottom:1px solid rgba(231,238,244,.14)}
+  .client-result-grays .result-line>span:before{content:"";flex:none;width:16px;height:1px;transform:translateY(-6px);background:#6fa8e6}
+  .client-result-grays .result-line>span>span{display:block;flex:1 1 auto;min-width:0;margin:0;padding:0;border:0;white-space:normal}
+  .client-result-grays .result-line>span>span:before{content:none}
+  .client-result-grays .result-foot{margin-top:28px;max-width:42em;color:#a8bdd4;font-size:13px;line-height:1.5}
+  .client-result.client-result-grays{height:auto;overflow:visible}
+  .client-result-grays .result-photo{overflow:clip}
+  .client-result-grays .wrap{padding-top:64px;padding-bottom:64px}
 }
 
 /* Gray's Papaya disclaimer (compliance): always rendered, never starts at opacity 0. */

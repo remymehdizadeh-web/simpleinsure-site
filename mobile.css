@@ -937,24 +937,42 @@
     max-width: none;
   }
   .client-result-grays h2 .desk-break { display: block; }
+  .client-result-grays .result-headline {
+    margin: 22px 0 0;
+    max-width: 16em;
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(26px, 7.2vw, 34px);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: #fff;
+    text-wrap: balance;
+  }
+  @media (max-width: 349px) {
+    .client-result-grays .result-headline { text-wrap: wrap; }
+    .client-result-grays .result-headline span { display: block; }
+  }
   .client-result-grays .result-line {
-    margin: 36px 0 0;
+    margin: 22px 0 0;
     max-width: none;
     font-family: Newsreader, Georgia, serif;
     font-weight: 400;
-    font-size: 21px;
+    font-size: 20px;
     line-height: 1.3;
     color: #fff;
   }
-  .client-result-grays .result-line span {
+  .client-result-grays .result-line > span {
     display: flex;
     align-items: baseline;
     gap: 14px;
+    min-width: 0;
     padding: 15px 0;
+    border: 0;
     border-top: 1px solid rgba(231,238,244,.16);
+    white-space: normal;
   }
-  .client-result-grays .result-line span:last-child { border-bottom: 1px solid rgba(231,238,244,.16); }
-  .client-result-grays .result-line span:before {
+  .client-result-grays .result-line > span:last-child { border-bottom: 1px solid rgba(231,238,244,.16); }
+  .client-result-grays .result-line > span:before {
     content: "";
     flex: none;
     width: 14px;
@@ -962,6 +980,16 @@
     transform: translateY(-6px);
     background: #6fa8e6;
   }
+  .client-result-grays .result-line > span > span {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    white-space: normal;
+  }
+  .client-result-grays .result-line > span > span:before { content: none; }
   .client-result-grays .result-body {
     margin: 28px 0 0;
     max-width: 32em;
@@ -971,9 +999,10 @@
   }
   .client-result-grays .result-foot {
     margin: 20px 0 0;
-    font-size: 12px;
-    line-height: 1.45;
-    color: rgba(231,238,244,.52);
+    max-width: 42em;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #a8bdd4;
   }
   .client-result-grays .result-rep {
     position: absolute;
@@ -1018,7 +1047,7 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
   transition: none !important;
 }
 @media (max-width: 1023px) {
-  .client-result-grays .result-foot { color: rgba(231,238,244,.6); }
+  .client-result-grays .result-foot { color: #a8bdd4; font-size: 13px; line-height: 1.5; }
 }
 
 /* Menu v5 (design/menu-v4): one design. Dark facade photo with slow drift
@@ -1251,7 +1280,7 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
     top: -88px;
     background: linear-gradient(to bottom, rgba(6,24,47,0) 0%, #06182f 58%);
   }
-  .client-result-grays .result-foot { color: #d5e2ef; font-size: 16px; }
+  .client-result-grays .result-foot { color: #a8bdd4; font-size: 13px; line-height: 1.5; }
   .client-result-grays .result-body { color: #e7eef4; font-size: 16px; }
   .client-result-grays .result-rep { color: #d5e2ef; font-size: 13px; line-height: 1.45; }
   .client-result-grays .result-rep a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
