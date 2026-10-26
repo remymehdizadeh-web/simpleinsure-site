@@ -51,7 +51,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 // The form post reaches this URL inside a hidden frame before the visitor does. Count once, on the real page.
 if (window.top === window.self) {
-  gtag('config', 'AW-18528347675');
+  gtag('config', 'AW-18528347675', { allow_ad_personalization_signals: false });
   gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personalization_signals: false });
   gtag('event', 'conversion', {'send_to': 'AW-18528347675/PTnLCK3M2aodEJvMgINF'});
 }
