@@ -422,10 +422,12 @@
   }
   var FORM_ENDPOINT = "https://formsubmit.co/377b52cf505cbfe923fcec89eeee6cae";
   var MAX_UPLOAD = 10 * 1024 * 1024;
-  // FormSubmit reCAPTCHA. Off: the post goes through a hidden frame, the page shows its own
-  // confirmation, and a failure offers the email draft. On: the visitor is sent to FormSubmit's
-  // captcha page (it cannot load in a frame), then lands on /form-sent/.
+  // FormSubmit reCAPTCHA. Off: the post goes through a hidden frame. On success FormSubmit
+  // redirects that frame to /thank-you/, and this page follows. On: the visitor is sent to
+  // FormSubmit's captcha page (it cannot load in a frame), then lands on /thank-you/.
+  // The Google Ads conversion event lives only on /thank-you/.
   var USE_CAPTCHA = false;
+  var THANK_YOU = "/thank-you/";
   function filesOf(form) {
     var out = [];
     form.querySelectorAll('input[type="file"]').forEach(function (el) {
@@ -492,7 +494,7 @@
       ["_subject", "Website: " + subject],
       ["_template", "table"],
       ["_honey", ""],
-      ["_next", location.origin + "/form-sent/"],
+      ["_next", location.origin + THANK_YOU],
       ["Form", subject]
     ];
     if (!USE_CAPTCHA) fields.splice(2, 0, ["_captcha", "false"]);
@@ -593,11 +595,10 @@
       try { path = frame.contentWindow.location.pathname; } catch (e) { path = null; }
       if (path === "blank") return;
       clearTimeout(timer);
-      if (path === "/form-sent/") {
+      if (path === "/thank-you/" || path === "/thank-you" || path === "/thank-you/index.html") {
         settled = true;
         cleanup();
-        showState(form, "sent");
-        if (window.gtag) window.gtag("event", "generate_lead", { form_name: form.getAttribute("data-subject") || "form" });
+        location.replace(THANK_YOU);
       } else {
         onFail();
       }
