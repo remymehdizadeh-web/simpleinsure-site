@@ -210,6 +210,8 @@ html.motion .money.is-in .track i{transform:scaleX(1);transition:transform 1.15s
 .site-footer .logo img{width:132px;height:28px}
 .legal-line{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:#B7C5D6;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .keep-line{white-space:nowrap}
+#photo-credits{font-size:22px;margin-top:36px}
+.photo-credits{font-size:15px;line-height:1.5;color:#3e4854;max-width:40em}
 .legal-line a{color:#D5DDE6}
 
 .page-head{position:relative;overflow:hidden;background:var(--deep);color:#F4F7FB;padding:calc(var(--header) + 48px) 0 64px}
@@ -887,6 +889,7 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
   .client-result-grays .result-rep{right:22px;bottom:18px;line-height:1.4}
   .client-result-grays .result-rep a{color:inherit;text-decoration:underline;text-underline-offset:2px}
   .work{position:relative;background:#f7f5f0;padding:156px 0 120px}
+#work .wrap.work-grid{width:min(1040px,calc(100% - 128px))}
   .page-home .work:before{content:"";position:absolute;left:0;right:0;top:0;height:56px;pointer-events:none;background:linear-gradient(to bottom,#06182f,rgba(6,24,47,0))}
   .work-grid{align-items:end;gap:64px 80px}
   .work-intro h2{font-size:clamp(56px,5vw,84px);line-height:.96}
