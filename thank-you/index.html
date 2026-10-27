@@ -53,7 +53,12 @@ gtag('js', new Date());
 if (window.top === window.self) {
   gtag('config', 'AW-18528347675', { allow_ad_personalization_signals: false });
   gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personalization_signals: false });
-  gtag('event', 'conversion', {'send_to': 'AW-18528347675/PTnLCK3M2aodEJvMgINF'});
+  try {
+    if (sessionStorage.getItem('si_submitted') === '1') {
+      sessionStorage.removeItem('si_submitted');
+      gtag('event', 'conversion', {'send_to': 'AW-18528347675/PTnLCK3M2aodEJvMgINF'});
+    }
+  } catch (e) {}
 }
 </script>
 </head>
@@ -136,6 +141,6 @@ if (window.top === window.self) {
     </div>
   </div>
 </footer>
-<script src="../site.js?v=19" defer></script>
+<script src="../site.js?v=20" defer></script>
 </body>
 </html>

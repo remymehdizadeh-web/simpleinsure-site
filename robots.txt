@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /form-sent/
 
 Sitemap: https://www.simpleinsure.co/sitemap.xml
