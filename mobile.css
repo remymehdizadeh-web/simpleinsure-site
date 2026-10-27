@@ -1739,3 +1739,29 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
   .cover-detail, .btn, .m-tile, .sleek-rise { transition: none; animation: none; }
   html.motion .sleek-rise { opacity: 1; transform: none; }
 }
+
+/* Compact call link in the white mobile header. Desktop keeps its own phone link. */
+@media (max-width: 980px) {
+  .nav-actions { gap: 6px; }
+  .nav-actions .phone-full {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 34px;
+    min-height: 34px;
+    margin: 0;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: #1B365D;
+    color: #fff;
+    font-family: Franklin, Arial, sans-serif;
+    font-size: 12.5px;
+    font-weight: 650;
+    letter-spacing: 0;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    flex: none;
+  }
+}
