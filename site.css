@@ -1010,3 +1010,46 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
   html.rail .slide-copy small{margin-top:12px;font-size:16px}
 }
 .h-meta{display:none}
+
+/* Client Center: one quiet column. The photo introduces the page. The login
+   and each request sit on white with room around them. */
+@media (min-width:1024px){
+  body:has(.cc-hero),main:has(.cc-hero){background:#fff}
+  .cc-hero{min-height:62vh;min-height:62dvh;align-items:flex-end}
+  .cc-hero .wrap{padding-bottom:72px}
+  .cc-portal{
+    display:block;
+    width:min(880px,calc(100% - 160px));
+    margin:0 auto;
+    padding:96px 0 128px;
+    background:#fff;
+  }
+  .cc-login{margin:0 0 80px}
+  .cc-portal>.wrap{display:block;width:auto;padding:0}
+  .cc-layout{display:block;max-width:none}
+  .ez-card{width:100%;margin:0 0 20px;background:#fff;box-shadow:none;border:1px solid var(--line)}
+  .ez-frame{height:520px}
+  .cc-disclose{max-width:36em;margin-top:8px;color:var(--muted)}
+  .cc-item,.cc-item:last-child{border:0;border-bottom:1px solid var(--line);background:transparent}
+  .cc-item summary,.cc-claim summary{
+    display:grid;
+    grid-template-columns:72px minmax(0,1fr);
+    align-items:baseline;
+    gap:8px 20px;
+    padding:42px 0;
+    background:transparent;
+    color:var(--navy);
+  }
+  .cc-claim{margin:36px 0;border:0}
+  .cc-claim summary{background:#06182f;color:#fff;padding:36px 32px;grid-template-columns:72px minmax(0,1fr)}
+  .cc-n{flex:none;width:auto;font-size:22px;color:#8aa0b8}
+  .cc-item summary b,.cc-claim summary b{font-size:clamp(36px,3vw,52px);color:var(--navy)}
+  .cc-claim .cc-n,.cc-claim summary b{color:#fff}
+  .cc-item summary em{color:var(--muted);font-size:17px}
+  .cc-claim summary em{color:#d5e2ef}
+  .cc-go{display:none}
+  .cc-hot{display:inline-flex;grid-column:2;grid-row:2;align-self:start;justify-self:start;align-items:center;justify-content:center;box-sizing:border-box;width:auto;min-height:48px;margin:18px 0 0;padding:0 18px;border:1px solid rgba(255,255,255,.75);color:#fff;font-family:var(--sans);font-size:16px;font-weight:650;line-height:1;letter-spacing:0;text-decoration:none;white-space:nowrap}
+  .cc-body{padding:0}
+  .cc-inner{max-width:640px;padding:4px 0 48px}
+  .cc-claim .cc-inner{background:#fff;color:var(--ink);padding:28px 32px 12px}
+}
