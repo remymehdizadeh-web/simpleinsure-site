@@ -1388,28 +1388,32 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
   #sheet .sheet-meta { margin-top: 10px; }
 }
 
-/* Home transitions. The practice cards and the Gray's panel share one inset
-   and the same corner radius. How it works gets the same kind of pause the
-   desktop section already has, and the navy panel keeps padding under the footnote. */
+/* Gray's is a full-bleed section, not a card in the rail. How it works
+   keeps a clear pause after the navy. */
 @media (max-width: 768px) {
-  body.page-home .m-home .m-block:has(.m-tiles) { padding-bottom: 32px; }
+  body.page-home .m-home .m-block:has(.m-tiles) { padding-bottom: 64px; }
   body.page-home .m-home .m-block:has(.m-num) { padding: 112px 0 80px; }
   body.page-home .client-result.client-result-grays {
-    margin: 0 32px;
-    padding: 0 0 64px;
-    border-radius: 18px;
+    margin: 0;
+    padding: 0 0 72px;
+    border-radius: 0;
     overflow: hidden;
     background: #06182f;
   }
   body.page-home .client-result-grays .result-photo.only-1024 {
-    width: auto;
+    display: block;
+    width: 100%;
     margin: 0;
     border-radius: 0;
   }
+  body.page-home .client-result-grays .result-photo img { border-radius: 0; }
   body.page-home .client-result-grays .wrap {
     width: auto;
     max-width: none;
-    padding: 20px 24px 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 28px 32px 0;
+    background: #06182f;
   }
   body.page-home .close,
   body.page-home .site-footer { background: #06182f; }
@@ -1422,4 +1426,15 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
 .site-footer .logo img {
   filter: brightness(0) invert(1) !important;
   opacity: 1 !important;
+}
+
+@media (max-width: 1023px) {
+  .cc-portal { padding: 56px 0 104px; }
+  .cc-login { margin-bottom: 56px; }
+  .ez-card { margin: 0 0 18px; box-shadow: none; }
+  .ez-frame { height: 460px; }
+  .cc-item summary { padding: 32px 0; }
+  .cc-item summary b { font-size: 34px; }
+  .cc-inner { padding-bottom: 40px; }
+  .cc-claim { margin: 28px 0; }
 }
