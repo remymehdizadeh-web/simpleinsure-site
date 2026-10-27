@@ -1388,6 +1388,33 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
   #sheet .sheet-meta { margin-top: 10px; }
 }
 
+/* Home transitions. The practice cards and the Gray's panel share one inset
+   and the same corner radius. How it works gets the same kind of pause the
+   desktop section already has, and the navy panel keeps padding under the footnote. */
+@media (max-width: 768px) {
+  body.page-home .m-home .m-block:has(.m-tiles) { padding-bottom: 32px; }
+  body.page-home .m-home .m-block:has(.m-num) { padding: 112px 0 80px; }
+  body.page-home .client-result.client-result-grays {
+    margin: 0 32px;
+    padding: 0 0 64px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #06182f;
+  }
+  body.page-home .client-result-grays .result-photo.only-1024 {
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+  }
+  body.page-home .client-result-grays .wrap {
+    width: auto;
+    max-width: none;
+    padding: 20px 24px 0;
+  }
+  body.page-home .close,
+  body.page-home .site-footer { background: #06182f; }
+}
+
 /* Footer wordmark stays white on navy, including before any scroll. */
 html:not(.scrolled) body.page-home:not(.nav-open) .m-foot .logo img,
 html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .logo img,
