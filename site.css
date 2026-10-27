@@ -1048,7 +1048,7 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
   .cc-item summary em{color:var(--muted);font-size:17px}
   .cc-claim summary em{color:#d5e2ef}
   .cc-go{display:none}
-  .cc-hot{display:inline-block;grid-column:2;margin-top:10px;color:#fff;font-size:22px}
+  .cc-hot{display:inline-flex;grid-column:2;grid-row:2;align-self:start;justify-self:start;align-items:center;justify-content:center;box-sizing:border-box;width:auto;min-height:48px;margin:18px 0 0;padding:0 18px;border:1px solid rgba(255,255,255,.75);color:#fff;font-family:var(--sans);font-size:16px;font-weight:650;line-height:1;letter-spacing:0;text-decoration:none;white-space:nowrap}
   .cc-body{padding:0}
   .cc-inner{max-width:640px;padding:4px 0 48px}
   .cc-claim .cc-inner{background:#fff;color:var(--ink);padding:28px 32px 12px}
