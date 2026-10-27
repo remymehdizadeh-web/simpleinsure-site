@@ -1053,3 +1053,19 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
   .cc-inner{max-width:640px;padding:4px 0 48px}
   .cc-claim .cc-inner{background:#fff;color:var(--ink);padding:28px 32px 12px}
 }
+/* The big line keeps its size. The H1 is the smaller line above it. Footer labels are not headings. */
+.hero h1.kicker{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.3;letter-spacing:0;text-transform:none;max-width:20em;margin:0 0 14px;color:#E7F1FB}
+.hero .brand-line,.hero-copy .brand-line{font-family:var(--serif);font-size:clamp(64px,6.4vw,92px);font-weight:500;line-height:.96;letter-spacing:-.03em;color:#fff;max-width:9em;margin:0}
+.hero .brand-line .line,.hero .brand-line .line>span{display:block}
+.page-head h1.kicker{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.3;letter-spacing:0;text-transform:none;max-width:24em;margin:0 0 12px;color:#C5DFF6}
+.page-head .page-title{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(42px,5vw,72px);max-width:14em;line-height:.98;margin:0}
+.cover-head .page-title{font-size:clamp(48px,4.2vw,68px);max-width:12em}
+.site-footer .foot-h{font-family:var(--serif);font-size:20px;font-weight:500;letter-spacing:0;text-transform:none;color:#fff;margin:0 0 14px}
+.done .done-title{font-family:var(--serif);font-weight:500;font-size:36px;line-height:1.15;margin:0 0 12px}
+.stage-lines a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.foot-links{margin:28px 0 0;font-size:14.5px;line-height:1.6}
+.desk-foot-links .foot-links{margin:8px 0 0}
+.foot-links a{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:768px){
+  .desk-foot-links{display:none}
+}

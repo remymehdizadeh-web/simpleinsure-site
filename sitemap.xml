@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.simpleinsure.co/</loc></url>
-  <url><loc>https://www.simpleinsure.co/coverage/</loc></url>
-  <url><loc>https://www.simpleinsure.co/policy-review/</loc></url>
-  <url><loc>https://www.simpleinsure.co/client-center/</loc></url>
-  <url><loc>https://www.simpleinsure.co/about/</loc></url>
-  <url><loc>https://www.simpleinsure.co/contact/</loc></url>
-  <url><loc>https://www.simpleinsure.co/legal/</loc></url>
+  <url><loc>https://www.simpleinsure.co/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/coverage/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/policy-review/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/client-center/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/about/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/contact/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/legal/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/new-york-contractor-insurance/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/new-york-building-insurance/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/new-york-restaurant-insurance/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/business-owners-policy/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.simpleinsure.co/nassau-county-commercial-insurance/</loc><lastmod>2026-10-27</lastmod></url>
 </urlset>
