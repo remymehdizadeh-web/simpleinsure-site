@@ -974,6 +974,26 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
 /* Gray's Papaya disclaimer (compliance): always rendered, never starts at opacity 0. */
 .client-result-grays .result-foot,html.motion.js .client-result-grays .result-foot,html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in){display:block !important;visibility:visible !important;opacity:1 !important;transform:none !important;transition:none !important}
 
+/* Coverage list. On a wide screen the practices stay open. */
+.cover-seg h2{margin:0;font-size:inherit;font-weight:inherit}
+.cover-seg button{font:inherit;color:inherit}
+.cover-detail{display:grid;grid-template-rows:0fr}
+.cover-detail>div{overflow:hidden;min-height:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li,.chips a{display:inline-flex;align-items:center;min-height:34px;padding:4px 12px;border-radius:999px;background:#f3f7fb;color:var(--navy);font-size:14px;font-weight:650;line-height:1.2;text-decoration:none}
+@media (min-width:1024px){
+  .cover-list{padding:8px 0 72px;background:#fff}
+  .cover-list>.wrap{width:min(880px,calc(100% - 160px))}
+  .cover-seg{scroll-margin-top:108px;border-bottom:1px solid var(--line);background:transparent;box-shadow:none;border-radius:0}
+  .cover-seg button{display:flex;width:100%;margin:0;padding:36px 0 8px;border:0;background:none;text-align:left;cursor:default;pointer-events:none}
+  .cover-seg button:after{content:none}
+  .cover-seg button b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(36px,3vw,52px);letter-spacing:-.03em;line-height:1.02;color:var(--navy)}
+  .cover-seg button em{display:block;margin-top:8px;font-style:normal;color:var(--muted);font-size:17px;line-height:1.4}
+  .cover-detail,.cover-seg.is-open .cover-detail{grid-template-rows:1fr;opacity:1}
+  .chips{margin-top:16px;padding:0}
+  .cover-detail .more{display:inline-flex;margin-top:18px;color:var(--navy);font-weight:560;text-decoration:underline;text-underline-offset:3px}
+  .cover-end{margin:36px 0 0}
+}
 /* Solid edges instead of soft fades. The fades over photos read as blurred bands. */
 html:not(.scrolled) body.page-home:not(.nav-open) .bar,
 html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{background:rgba(6,24,47,.82);border-color:rgba(255,255,255,.16)}
