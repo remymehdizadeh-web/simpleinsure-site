@@ -562,9 +562,13 @@
     }
     if (btn) { btn.disabled = true; btn.textContent = files.length ? "Uploading\u2026" : "Sending\u2026"; }
     if (err) err.hidden = true;
+    function markSubmitted() {
+      try { sessionStorage.setItem("si_submitted", "1"); } catch (e) {}
+    }
     if (USE_CAPTCHA) {
       post.target = "_self";
       d.body.appendChild(post);
+      markSubmitted();
       post.submit();
       return;
     }
@@ -575,6 +579,7 @@
     function onFail() {
       if (settled) return;
       settled = true;
+      try { sessionStorage.removeItem("si_submitted"); } catch (e) {}
       cleanup();
       fail("We could not send this just now. Please try again, call (516) 226-7969, or use the email draft below.");
       var mail = form.querySelector("[data-mailto]");
@@ -605,6 +610,7 @@
     });
     d.body.appendChild(frame);
     d.body.appendChild(post);
+    markSubmitted();
     post.submit();
   }
   d.querySelectorAll("form.wizard").forEach(function (form) {
