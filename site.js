@@ -3,6 +3,18 @@
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   d.documentElement.classList.add("js");
 
+  // One Google Ads conversion per page load for any tel: link, including links
+  // added later. Capture so a handler that stops the bubble still counts.
+  // Do not cancel the click, so the phone dial starts immediately.
+  var phoneTapSent = false;
+  d.addEventListener("click", function (e) {
+    if (phoneTapSent) return;
+    var link = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!link || typeof gtag !== "function") return;
+    phoneTapSent = true;
+    gtag("event", "conversion", { send_to: "AW-18528347675/2a8iCMaOnq0dEJvMgINF" });
+  }, true);
+
   var header = d.querySelector(".site-header");
   var menuBtn = d.querySelector(".nav-btn");
   var sheet = d.getElementById("sheet");
