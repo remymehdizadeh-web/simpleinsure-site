@@ -692,13 +692,15 @@
       if (met) met.hidden = true;
     }
     var params = new URLSearchParams(location.search);
-    var preset = params.get("type");
-    if (preset) {
+    var preset = params.get("line") || params.get("type");
+    if (preset && /^(real-estate|hospitality|construction|professional|personal|unsure)$/.test(preset)) {
       var radio = form.querySelector('input[name="line"][value="' + preset + '"]');
       if (radio) {
         radio.checked = true;
         applyLine(form);
-        if (total > 1) show(2);
+        var firstPane = panes[0];
+        var moreThanLine = firstPane && firstPane.querySelector("textarea, select, input:not([type='radio']):not([type='hidden'])");
+        if (total > 1 && !moreThanLine) show(2);
       }
     }
     show(step);
