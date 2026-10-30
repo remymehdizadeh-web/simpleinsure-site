@@ -85,7 +85,7 @@
   h1, h2,
   .page-head h1, .photo-hero h1, .hero h1,
   .section h2, .prose h2, .ask h2, .panel h2,
-  .m-block h2, .band h2, .cc-item summary b, .index-list strong, .next b {
+  .m-block h2, .m-block .m-h, .band h2, .cc-item summary b, .index-list strong, .next b {
     font-family: Newsreader, Georgia, serif;
     font-weight: 500;
   }
@@ -319,7 +319,7 @@
 
   .m-block { background: #fff; padding: 52px 0; }
   .m-block.alt { background: #f3f7fb; }
-  .m-block h2 {
+  .m-block h2, .m-block .m-h {
     margin: 0;
     font-family: Newsreader, Georgia, serif;
     font-size: 40px;
@@ -328,7 +328,7 @@
     letter-spacing: -.03em;
     color: #061A2E;
   }
-  .m-block h2 .b { display: block; color: #1F6FC4; font-weight: 500; }
+  .m-block h2 .b, .m-block .m-h .b { display: block; color: #1F6FC4; font-weight: 500; }
   .m-lead {
     margin: 14px 0 0;
     max-width: 28em;
@@ -1177,7 +1177,7 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
 @media (max-width: 1023px) {
   html { scroll-padding-top: 96px; }
   body { overflow-x: clip; }
-  h1, h2, .result-line span { text-wrap: balance; }
+  h1, h2, .m-h, .result-line span { text-wrap: balance; }
 
   .logo { min-height: 44px; }
   .nav-btn { width: 44px; height: 44px; }
@@ -1348,7 +1348,7 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
   .about-principal .kicker { color: #1B365D; }
   .about-principal h2 { font-size: 40px; margin-bottom: 8px; }
   .about-principal h2::before { content: none; }
-  .m-block h2 .b { color: inherit; }
+  .m-block h2 .b, .m-block .m-h .b { color: inherit; }
   .field input[type="file"]::file-selector-button,
   .field input[type="file"]::-webkit-file-upload-button {
     min-height: 44px;
@@ -1720,7 +1720,7 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
     text-decoration: underline;
     text-underline-offset: 3px;
   }
-  .cover-end { margin: 8px 0 12px; }
+  .cover-end { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 8px 0 12px; }
 }
 
 @media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
