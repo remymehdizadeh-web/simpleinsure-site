@@ -3,16 +3,18 @@
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   d.documentElement.classList.add("js");
 
-  // One Google Ads conversion per page load for any tel: link, including links
-  // added later. Capture so a handler that stops the bubble still counts.
-  // Do not cancel the click, so the phone dial starts immediately.
-  var phoneTapSent = false;
+  // Phone tap conversion. One hit per real click or tap on a tel: link,
+  // including links added later. Capture so a handler that stops the bubble
+  // still counts. Ignore scripted clicks. Beacon sends the hit without
+  // delaying the dial.
   d.addEventListener("click", function (e) {
-    if (phoneTapSent) return;
+    if (!e.isTrusted) return;
     var link = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
     if (!link || typeof gtag !== "function") return;
-    phoneTapSent = true;
-    gtag("event", "conversion", { send_to: "AW-18528347675/2a8iCMaOnq0dEJvMgINF" });
+    gtag("event", "conversion", {
+      send_to: "AW-18528347675/2a8iCMaOnq0dEJvMgINF",
+      transport_type: "beacon"
+    });
   }, true);
 
   var header = d.querySelector(".site-header");
