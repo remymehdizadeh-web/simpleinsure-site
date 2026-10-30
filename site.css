@@ -992,7 +992,7 @@ html.motion .hero .ken{animation:ken 22s ease-out both}
   .cover-detail,.cover-seg.is-open .cover-detail{grid-template-rows:1fr;opacity:1}
   .chips{margin-top:16px;padding:0}
   .cover-detail .more{display:inline-flex;margin-top:18px;color:var(--navy);font-weight:560;text-decoration:underline;text-underline-offset:3px}
-  .cover-end{margin:36px 0 0}
+  .cover-end{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:36px 0 0}
 }
 /* Solid edges instead of soft fades. The fades over photos read as blurred bands. */
 html:not(.scrolled) body.page-home:not(.nav-open) .bar,
