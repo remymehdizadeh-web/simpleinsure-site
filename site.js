@@ -402,6 +402,10 @@
         lines.push("Consent: yes");
         return;
       }
+      if (el.name === "permission") {
+        lines.push("Permission to share client contact: yes");
+        return;
+      }
       var lab = form.querySelector('label[for="' + el.id + '"]');
       if (lab) boxes.push(lab.textContent.replace(/\s+/g, " ").trim());
     });
@@ -664,6 +668,7 @@
           return;
         }
         if (el.type === "checkbox") {
+          if (el.name === "consent") return;
           if (el.required && !el.checked) problem = problem || el;
           return;
         }
