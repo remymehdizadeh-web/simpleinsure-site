@@ -398,6 +398,10 @@
     var boxes = [];
     form.querySelectorAll('input[type="checkbox"]').forEach(function (el) {
       if (el.disabled || !el.checked || offForm(el, form)) return;
+      if (el.name === "consent") {
+        lines.push("Consent: yes");
+        return;
+      }
       var lab = form.querySelector('label[for="' + el.id + '"]');
       if (lab) boxes.push(lab.textContent.replace(/\s+/g, " ").trim());
     });
@@ -516,6 +520,8 @@
     fields.forEach(function (f) { used[f[0]] = 1; });
     var email = form.querySelector('input[type="email"]');
     if (email && String(email.value || "").trim()) fields.push(["_replyto", String(email.value).trim()]);
+    var autoresponse = form.getAttribute("data-autoresponse");
+    if (autoresponse) fields.push(["_autoresponse", autoresponse]);
     lines.forEach(function (line, i) {
       var k = line.indexOf(": ");
       var key = k > 0 ? line.slice(0, k) : "Item " + (i + 1);
@@ -655,6 +661,10 @@
         if (el.disabled || el.closest("[hidden]")) return;
         if (el.type === "radio") {
           if (el.required) radios[el.name] = el;
+          return;
+        }
+        if (el.type === "checkbox") {
+          if (el.required && !el.checked) problem = problem || el;
           return;
         }
         if (el.required && !String(el.value || "").trim()) problem = problem || el;
