@@ -513,7 +513,7 @@
       }
     }
     var fields = [
-      ["_subject", "Website: " + subject],
+      ["_subject", form.hasAttribute("data-subject-exact") ? subject : "Website: " + subject],
       ["_template", "table"],
       ["_honey", ""],
       ["_next", location.origin + THANK_YOU],
