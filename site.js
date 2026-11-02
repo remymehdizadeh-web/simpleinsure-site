@@ -450,6 +450,16 @@
   // The Google Ads conversion event lives only on /thank-you/.
   var USE_CAPTCHA = false;
   var THANK_YOU = "/thank-you/";
+  function reasonValue(form) {
+    var reasonEl = form.querySelector('input[name="reason"]');
+    if (!reasonEl || reasonEl.disabled) return "";
+    var reason = String(reasonEl.value || "").trim();
+    return /^[a-z0-9-]{1,40}$/.test(reason) ? reason : "";
+  }
+  function thankYouUrl(form) {
+    var reason = reasonValue(form);
+    return reason ? THANK_YOU + "?reason=" + encodeURIComponent(reason) : THANK_YOU;
+  }
   function filesOf(form) {
     var out = [];
     form.querySelectorAll('input[type="file"]').forEach(function (el) {
@@ -516,7 +526,7 @@
       ["_subject", form.hasAttribute("data-subject-exact") ? subject : "Website: " + subject],
       ["_template", "table"],
       ["_honey", ""],
-      ["_next", location.origin + THANK_YOU],
+      ["_next", location.origin + thankYouUrl(form)],
       ["Form", subject]
     ];
     if (!USE_CAPTCHA) fields.splice(2, 0, ["_captcha", "false"]);
@@ -587,7 +597,12 @@
     if (btn) { btn.disabled = true; btn.textContent = files.length ? "Uploading\u2026" : "Sending\u2026"; }
     if (err) err.hidden = true;
     function markSubmitted() {
-      try { sessionStorage.setItem("si_submitted", "1"); } catch (e) {}
+      try {
+        sessionStorage.setItem("si_submitted", "1");
+        var reason = reasonValue(form);
+        if (reason) sessionStorage.setItem("si_reason", reason);
+        else sessionStorage.removeItem("si_reason");
+      } catch (e) {}
     }
     if (USE_CAPTCHA) {
       post.target = "_self";
@@ -603,7 +618,7 @@
     function onFail() {
       if (settled) return;
       settled = true;
-      try { sessionStorage.removeItem("si_submitted"); } catch (e) {}
+      try { sessionStorage.removeItem("si_submitted"); sessionStorage.removeItem("si_reason"); } catch (e) {}
       cleanup();
       fail("We could not send this just now. Please try again, call (516) 226-7969, or use the email draft below.");
       var mail = form.querySelector("[data-mailto]");
@@ -627,7 +642,7 @@
       if (path === "/thank-you/" || path === "/thank-you" || path === "/thank-you/index.html") {
         settled = true;
         cleanup();
-        location.replace(THANK_YOU);
+        location.replace(thankYouUrl(form));
       } else {
         onFail();
       }

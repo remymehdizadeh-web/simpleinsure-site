@@ -224,6 +224,11 @@ html.motion .money.is-in .track i{transform:scaleX(1);transition:transform 1.15s
 .page-head .kicker:before{background:var(--sky)}
 .page-head .wrap{position:relative;z-index:1}
 .page-head a.btn{color:#fff}
+.page-head .trust-strip{margin:18px 0 0;padding-top:14px;border-top:1px solid rgba(197,223,246,.4);max-width:46em;color:#C5DFF6;font-size:14.5px;line-height:1.5}
+.page-head .form-note{margin:12px 0 0;max-width:40em;color:#D5E4F2;font-size:16.5px;line-height:1.4}
+.lead-form.wizard{margin-top:22px;max-width:680px;background:#fff;border:1px solid var(--line);padding:28px;color:var(--ink)}
+.lead-form .field label,.lead-form .choice,.lead-form .quiet,.lead-form .lede{color:var(--ink)}
+.lead-form .quiet,.lead-form .lede{color:var(--muted)}
 
 .prose{max-width:42em}
 .prose h2{font-size:36px;margin:36px 0 12px}
