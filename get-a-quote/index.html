@@ -28,8 +28,8 @@
   html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
 }
 </style>
-<link rel="stylesheet" href="../site.css?v=42">
-<link rel="stylesheet" href="../mobile.css?v=28">
+<link rel="stylesheet" href="../site.css?v=43">
+<link rel="stylesheet" href="../mobile.css?v=29">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"InsuranceAgency","@id":"https://www.simpleinsure.co/#agency","name":"SimpleINSURE Brokerage LLC","alternateName":"SimpleINSURE","url":"https://www.simpleinsure.co/","logo":"https://www.simpleinsure.co/img/simpleinsure-wordmark.png","image":"https://www.simpleinsure.co/img/og.png","telephone":"+1-516-226-7969","email":"info@simpleinsure.co","address":{"@type":"PostalAddress","streetAddress":"900 Stewart Ave Ste 210","addressLocality":"Garden City","addressRegion":"NY","postalCode":"11530","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Manhattan, NY"},{"@type":"City","name":"Brooklyn, NY"},{"@type":"City","name":"Queens, NY"},{"@type":"City","name":"The Bronx, NY"},{"@type":"City","name":"Staten Island, NY"},{"@type":"AdministrativeArea","name":"Nassau County, NY"},{"@type":"AdministrativeArea","name":"Suffolk County, NY"},{"@type":"City","name":"Garden City, NY"}],"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+1-516-226-7969","hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00","timeZone":"America/New_York"}},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"New York property and casualty insurance broker license","identifier":"BR-1984615","recognizedBy":{"@type":"GovernmentOrganization","name":"New York State Department of Financial Services"}},"knowsAbout":["Commercial property insurance","General liability insurance","Builders risk insurance","Businessowners policy","Workers compensation insurance","Commercial umbrella insurance","Professional liability insurance","Cyber liability insurance","Homeowners insurance"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.simpleinsure.co/"},{"@type":"ListItem","position":2,"name":"Get a quote","item":"https://www.simpleinsure.co/get-a-quote/"}]}]}</script>
@@ -75,7 +75,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
       <div class="meter" aria-hidden="true"><i></i></div>
       <div data-step="1" data-label="Account" data-error="Choose a line of business.">
-        <p class="quiet">Sent through FormSubmit. Answers may be kept up to 30 days. Files are not stored on this site.</p>
+        <p class="quiet">Sent through FormSubmit. Not stored on this site.</p>
         <h2 style="font-size:32px;margin-bottom:8px">Line of business</h2>
         <div style="margin-top:16px">
           <label class="choice" for="line-real-estate"><input id="line-real-estate" type="radio" name="line" value="real-estate" required><span>Building</span></label>
@@ -86,29 +86,29 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
           <label class="choice" for="line-unsure"><input id="line-unsure" type="radio" name="line" value="unsure" required><span>Not sure</span></label>
         </div>
         <div class="fields" style="margin-top:16px">
-          <div class="field full"><label for="qbiz">Business or named insured</label><input id="qbiz" name="business" type="text" autocomplete="organization"></div>
+          <div class="field full"><label for="qbiz">Business</label><input id="qbiz" name="business" type="text" autocomplete="organization"></div>
           <div class="field"><label for="qcity">City or ZIP</label><input id="qcity" name="city" type="text" autocomplete="postal-code"></div>
-          <div class="field"><label for="qrenew">Renewal or expiration date</label><input id="qrenew" name="renew" type="date"></div>
-          <div class="field full"><label for="qnotes">Anything we should know</label><textarea id="qnotes" name="notes"></textarea></div>
+          <div class="field"><label for="qrenew">Renewal date</label><input id="qrenew" name="renew" type="date"></div>
+          <div class="field full"><label for="qnotes">Notes</label><textarea id="qnotes" name="notes"></textarea></div>
         </div>
       </div>
       <div data-step="2" data-label="Contact" data-error="Add your name, and an email or a phone number." hidden>
-        <h2 style="font-size:32px;margin-bottom:14px">Where should we reply?</h2>
+        <h2 style="font-size:32px;margin-bottom:14px">Contact</h2>
         <div class="fields">
-          <div class="field full"><label for="qhelp1439">What can we help with?</label><select id="qhelp1439" name="help_with" required><option value="">Select</option><option>New business insurance</option><option>Renewal review</option><option>Landlord / property</option><option>Contractor</option><option>Auto / commercial auto</option><option>Home / personal</option><option>Certificate or policy service</option><option>Referral partner</option><option>Other</option></select></div><div class="field full"><label for="qname">Full name</label><input id="qname" name="name" type="text" required autocomplete="name"></div>
+          <div class="field full"><label for="qhelp1439">Topic</label><select id="qhelp1439" name="help_with" required><option value="">Select</option><option>New business</option><option>Renewal</option><option>Landlord</option><option>Contractor</option><option>Auto</option><option>Home</option><option>Certificate</option><option>Referral</option><option>Other</option></select></div><div class="field full"><label for="qname">Name</label><input id="qname" name="name" type="text" required autocomplete="name"></div>
           <div class="field"><label for="qemail">Email</label><input id="qemail" name="email" type="email" data-need="email" autocomplete="email"></div>
           <div class="field"><label for="qphone">Phone</label><input id="qphone" name="phone" type="tel" data-need="phone" autocomplete="tel"></div>
-          <div class="field"><label for="qreach">Best way to reply</label><select id="qreach" name="reach"><option value="">Select</option><option>Phone</option><option>Email</option><option>Either</option></select></div>
+          <div class="field"><label for="qreach">Reply by</label><select id="qreach" name="reach"><option value="">Select</option><option>Phone</option><option>Email</option><option>Either</option></select></div>
         </div>
-        <div class="field full consent-field"><label class="choice" for="qconsent1"><input id="qconsent1" name="consent" type="checkbox" value="yes"><span>I agree that SimpleINSURE Brokerage LLC may contact me by phone, text, or email about this request.</span></label>
-  <p class="quiet">Consent is not a condition of any purchase. Message and data rates may apply. Reply STOP to opt out of texts; reply HELP for help. See our <a href="../legal/#privacy">Privacy notice</a>.</p>
-  <p class="quiet">SimpleINSURE Brokerage LLC is a licensed New York property and casualty insurance broker, NY DFS License BR-1984615.</p></div>
+        <div class="field full consent-field"><label class="choice" for="qconsent1"><input id="qconsent1" name="consent" type="checkbox" value="yes"><span>You may call, text, or email me about this request.</span></label>
+  <p class="quiet">Not required to buy. Reply STOP to opt out. <a href="../legal/#privacy">Privacy</a>.</p>
+  <p class="quiet">NY DFS License BR-1984615.</p></div>
       </div>
       <p class="form-error" role="alert" hidden></p>
       <div class="wizard-nav"><button type="button" class="btn-ghost" data-back hidden>Back</button><button type="submit" class="btn" data-next>Continue</button></div>
       <div class="done" hidden>
         <p class="done-title">Your note is ready to send.</p>
-        <p class="lede">An email draft to <a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a> may not open. Use the button if it does not. Email is not encrypted. Leave out Social Security, license, birth date, and bank numbers, or call (516) 226-7969.</p>
+        <p class="lede">Use the button if no draft opens.</p>
         <div class="summary"></div>
         <div class="done-actions">
           <a class="btn" data-mailto href="mailto:info@simpleinsure.co?subject=Get%20a%20quote">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
@@ -119,7 +119,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     </form>
     <aside class="aside">
       <div class="panel"><h2>What happens next</h2>
-        <p>A broker reads what you sent and replies by phone or email.</p>
+        <p>A broker replies by phone or email.</p>
         <div class="row"><span>Call</span><a href="tel:+15162267969">(516) 226-7969</a></div>
         <div class="row"><span>Email</span><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
       </div>

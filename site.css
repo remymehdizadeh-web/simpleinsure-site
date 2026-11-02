@@ -1096,8 +1096,8 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
 }
 .scan h2{margin-top:56px}
 .scan .wrap>h2:first-child,.scan .wrap>#faq:first-child h2{margin-top:0}
-.scan .sub{margin:8px 0 0;color:var(--muted);font-size:17px;line-height:1.4}
-.scan .sub a{display:inline-flex;align-items:center;min-height:44px;padding:8px 0}
+.scan .sub,.prose p.sub{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.4}
+.scan .sub a,.prose p.sub a{display:inline-flex;align-items:center;min-height:44px;padding:10px 4px}
 .close .text-link.on-dark{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:2px}
 .page-head.fold{min-height:100svh;min-height:100dvh;display:flex;flex-direction:column;justify-content:flex-end;box-sizing:border-box}
 .fold-call{color:#d5e4f2;font-weight:650;text-decoration:none;font-size:17px}
