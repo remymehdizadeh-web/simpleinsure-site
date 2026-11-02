@@ -3,6 +3,7 @@
    the only rule outside these queries hides the extra phone markup. */
 
 .m-only { display: none; }
+.call-bar { display: none; }
 
 @media (max-width: 768px) {
   .m-only { display: block; }
@@ -1533,6 +1534,10 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
   }
   .page-head .lede, .photo-hero .lede, .cc-hero .lede,
   body.page-inner main > .photo-hero .lede { color: #4e6278; }
+  .page-head .trust-strip, .page-head .form-note { color: #4e6278; }
+  .page-head .trust-strip { margin-top: 10px; padding-top: 8px; border-top-color: #e4ebf2; }
+  .page-head .form-note { margin-top: 8px; }
+  .lead-form.wizard { margin-top: 10px; padding: 12px; border-color: #e4ebf2; }
   .page-head .kicker, .photo-hero .kicker, .page-head h1.kicker { color: #2D7DD2; }
   .cover-head { padding-bottom: 6px; }
   .cover-head h1.kicker {
@@ -1738,4 +1743,42 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
 @media (max-width: 1023px) and (prefers-reduced-motion: reduce) {
   .cover-detail, .btn, .m-tile, .sleek-rise { transition: none; animation: none; }
   html.motion .sleek-rise { opacity: 1; transform: none; }
+}
+
+/* Sticky call bar. Shown only while the header phone number is hidden. */
+@media (max-width: 980px) {
+  .call-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid #e4ebf2;
+    box-shadow: 0 -8px 24px rgba(6, 26, 46, .08);
+  }
+  .call-bar .btn,
+  .call-bar .btn-ghost {
+    flex: 1 1 0;
+    width: auto;
+    min-height: 48px;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .call-bar .btn-ghost {
+    background: #fff;
+    color: #1B365D;
+    border-color: #1A6EC8;
+  }
+  body:has(.call-bar) { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+  html.nav-open .call-bar { visibility: hidden; }
+}
+@media (max-width: 380px) {
+  .call-bar .btn, .call-bar .btn-ghost { font-size: 12.5px; padding: 0 6px; }
 }

@@ -85,7 +85,21 @@ if (window.top === window.self) {
   <div class="sheet-cta"><a class="btn" href="../policy-review/">Request a review</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
   <p class="sheet-meta"><span>Garden City, New York</span><span>NY License BR-1984615</span></p>
 </div>
-<main id="main"><header class="page-head"><div class="wrap"><p class="kicker m-only">Request received</p><h1 class="rise"><span class="line"><span>We received it.</span></span></h1><p class="lede">A licensed broker will follow up by phone or email.</p></div></header>
+<main id="main"><header class="page-head"><div class="wrap"><p class="kicker m-only">Request received</p><h1 class="rise"><span class="line"><span>We received it.</span></span></h1><p class="lede" id="thanks-lede">A licensed broker will follow up by phone or email.</p></div></header>
+<script>
+(function () {
+  if (window.top !== window.self) return;
+  var reason = "";
+  try {
+    reason = new URLSearchParams(location.search).get("reason") || sessionStorage.getItem("si_reason") || "";
+    sessionStorage.removeItem("si_reason");
+  } catch (e) {}
+  if (reason === "landlord-checkup") {
+    var lede = document.getElementById("thanks-lede");
+    if (lede) lede.textContent = "A licensed broker will reply the same business day when the request is received before 4 PM ET.";
+  }
+})();
+</script>
 <section class="section" style="padding-top:12px"><div class="wrap prose narrow">
   <p>Nothing is bound until it is confirmed in writing.</p>
   <p>To add anything, call <a href="tel:+15162267969">(516) 226-7969</a>, Mon to Fri, 9 to 6 ET.</p>
