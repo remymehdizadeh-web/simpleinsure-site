@@ -28,8 +28,8 @@
   html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
 }
 </style>
-<link rel="stylesheet" href="../site.css?v=39">
-<link rel="stylesheet" href="../mobile.css?v=27">
+<link rel="stylesheet" href="../site.css?v=42">
+<link rel="stylesheet" href="../mobile.css?v=28">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -69,16 +69,20 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   <p class="sheet-meta"><span>Garden City, New York</span><span>NY License BR-1984615</span></p>
 </div>
 <main id="main">
-<header class="page-head"><div class="wrap">
+<header class="page-head fold"><div class="wrap">
   <h1 class="rise"><span class="line"><span>Free landlord policy checkup</span></span></h1>
-  <p class="lede">Send the address and the declarations. A broker reviews them. Free, no obligation.</p>
+  <p class="lede">Send the address and the declarations. No obligation.</p>
+  <div class="cta-row">
+    <a class="btn" href="#checkup-form">Start the checkup</a>
+    <a class="fold-call" href="tel:+15162267969">(516) 226-7969</a>
+  </div>
 </div></header>
 <section class="section" style="padding-top:12px"><div class="wrap prose narrow">
-  <form class="wizard" method="post" enctype="multipart/form-data" data-subject="Landlord policy checkup request" data-subject-exact data-final="Send for a checkup" novalidate>
+  <form class="wizard" id="checkup-form" method="post" enctype="multipart/form-data" data-subject="Landlord policy checkup request" data-subject-exact data-final="Send for a checkup" novalidate>
     <p class="progress"><span data-steplabel>Checkup</span><span data-stepcount></span></p>
     <div class="meter" aria-hidden="true"><i></i></div>
     <div data-step="1" data-label="Checkup" data-error="Add your name, email, and property address.">
-      <p class="quiet">Sent through FormSubmit. Answers may be kept up to 30 days. Files are not stored on this site.</p>
+      <p class="quiet">Sent through FormSubmit. Files are not stored on this site.</p>
       <input type="hidden" name="reason" value="landlord-checkup">
       <div class="fields">
         <div class="field full"><label for="property_addresses">Property addresses</label><textarea id="property_addresses" name="property_addresses" rows="4" required placeholder="One address per line"></textarea></div>
@@ -107,7 +111,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       </div>
     </div>
   </form>
-  <p>More on <a href="../landlord-insurance/">landlord insurance</a> and <a href="../new-york-building-insurance/">apartment, mixed-use and rental building insurance</a>.</p>
+  <p class="sub"><a href="../landlord-insurance/">Landlord insurance</a></p>
   <p>Coverage descriptions are general summaries. The issued policy governs.</p>
 </div></section>
 </main>
