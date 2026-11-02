@@ -1753,7 +1753,7 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
     font-weight: 650;
   }
   .m-foot .foot-h { color: #0E4D8C; }
-  body:has(.call-bar) .page-head.fold { padding-bottom: calc(108px + env(safe-area-inset-bottom)); }
+  body:has(.call-bar) .page-head.fold { padding-bottom: 28px; }
 }
 @media (max-width: 1023px) and (prefers-reduced-motion: reduce) {
   .cover-detail, .btn, .m-tile, .sleek-rise { transition: none; animation: none; }
