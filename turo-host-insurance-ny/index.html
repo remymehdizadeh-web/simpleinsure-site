@@ -89,8 +89,8 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div data-step="1" data-label="Review" data-error="Choose a line of business, then add your name and an email or a phone number.">
       <p class="quiet">Your answers and files are emailed to SimpleINSURE through our form service, FormSubmit. FormSubmit keeps form answers for up to 30 days and says it does not keep uploaded files. Nothing is stored on this website.</p>
       <h2 style="font-size:32px;margin-bottom:8px">Line of business</h2>
-      <p class="quiet">If none of these fit a car listed on Turo, choose Not sure and add the details below.</p>
       <div style="margin-top:16px">
+        <label class="choice" for="th-line-host"><input id="th-line-host" type="radio" name="line" value="car-sharing-host" checked required><span>Car-sharing host (Turo or similar)</span></label>
         <label class="choice" for="th-line-real-estate"><input id="th-line-real-estate" type="radio" name="line" value="real-estate" required><span>Building</span></label>
         <label class="choice" for="th-line-hospitality"><input id="th-line-hospitality" type="radio" name="line" value="hospitality" required><span>Restaurant or cafe</span></label>
         <label class="choice" for="th-line-construction"><input id="th-line-construction" type="radio" name="line" value="construction" required><span>Contractor or trade</span></label>
@@ -99,6 +99,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
         <label class="choice" for="th-line-unsure"><input id="th-line-unsure" type="radio" name="line" value="unsure" required><span>Not sure</span></label>
       </div>
       <div class="fields" style="margin-top:16px">
+        <div class="field full"><label for="th-vehicles">Number of vehicles listed</label><select id="th-vehicles" name="vehicles"><option value="">Select</option><option>1</option><option>2 to 4</option><option>5 to 9</option><option>10+</option></select></div>
         <div class="field full"><label for="th-biz">Business or named insured</label><input id="th-biz" name="business" type="text" autocomplete="organization"></div>
         <div class="field"><label for="th-city">City or ZIP</label><input id="th-city" name="city" type="text" autocomplete="postal-code"></div>
         <div class="field"><label for="th-renew">Renewal or expiration date</label><input id="th-renew" name="renew" type="date"></div>
