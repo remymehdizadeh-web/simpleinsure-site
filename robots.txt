@@ -3,3 +3,4 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://www.simpleinsure.co/sitemap.xml
+Sitemap: https://www.simpleinsure.co/sitemap-local.xml
