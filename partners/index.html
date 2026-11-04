@@ -20,8 +20,8 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="../fonts/franklin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../site.css?v=39">
-<link rel="stylesheet" href="../mobile.css?v=25">
+<link rel="stylesheet" href="../site.css?v=44">
+<link rel="stylesheet" href="../mobile.css?v=30">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18528347675"></script>
@@ -62,38 +62,36 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </nav>
 </div>
 <main id="main">
-<section class="section"><div class="wrap prose narrow">
-  <p class="eyebrow">Partners</p>
+<header class="page-head fold"><div class="wrap">
   <h1>Introduce a client. We take it from there.</h1>
-  <p>SimpleINSURE Brokerage LLC is a licensed New York property and casualty insurance broker in Garden City. We work with apartment and mixed-use building owners, contractors, restaurants, and local businesses in New York City and on Long Island. Landlord and building-owner coverage is on the <a href="../landlord-insurance/">landlord insurance</a> page.</p>
-</div></section>
-<section class="section" style="padding-top:0"><div class="wrap prose narrow">
-  <h2>What we do for your clients</h2>
-  <ul>
-    <li>Read the policy they already have and explain it in plain English.</li>
-    <li>Spot gaps that matter at closing, renewal, or certificate time.</li>
-    <li>Shop coverage only when there is a reason to.</li>
-    <li>Stay reachable after the policy is bound.</li>
+  <p class="lede">Licensed New York broker in Garden City.</p>
+  <div class="cta-row"><a class="btn" href="#refer">Send a referral</a><a class="fold-call" href="tel:+15162267969">(516) 226-7969</a></div>
+</div></header>
+<section class="section scan" style="padding-top:0"><div class="wrap prose narrow">
+  <h2>What we do</h2>
+  <ul class="points">
+    <li>Read the policy in plain English</li>
+    <li>Flag gaps before closing</li>
+    <li>Shop only with a reason</li>
   </ul>
-  <h2>Who this page is for</h2>
-  <ul>
-    <li>Realtors and broker teams</li>
-    <li>Mortgage lenders and loan officers</li>
-    <li>Property managers and managing agents</li>
-    <li>Attorneys and accountants who already introduce clients</li>
+  <h2>Who this is for</h2>
+  <ul class="points cols">
+    <li>Realtors</li>
+    <li>Mortgage lenders</li>
+    <li>Property managers</li>
+    <li>Attorneys and accountants</li>
   </ul>
   <h2>How to refer</h2>
-  <ol>
-    <li>Tell your client you are introducing SimpleINSURE, or ask us to say you sent them.</li>
-    <li>Send their name, best phone or email, and a one-line note on what they need.</li>
-    <li>A licensed broker at SimpleINSURE replies during business hours (Mon to Fri, 9 to 6 ET).</li>
-    <li>With your client's OK, we keep you posted on status. We do not share their policy details without permission.</li>
+  <ol class="points">
+    <li>Tell the client, or we will</li>
+    <li>Send a name and a phone or email</li>
+    <li>We keep you posted with their OK</li>
   </ol>
-  <p>We do not pay referral fees or commissions to unlicensed partners.</p>
+  <p class="sub">No fees to unlicensed partners.</p>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap prose narrow">
+<section class="section" id="refer" style="padding-top:48px"><div class="wrap prose narrow">
   <h2>Send a referral</h2>
-  <form class="wizard" method="post" data-subject="Referral partner" data-final="Send referral" novalidate>
+  <form class="wizard" method="post" data-subject="Referral" data-final="Send referral" novalidate>
     <p class="progress"><span data-steplabel>Referral</span><span data-stepcount></span></p>
     <div class="meter" aria-hidden="true"><span></span></div>
     <div data-step="1" data-label="Referral" data-error="Add your details, the client name, and a client email or phone.">
@@ -106,12 +104,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
         <div class="field full"><label for="pr_client">Client name</label><input id="pr_client" name="client_name" type="text" required></div>
         <div class="field"><label for="pr_cemail">Client email</label><input id="pr_cemail" name="client_email" type="email" data-need="email"></div>
         <div class="field"><label for="pr_cphone">Client phone</label><input id="pr_cphone" name="client_phone" type="tel" data-need="phone"></div>
-        <div class="field full"><label for="pr_help">What they need</label><select id="pr_help" name="help_with" required><option value="">Select</option><option>New business insurance</option><option>Renewal review</option><option selected>Landlord / property</option><option>Contractor</option><option>Auto / commercial auto</option><option>Home / personal</option><option>Certificate or policy service</option><option>Referral partner</option><option>Other</option></select></div>
-        <div class="field full"><label for="pr_note">Anything we should know</label><textarea id="pr_note" name="notes" rows="3"></textarea></div>
-        <div class="field full consent-field"><label class="choice" for="pr_permission"><input id="pr_permission" name="permission" type="checkbox" value="yes" required><span>I confirm I have permission to share this client's contact details with SimpleINSURE Brokerage LLC.</span></label></div>
-        <div class="field full consent-field"><label class="choice" for="pr_consent"><input id="pr_consent" name="consent" type="checkbox" value="yes"><span>I agree that SimpleINSURE Brokerage LLC may contact me and the client by phone, text, or email about this referral. Consent is not a condition of any purchase.</span></label>
-          <p class="quiet">Consent is not a condition of any purchase. Message and data rates may apply. Reply STOP to opt out of texts; reply HELP for help. See our <a href="../legal/#privacy">Privacy notice</a>.</p>
-          <p class="quiet">SimpleINSURE Brokerage LLC is a licensed New York property and casualty insurance broker, NY DFS License BR-1984615.</p></div>
+        <div class="field full"><label for="pr_help">What they need</label><select id="pr_help" name="help_with" required><option value="">Select</option><option>New business</option><option>Renewal</option><option selected>Landlord</option><option>Contractor</option><option>Auto</option><option>Home</option><option>Certificate</option><option>Referral</option><option>Other</option></select></div>
+        <div class="field full"><label for="pr_note">Notes</label><textarea id="pr_note" name="notes" rows="3"></textarea></div>
+        <div class="field full consent-field"><label class="choice" for="pr_permission"><input id="pr_permission" name="permission" type="checkbox" value="yes" required><span>I have permission to share this client's contact details.</span></label></div>
+        <div class="field full consent-field"><label class="choice" for="pr_consent"><input id="pr_consent" name="consent" type="checkbox" value="yes"><span>You may contact me and the client about this referral.</span></label>
+          <p class="quiet">Not required to buy. Reply STOP to opt out. <a href="../legal/#privacy">Privacy</a>.</p>
+          <p class="quiet">NY DFS License BR-1984615.</p></div>
       </div>
       <p class="form-error" hidden></p>
     </div>

@@ -1094,3 +1094,17 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
 @media (max-width:768px){
   .desk-foot-links{display:none}
 }
+.scan h2{margin-top:56px}
+.scan .wrap>h2:first-child,.scan .wrap>#faq:first-child h2{margin-top:0}
+.scan .sub,.prose p.sub{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.4}
+.scan .sub a,.prose p.sub a{display:inline-flex;align-items:center;min-height:44px;padding:10px 4px}
+.close .text-link.on-dark{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:2px}
+.page-head.fold{box-sizing:border-box}
+.fold-call{color:#d5e4f2;font-weight:650;text-decoration:none;font-size:17px}
+.trust-bar{padding:18px 0;background:#f4f7fb;color:#1B365D;font-size:14.5px;line-height:1.45;border-bottom:1px solid var(--line)}
+.trust-bar .wrap{width:min(var(--wrap),calc(100% - 48px));margin:0 auto}
+ul.points,ol.points,.prose ul.points,.prose ol.points{list-style:none;display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0;padding:0}
+.points li,.prose .points li{margin:0;padding:18px 18px;background:var(--paper);border:1px solid var(--line);color:var(--ink);font-size:16.5px;line-height:1.35}
+@media (min-width:720px){
+  .prose ul.points.cols{grid-template-columns:1fr 1fr}
+}
