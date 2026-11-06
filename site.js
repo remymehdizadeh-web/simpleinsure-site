@@ -443,6 +443,11 @@
     location.href = href;
   }
   var FORM_ENDPOINT = "https://formsubmit.co/377b52cf505cbfe923fcec89eeee6cae";
+  // Temporary. FormSubmit is returning Cloudflare 522, so Send skips the iframe
+  // POST and opens the mailto draft (info@simpleinsure.co) via openMail.
+  // Set true to restore the FormSubmit path below. /thank-you/ still fires only
+  // after a real FormSubmit success, so this outage does not invent a conversion.
+  var USE_FORMSUBMIT = false;
   var MAX_UPLOAD = 10 * 1024 * 1024;
   // FormSubmit reCAPTCHA. Off: the post goes through a hidden frame. On success FormSubmit
   // redirects that frame to /thank-you/, and this page follows. On: the visitor is sent to
@@ -521,6 +526,10 @@
         if (need.focus) need.focus();
         return;
       }
+    }
+    if (!USE_FORMSUBMIT) {
+      openMail(subject, lines, form);
+      return;
     }
     var fields = [
       ["_subject", form.hasAttribute("data-subject-exact") ? subject : "Website: " + subject],
