@@ -1,0 +1,42 @@
+name: FormSubmit health
+
+on:
+  schedule:
+    # 13:00 UTC is 8:00 AM EST and 9:00 AM EDT.
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the FormSubmit endpoint
+        run: |
+          set -u
+          url="https://formsubmit.co/377b52cf505cbfe923fcec89eeee6cae"
+          hdr="$(mktemp)"
+          body="$(mktemp)"
+          # GET only. A POST would email the office.
+          if ! code="$(curl -sS -D "$hdr" -o "$body" -w "%{http_code}" --max-time 25 --retry 2 --retry-delay 3 --retry-connrefused -A "SimpleINSURE-form-check" "$url")"; then
+            echo "FormSubmit did not answer (timeout or connection error)."
+            echo "Lead forms will fall back to email and phone until it recovers."
+            exit 1
+          fi
+          echo "HTTP ${code}"
+          if [ "$code" = "200" ]; then
+            echo "FormSubmit endpoint answered 200."
+            exit 0
+          fi
+          # GitHub-hosted runners receive a Cloudflare challenge from this
+          # endpoint even when a browser gets 200. That challenge is not the
+          # 522 outage that dropped leads. 520-524 and other 5xx still fail.
+          if [ "$code" = "403" ] && grep -qi -e "cf-mitigated: challenge" -e "Just a moment" "$hdr" "$body"; then
+            echo "Cloudflare challenged this runner (HTTP 403). Not an origin outage, so this check passes."
+            exit 0
+          fi
+          echo "FormSubmit returned HTTP ${code}."
+          echo "Lead forms will fall back to email and phone until it recovers."
+          exit 1

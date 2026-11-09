@@ -412,12 +412,13 @@
     if (boxes.length) lines.push("Coverage to discuss: " + boxes.join(", "));
     return lines;
   }
-  function mailtoHref(subject, lines) {
+  function mailtoHref(subject, lines, to) {
+    var addr = to || "info@simpleinsure.co";
     var body = lines.join("\n");
-    var href = "mailto:info@simpleinsure.co?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    var href = "mailto:" + addr + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
     if (href.length > 1800) {
       body = lines.slice(0, 12).join("\n") + "\n\nThe full summary is on the confirmation screen. Please call if anything was cut off.";
-      href = "mailto:info@simpleinsure.co?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      href = "mailto:" + addr + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
     }
     return href;
   }
@@ -447,9 +448,127 @@
   // FormSubmit reCAPTCHA. Off: the post goes through a hidden frame. On success FormSubmit
   // redirects that frame to /thank-you/, and this page follows. On: the visitor is sent to
   // FormSubmit's captcha page (it cannot load in a frame), then lands on /thank-you/.
-  // The Google Ads conversion event lives only on /thank-you/.
+  // The Google Ads form conversion lives only on /thank-you/.
+  // If the frame does not get there, the visitor gets a prefilled email and a phone link.
+  // That path records form_fallback with no send_to, so it is not the form conversion.
+  // Phone taps stay on the tel: listener above, including the fallback call link.
   var USE_CAPTCHA = false;
   var THANK_YOU = "/thank-you/";
+  var FALLBACK_WAIT_MS = 12000;
+  var FALLBACK_GIVE_UP_MS = 45000;
+  var FALLBACK_UPLOAD_GIVE_UP_MS = 120000;
+  var OFFICE_PHONE_TEL = "tel:+15162267969";
+  var OFFICE_PHONE_LABEL = "(516) 226-7969";
+  function fallbackAddress(form) {
+    var to = String(form.getAttribute("data-fallback-email") || "info@simpleinsure.co").trim();
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to) ? to : "info@simpleinsure.co";
+  }
+  function frameLocation(frame) {
+    try {
+      var loc = frame.contentWindow && frame.contentWindow.location;
+      if (!loc) return { path: "", href: "" };
+      return { path: loc.pathname || "", href: loc.href || "" };
+    } catch (e) {
+      return null;
+    }
+  }
+  function isBlankFrame(info) {
+    if (!info) return false;
+    if (!info.href || info.href === "about:blank") return true;
+    return info.path === "blank";
+  }
+  function isThankYouPath(path) {
+    return path === "/thank-you/" || path === "/thank-you" || path === "/thank-you/index.html";
+  }
+  function trackFormFallback(form, why) {
+    form.setAttribute("data-fallback-reason", why || "error");
+    if (form.getAttribute("data-fallback-tracked") === "1") return;
+    form.setAttribute("data-fallback-tracked", "1");
+    if (typeof gtag !== "function") return;
+    gtag("event", "form_fallback", {
+      form_page: location.pathname,
+      form_subject: form.getAttribute("data-subject") || "",
+      fallback_reason: why || "error",
+      transport_type: "beacon"
+    });
+  }
+  function showFallback(form, subject, lines, why) {
+    var addr = fallbackAddress(form);
+    var err = form.querySelector(".form-error");
+    var btn = form.querySelector("[data-next]");
+    var mail = form.querySelector("[data-mailto]");
+    var summary = form.querySelector(".summary");
+    var done = form.querySelector(".done:not(.sent)");
+    var withFile = lines.some(function (line) { return line.indexOf("A file was selected") === 0; });
+    var timedOut = why === "timeout";
+    if (btn) {
+      if (timedOut) {
+        btn.disabled = true;
+        btn.textContent = "Still sending\u2026";
+      } else {
+        btn.disabled = false;
+        btn.textContent = form.getAttribute("data-final") || "Send";
+      }
+    }
+    if (err) {
+      err.textContent = timedOut
+        ? "Still trying to send. You can email or call below, and you do not have to wait."
+        : "We could not send this from the page. Email or call below.";
+      err.hidden = false;
+    }
+    if (mail) {
+      mail.href = mailtoHref(subject, lines, addr);
+      mail.textContent = "";
+      mail.appendChild(d.createTextNode("Email " + addr + " "));
+      var arr = d.createElement("span");
+      arr.className = "arr";
+      arr.setAttribute("aria-hidden", "true");
+      arr.textContent = "\u2192";
+      mail.appendChild(arr);
+    }
+    if (summary) summary.textContent = lines.join("\n");
+    if (done) {
+      var title = done.querySelector(".done-title, h2");
+      if (title) {
+        title.hidden = false;
+        title.textContent = timedOut ? "This is taking too long." : "The form did not send.";
+      }
+      var lede = done.querySelector(".lede");
+      if (lede) {
+        lede.textContent = timedOut
+          ? "Email the note below, or call " + OFFICE_PHONE_LABEL + ". If the form still goes through, this page will move on by itself."
+          : "Email the note below, or call " + OFFICE_PHONE_LABEL + "." + (withFile ? " Add the file in your mail app. It is not attached here." : "");
+      }
+      var call = done.querySelector('a[href^="tel:"]');
+      if (!call) {
+        call = d.createElement("a");
+        call.className = "btn-ghost";
+        var actions = done.querySelector(".done-actions");
+        (actions || done).appendChild(call);
+      }
+      call.href = OFFICE_PHONE_TEL;
+      call.textContent = "Call " + OFFICE_PHONE_LABEL;
+      done.hidden = false;
+      if (!done.__handoffBound) {
+        done.__handoffBound = true;
+        done.addEventListener("click", function (e) {
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var link = t.closest("a[href^='mailto:'], a[href^='tel:']");
+          if (!link || !done.contains(link)) return;
+          form.__handoff = true;
+          try {
+            sessionStorage.removeItem("si_submitted");
+            sessionStorage.removeItem("si_reason");
+          } catch (err2) {}
+        });
+      }
+      if (done.scrollIntoView) {
+        try { done.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" }); } catch (e2) {}
+      }
+    }
+    trackFormFallback(form, why);
+  }
   function reasonValue(form) {
     var reasonEl = form.querySelector('input[name="reason"]');
     if (!reasonEl || reasonEl.disabled) return "";
@@ -508,9 +627,16 @@
     var honey = form.querySelector('input[name="_honey"]');
     if (honey && honey.value) { showState(form, "sent"); return; }
     var files = filesOf(form);
+    var fileNames = files.map(function (f) { return f.name; }).join(", ");
+    var postLines = lines.concat(["Page: " + location.pathname]);
+    var mailLines = postLines.slice();
+    if (files.length) {
+      mailLines.push("A file was selected on the form (" + fileNames + "). This email does not include it. Please attach it before you send.");
+    }
     var total = files.reduce(function (n, f) { return n + f.size; }, 0);
     if (total > MAX_UPLOAD) {
-      fail("Those files are over 10 MB together. Send fewer or smaller files, or email them to info@simpleinsure.co.");
+      showFallback(form, subject, mailLines, "error");
+      fail("Those files are over 10 MB together. Send fewer or smaller files, or email them to " + fallbackAddress(form) + ".");
       return;
     }
     var need = form.querySelector("[data-upload-for]");
@@ -536,7 +662,7 @@
     if (email && String(email.value || "").trim()) fields.push(["_replyto", String(email.value).trim()]);
     var autoresponse = form.getAttribute("data-autoresponse");
     if (autoresponse) fields.push(["_autoresponse", autoresponse]);
-    lines.forEach(function (line, i) {
+    postLines.forEach(function (line, i) {
       var k = line.indexOf(": ");
       var key = k > 0 ? line.slice(0, k) : "Item " + (i + 1);
       var val = k > 0 ? line.slice(k + 2) : line;
@@ -544,7 +670,7 @@
       used[key] = 1;
       fields.push([key, val]);
     });
-    if (files.length) fields.push(["Files attached", files.map(function (f) { return f.name; }).join(", ")]);
+    if (files.length) fields.push(["Files attached", fileNames]);
     var name = "fs" + Date.now();
     var frame = d.createElement("iframe");
     frame.name = name;
@@ -582,20 +708,23 @@
     }
     if (files.length && !attached) {
       [].slice.call(post.querySelectorAll('input[type="file"]')).forEach(function (el) { el.remove(); });
-      form.querySelectorAll('input[type="file"]').forEach(function (orig, i) {
+      form.querySelectorAll('input[type="file"]').forEach(function (orig) {
         if (!orig.files || !orig.files.length || offForm(orig, form)) return;
         var input = d.createElement("input");
         input.type = "file";
         input.name = attached === 0 ? "attachment" : "attachment" + (attached + 1);
-        try { input.files = orig.files; post.appendChild(input); attached++; } catch (e) {}
+        try { input.files = orig.files; post.appendChild(input); attached++; } catch (e2) {}
       });
     }
     if (files.length && !attached) {
-      fail("This browser could not attach your files. Please email them to info@simpleinsure.co or call (516) 226-7969.");
+      showFallback(form, subject, mailLines, "error");
+      fail("This browser could not attach your files. Email them to " + fallbackAddress(form) + " or call " + OFFICE_PHONE_LABEL + ".");
       return;
     }
     if (btn) { btn.disabled = true; btn.textContent = files.length ? "Uploading\u2026" : "Sending\u2026"; }
     if (err) err.hidden = true;
+    form.__handoff = false;
+    form.removeAttribute("data-fallback-tracked");
     function markSubmitted() {
       try {
         sessionStorage.setItem("si_submitted", "1");
@@ -611,45 +740,62 @@
       post.submit();
       return;
     }
-    var settled = false;
-    function cleanup() {
-      setTimeout(function () { frame.remove(); post.remove(); }, 1000);
+    var attempt = { frame: frame, post: post, settled: false, fallbackShown: false };
+    form.__attempt = attempt;
+    function clearTimers() {
+      if (attempt.soft) clearTimeout(attempt.soft);
+      if (attempt.hard) clearTimeout(attempt.hard);
     }
-    function onFail() {
-      if (settled) return;
-      settled = true;
+    function removeTransport() {
+      if (frame.parentNode) frame.remove();
+      if (post.parentNode) post.remove();
+    }
+    function isCurrent() { return form.__attempt === attempt; }
+    function succeed() {
+      if (attempt.settled) return;
+      attempt.settled = true;
+      clearTimers();
+      removeTransport();
+      if (form.__handoff) {
+        var note = form.querySelector(".done:not(.sent) .lede");
+        if (note) note.textContent = "The page send went through as well. If your email or call is already open, you can finish that.";
+        return;
+      }
+      location.replace(thankYouUrl(form));
+    }
+    function hardFail(why) {
+      if (attempt.settled) return;
+      attempt.settled = true;
+      clearTimers();
+      removeTransport();
+      if (!isCurrent()) return;
       try { sessionStorage.removeItem("si_submitted"); sessionStorage.removeItem("si_reason"); } catch (e) {}
-      cleanup();
-      fail("We could not send this just now. Please try again, call (516) 226-7969, or use the email draft below.");
-      var mail = form.querySelector("[data-mailto]");
-      var summary = form.querySelector(".summary");
-      var done = form.querySelector(".done:not(.sent)");
-      if (mail) mail.href = mailtoHref(subject, lines);
-      if (summary) summary.textContent = lines.join("\n");
-      if (done) {
-        done.hidden = false;
-        var h = done.querySelector("h2");
-        if (h) h.hidden = true;
-      }
+      showFallback(form, subject, mailLines, why || "error");
     }
-    var timer = setTimeout(onFail, 150000);
+    function giveUp() {
+      hardFail("error");
+    }
+    attempt.soft = setTimeout(function () {
+      if (attempt.settled || !isCurrent()) return;
+      attempt.fallbackShown = true;
+      showFallback(form, subject, mailLines, "timeout");
+    }, FALLBACK_WAIT_MS);
+    attempt.hard = setTimeout(giveUp, files.length ? FALLBACK_UPLOAD_GIVE_UP_MS : FALLBACK_GIVE_UP_MS);
     frame.addEventListener("load", function () {
-      if (settled) return;
-      var path;
-      try { path = frame.contentWindow.location.pathname; } catch (e) { path = null; }
-      if (path === "blank") return;
-      clearTimeout(timer);
-      if (path === "/thank-you/" || path === "/thank-you" || path === "/thank-you/index.html") {
-        settled = true;
-        cleanup();
-        location.replace(thankYouUrl(form));
-      } else {
-        onFail();
-      }
+      if (!attempt.posted || attempt.settled) return;
+      var info = frameLocation(frame);
+      if (isBlankFrame(info)) return;
+      if (info && isThankYouPath(info.path)) succeed();
+      else hardFail("error");
+    });
+    frame.addEventListener("error", function () {
+      if (!attempt.posted) return;
+      hardFail("error");
     });
     d.body.appendChild(frame);
     d.body.appendChild(post);
     markSubmitted();
+    attempt.posted = true;
     post.submit();
   }
   d.querySelectorAll("form.wizard").forEach(function (form) {

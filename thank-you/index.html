@@ -94,7 +94,7 @@ if (window.top === window.self) {
     reason = new URLSearchParams(location.search).get("reason") || sessionStorage.getItem("si_reason") || "";
     sessionStorage.removeItem("si_reason");
   } catch (e) {}
-  if (reason === "landlord-checkup") {
+  if (reason === "landlord-checkup" || reason === "building-checkup") {
     var lede = document.getElementById("thanks-lede");
     if (lede) lede.textContent = "A licensed broker will reply the same business day when the request is received before 4 PM ET.";
   }
@@ -155,6 +155,6 @@ if (window.top === window.self) {
     </div>
   </div>
 </footer>
-<script src="../site.js?v=22" defer></script>
+<script src="../site.js?v=44" defer></script>
 </body>
 </html>

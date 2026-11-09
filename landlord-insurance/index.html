@@ -87,7 +87,8 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <li>Mixed-use buildings</li>
   </ul>
   <h2 id="checkup">Free checkup</h2>
-  <form class="wizard lead-form" method="post" enctype="multipart/form-data" data-subject="Landlord policy checkup request" data-subject-exact data-final="Send for a checkup" novalidate>
+  <form class="wizard lead-form" method="post" enctype="multipart/form-data" data-subject="Landlord policy checkup request" data-subject-exact data-final="Send for a checkup" data-fallback-email="remy@simpleinsure.co" novalidate>
+    <noscript><p class="quiet">If the form does not send, email <a href="mailto:remy@simpleinsure.co?subject=Landlord%20policy%20checkup%20request">remy@simpleinsure.co</a> or call <a href="tel:+15162267969">(516) 226-7969</a>.</p></noscript>
     <div data-step="1" data-label="Checkup" data-error="Add your name, email, and property address.">
       <input type="hidden" name="reason" value="landlord-checkup">
       <div class="fields">
@@ -103,11 +104,11 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     </div>
     <div class="wizard-nav"><button type="submit" class="btn" data-next>Send for a checkup</button></div>
     <div class="done" hidden>
-      <p class="done-title">Your note is ready to send.</p>
-      <p class="lede">Use the button if no draft opens. Call <a href="tel:+15162267969">(516) 226-7969</a>.</p>
+      <p class="done-title">The form did not send.</p>
+      <p class="lede">Email the note below, or call (516) 226-7969.</p>
       <div class="summary"></div>
       <div class="done-actions">
-        <a class="btn" data-mailto href="mailto:info@simpleinsure.co">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn" data-mailto href="mailto:remy@simpleinsure.co?subject=Landlord%20policy%20checkup%20request">Email remy@simpleinsure.co <span class="arr" aria-hidden="true">→</span></a>
         <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
         <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
       </div>
@@ -214,6 +215,6 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   <a class="btn" href="tel:+15162267969">Call (516) 226-7969</a>
   <a class="btn btn-ghost" href="../landlord-checkup/">Free checkup</a>
 </div>
-<script src="../site.js?v=42" defer></script>
+<script src="../site.js?v=44" defer></script>
 </body>
 </html>
