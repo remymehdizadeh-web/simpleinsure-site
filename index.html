@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#061018" media="(max-width: 1023px)">
+<meta name="theme-color" content="#ffffff" media="(max-width: 1023px)">
 <title>Commercial Insurance Broker, Garden City NY | SimpleINSURE</title>
 <meta name="description" content="Independent New York broker in Garden City placing insurance for buildings, contractors, restaurants and small businesses in Nassau, Long Island and NYC.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.simpleinsure.co/">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
+<link rel="preload" href="fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="ui.css?v=1">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Commercial Insurance Broker, Garden City NY | SimpleINSURE">
@@ -19,30 +21,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="fonts/franklin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=45">
-<style>
-.m-only{display:none}
-@media (max-width:980px){
-  .site-header{position:fixed !important;top:calc(12px + env(safe-area-inset-top)) !important;left:0 !important;right:0 !important;padding-top:0 !important;z-index:80 !important;transform:translate3d(0,var(--header-shift,0px),0)}
-  .site-header:before{content:"";position:absolute;left:0;right:0;bottom:100%;height:calc(12px + env(safe-area-inset-top));background:transparent;pointer-events:none}
-  html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
-  .h-pin{height:auto !important}
-  .h-sticky{position:static !important;height:auto !important;display:block !important;overflow:visible !important}
-  .h-intro{width:auto !important;display:block !important;padding:48px 20px 16px !important;box-sizing:border-box !important}
-  .h-track{display:block !important;transform:none !important;height:auto !important;width:auto !important}
-  .slide{position:relative !important;display:block !important;width:100% !important;height:72vh !important;min-height:420px !important;overflow:hidden !important;color:#fff !important;flex:none !important}
-  .slide img{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;max-width:none !important;object-fit:cover !important}
-  .slide-shade{position:absolute !important;inset:0 !important}
-  .slide-copy{position:absolute !important;left:20px !important;right:20px !important;bottom:22px !important;z-index:2 !important;color:#fff !important}
-  .slide-copy strong,.slide-copy small{display:block !important;color:#fff !important}
-  .slide-copy small{margin-top:8px !important}
-}
-</style>
-<link rel="stylesheet" href="mobile.css?v=30">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
-<link rel="preload" href="fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="photos/hero-1600.webp?v=5" imagesrcset="photos/hero-800.webp?v=5 800w, photos/hero-1200.webp?v=5 1200w, photos/hero-1600.webp?v=5 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="photos/hero-800.webp?v=5" imagesrcset="photos/hero-800.webp?v=5 800w, photos/hero-1200.webp?v=5 1200w, photos/hero-1600.webp?v=5 1600w" imagesizes="540px" media="(min-width: 1024px)" fetchpriority="high">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"InsuranceAgency","@id":"https://www.simpleinsure.co/#agency","name":"SimpleINSURE Brokerage LLC","alternateName":"SimpleINSURE","url":"https://www.simpleinsure.co/","logo":"https://www.simpleinsure.co/img/simpleinsure-wordmark.png","image":"https://www.simpleinsure.co/img/og.png","telephone":"+1-516-226-7969","email":"info@simpleinsure.co","address":{"@type":"PostalAddress","streetAddress":"900 Stewart Ave Ste 210","addressLocality":"Garden City","addressRegion":"NY","postalCode":"11530","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Manhattan, NY"},{"@type":"City","name":"Brooklyn, NY"},{"@type":"City","name":"Queens, NY"},{"@type":"City","name":"The Bronx, NY"},{"@type":"City","name":"Staten Island, NY"},{"@type":"AdministrativeArea","name":"Nassau County, NY"},{"@type":"AdministrativeArea","name":"Suffolk County, NY"},{"@type":"City","name":"Garden City, NY"}],"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+1-516-226-7969","hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00","timeZone":"America/New_York"}},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"New York property and casualty insurance broker license","identifier":"BR-1984615","recognizedBy":{"@type":"GovernmentOrganization","name":"New York State Department of Financial Services"}},"knowsAbout":["Commercial property insurance","General liability insurance","Builders risk insurance","Businessowners policy","Workers compensation insurance","Commercial umbrella insurance","Professional liability insurance","Cyber liability insurance","Homeowners insurance"]}]}</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18528347675"></script>
@@ -54,110 +34,74 @@ gtag('config', 'AW-18528347675', { allow_ad_personalization_signals: false });
 gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personalization_signals: false });
 </script>
 </head>
-<body class="page-home">
+<body class="has-mbar">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="bar">
-    <a class="logo" href="./" aria-label="SimpleINSURE home"><img src="simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-    <nav class="nav-desk" aria-label="Primary">
-      <a href="coverage/">Coverage</a>
-      <a href="client-center/">Client Center</a>
-      <a href="about/">Firm</a>
-      <a href="contact/">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="phone-full" href="tel:+15162267969">(516) 226-7969</a>
-      <a class="btn btn-sm" href="get-a-quote/">Get a quote</a>
-      <a class="btn btn-sm" href="policy-review/">Request a review</a>
-      <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button>
-    </div>
+<header class="hdr site-header"><div class="wrap hdr-in">
+  <a class="logo" href="./" aria-label="SimpleINSURE home"><img src="img/simpleinsure-wordmark-560.png" alt="SimpleINSURE" width="560" height="120"></a>
+  <nav class="nav" aria-label="Primary"><a href="landlord-insurance/">Landlords</a><a href="new-york-building-insurance/">Buildings</a><a href="coverage/">Business</a><a href="coverage/#personal">Personal</a><a href="client-center/">Client Center</a></nav>
+  <div class="hdr-act">
+    <a class="hdr-phone" href="tel:+15162267969"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(516) 226-7969</a>
+    <a class="btn btn-sm hdr-cta" href="#call-back">Get a quick call back</a>
+    <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button>
   </div>
-</header>
+</div></header>
 <div class="sheet" id="sheet" hidden>
-  <nav aria-label="Mobile"><a href="coverage/">Coverage</a><a href="client-center/">Client Center</a><a href="about/">Firm</a><a href="contact/">Contact</a></nav>
-  <div class="sheet-cta"><a class="btn" href="get-a-quote/">Get a quote</a><a class="btn" href="policy-review/">Request a review</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
-  <p class="sheet-meta"><span>Garden City, New York</span><span>NY License BR-1984615</span></p>
+  <nav aria-label="Mobile"><a href="landlord-insurance/">Landlords</a><a href="new-york-building-insurance/">Buildings</a><a href="coverage/">Business</a><a href="coverage/#personal">Personal</a><a href="client-center/">Client Center</a><a href="about/">About us</a><a href="contact/">Contact</a></nav>
+  <div class="sheet-cta"><a class="btn btn-lg" href="#call-back">Get a quick call back</a><a class="btn-ghost btn-lg" href="tel:+15162267969"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call (516) 226-7969</a></div>
+  <p class="sheet-meta">Mon to Fri, 9 to 6 ET · Garden City, NY</p>
 </div>
 <main id="main">
-<section class="hero" aria-label="Introduction">
-  <div class="hero-media">
-    <div class="ken"><img src="photos/hero-800.webp?v=5" srcset="photos/hero-800.webp?v=5 800w, photos/hero-1200.webp?v=5 1200w, photos/hero-1600.webp?v=5 1600w" sizes="100vw" alt="Glass office towers against a pale sky" width="1600" height="1067" fetchpriority="high" decoding="async"></div>
-    <div class="hero-shade" aria-hidden="true"></div>
+<section class="hero"><div class="wrap hero-grid">
+  <div class="hero-copy">
+    <h1 class="kick">Commercial insurance broker in Garden City, New York</h1>
+    <p class="h-display">Insurance, made simple.</p>
+    <p class="lead">Send the policy. We explain it plainly.</p>
+    <div class="btns"><a class="btn btn-lg" href="#call-back">Get a quick call back</a><a class="btn-ghost btn-lg" href="tel:+15162267969" data-call-spot="home-hero"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call (516) 226-7969</a></div>
+    <ul class="facts"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>Licensed NY insurance broker</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon to Fri, 9 to 6 ET</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Garden City, NY</li></ul>
   </div>
-  <div class="hero-copy wrap">
-    <h1 class="kicker light">Commercial insurance broker in Garden City, New York</h1>
-    <p class="brand-line rise"><span class="line"><span>Insurance,</span></span><span class="line"><span>made simple.</span></span></p>
-    <p class="lede">Send the policy. We explain it plainly.</p>
-    <div class="cta-row">
-      <a class="btn btn-light magnet" href="policy-review/">Request a review <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="text-link on-dark" href="tel:+15162267969">(516) 226-7969</a>
+  <div class="hero-photo desk-only"><picture><source media="(min-width: 1024px)" srcset="photos/hero-800.webp?v=5 800w, photos/hero-1200.webp?v=5 1200w, photos/hero-1600.webp?v=5 1600w" sizes="540px"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Glass office towers against a pale sky" width="1600" height="1067" fetchpriority="high" decoding="async"></picture><div class="hero-badge"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></i><div><b>A licensed broker reads your policy</b><span>If it is right, we say so.</span></div></div></div>
+</div></section>
+<section class="sec-sm"><div class="wrap">
+  <div class="sec-head"><h2 class="h-sec">What do you need covered?</h2></div>
+  <div class="paths">
+    <a class="path" href="landlord-insurance/"><div class="path-img"><img src="photos/personal-800.webp?v=5" srcset="photos/personal-800.webp?v=5 800w, photos/personal-1200.webp?v=5 1200w, photos/personal-1600.webp?v=5 1600w" sizes="(min-width: 768px) 380px, 96px" alt="A modern house exterior in the evening" width="1600" height="1067" decoding="async" loading="lazy"></div><div class="path-b"><div><b>I own rental property</b><span>Houses and 1 to 50 units</span></div><span class="path-go"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+    <a class="path" href="new-york-building-insurance/"><div class="path-img"><img src="photos/estate-800.webp?v=5" srcset="photos/estate-800.webp?v=5 800w, photos/estate-1200.webp?v=5 1200w, photos/estate-1600.webp?v=5 1600w" sizes="(min-width: 768px) 380px, 96px" alt="Looking up a modern white tower" width="1600" height="1067" decoding="async" loading="lazy"></div><div class="path-b"><div><b>I own a building</b><span>Apartment and mixed-use</span></div><span class="path-go"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+    <a class="path" href="coverage/"><div class="path-img"><img src="photos/hospitality-800.webp?v=5" srcset="photos/hospitality-800.webp?v=5 800w, photos/hospitality-1200.webp?v=5 1200w, photos/hospitality-1600.webp?v=5 1600w" sizes="(min-width: 768px) 380px, 96px" alt="A wide, sharp view of an upscale restaurant dining room" width="1600" height="1067" decoding="async" loading="lazy"></div><div class="path-b"><div><b>I run a business</b><span>Restaurants, contractors, offices</span></div><span class="path-go"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+  </div>
+  <div class="more-paths">
+    <a class="pill" href="new-york-restaurant-insurance/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 12v9M16 21V3c2 0 3.5 2 3.5 5.5S18 13 16 13"/></svg>Restaurants</a>
+    <a class="pill" href="new-york-contractor-insurance/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20M4 18v-3a8 8 0 0 1 16 0v3M10 7V5h4v2"/></svg>Contractors</a>
+    <a class="pill" href="coverage/#personal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>Home and personal</a>
+    <a class="pill" href="policy-review/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Policy review</a>
+    <a class="pill" href="client-center/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Already a client?</a>
+  </div>
+</div></section>
+<section class="sec-sm sec-soft"><div class="wrap">
+  <div class="sec-head"><h2 class="h-sec">How it works</h2></div>
+  <ol class="steps" style="--n:4"><li><div><b>We read it</b><span>The policy.</span></div></li><li><div><b>We tell you</b><span>If it fits.</span></div></li><li><div><b>We shop it</b><span>If needed.</span></div></li><li><div><b>We switch it</b><span>Dates lined up.</span></div></li></ol>
+</div></section>
+<section class="sec-sm" id="grays" aria-labelledby="grays-h"><div class="wrap">
+  <div class="proof">
+    <div class="proof-img"><img src="photos/counter-800.webp?v=5" srcset="photos/counter-800.webp?v=5 800w, photos/counter-1200.webp?v=5 1200w, photos/counter-1600.webp?v=5 1600w" sizes="(min-width: 900px) 460px, 100vw" alt="Gray&#x27;s Papaya storefront at 72nd Street and Broadway" width="1600" height="2400" decoding="async" loading="lazy"></div>
+    <div class="proof-b">
+      <p class="kick">Gray's Papaya</p>
+      <h2 class="h-sec" id="grays-h">One account.</h2>
+      <ul class="checks">
+        <li>Umbrella from $1M to $5M</li>
+        <li>Employment practices added</li>
+        <li>At least 42% less, fee included</li>
+      </ul>
+      <p class="proof-foot">Versus last year's premium. $3,000 deductible.</p>
     </div>
   </div>
-  <a class="scroll-cue" href="#practices"><span class="sr">Practices</span><i aria-hidden="true"></i></a>
-</section>
-<section class="h-pin" id="practices" aria-labelledby="practices-h">
-  <div class="h-sticky">
-    <div class="h-intro">
-      <div class="h-copy">
-        <h2 class="rise" id="practices-h"><span class="line"><span>Five</span></span><span class="line"><span>practices.</span></span></h2>
-        <p class="h-meta" aria-hidden="true"><b class="h-now">01</b><span class="h-bar"><i></i></span><span>05</span></p>
-      </div>
-    </div>
-    <div class="h-track"><div class="slide rise-photo"><img src="photos/estate-800.webp?v=5" srcset="photos/estate-800.webp?v=5 800w, photos/estate-1200.webp?v=5 1200w, photos/estate-1600.webp?v=5 1600w" sizes="(max-width: 980px) 100vw, 22vw" alt="Looking up a modern white tower" width="1600" height="1067" loading="lazy" decoding="async"><span class="slide-shade" aria-hidden="true"></span><a class="slide-hit" href="new-york-building-insurance/"><span class="sr">Real estate</span></a><span class="slide-copy" data-rise><em>01</em><strong>Real estate</strong></span></div><div class="slide rise-photo slide-hospitality"><img src="photos/hospitality-800.webp?v=5" srcset="photos/hospitality-800.webp?v=5 800w, photos/hospitality-1200.webp?v=5 1200w, photos/hospitality-1600.webp?v=5 1600w" sizes="(max-width: 980px) 100vw, 22vw" alt="A wide, sharp view of an upscale restaurant dining room" width="1600" height="1067" loading="lazy" decoding="async"><span class="slide-shade" aria-hidden="true"></span><a class="slide-hit" href="new-york-restaurant-insurance/"><span class="sr">Hospitality</span></a><span class="slide-copy" data-rise><em>02</em><strong>Hospitality</strong></span></div><div class="slide rise-photo"><img src="photos/construction-800.webp?v=5" srcset="photos/construction-800.webp?v=5 800w, photos/construction-1200.webp?v=5 1200w, photos/construction-1600.webp?v=5 1600w" sizes="(max-width: 980px) 100vw, 22vw" alt="Tower cranes over a building site in low evening light" width="1600" height="1067" loading="lazy" decoding="async"><span class="slide-shade" aria-hidden="true"></span><a class="slide-hit" href="new-york-contractor-insurance/"><span class="sr">Contractors</span></a><span class="slide-copy" data-rise><em>03</em><strong>Contractors</strong></span></div><div class="slide rise-photo"><img src="photos/professional-800.webp?v=5" srcset="photos/professional-800.webp?v=5 800w, photos/professional-1200.webp?v=5 1200w, photos/professional-1600.webp?v=5 1600w" sizes="(max-width: 980px) 100vw, 22vw" alt="A glass conference room in a modern office" width="1600" height="1067" loading="lazy" decoding="async"><span class="slide-shade" aria-hidden="true"></span><a class="slide-hit" href="coverage/#professional"><span class="sr">Offices</span></a><span class="slide-copy" data-rise><em>04</em><strong>Offices</strong></span></div><div class="slide rise-photo"><img src="photos/personal-800.webp?v=5" srcset="photos/personal-800.webp?v=5 800w, photos/personal-1200.webp?v=5 1200w, photos/personal-1600.webp?v=5 1600w" sizes="(max-width: 980px) 100vw, 22vw" alt="A modern house exterior in the evening" width="1600" height="1067" loading="lazy" decoding="async"><span class="slide-shade" aria-hidden="true"></span><a class="slide-hit" href="coverage/#personal"><span class="sr">Personal</span></a><span class="slide-copy" data-rise><em>05</em><strong>Personal</strong></span></div></div>
+</div></section>
+<section class="sec sec-soft" id="talk" aria-labelledby="home-cb-h"><div class="wrap split split-top">
+  <div class="split-copy">
+    <h2 class="h-sec" id="home-cb-h">Talk to a broker</h2>
+    <p class="lead">Leave your name and number, or call us. A licensed broker in Garden City picks up.</p>
+    <div class="btns"><a class="btn-ghost btn-lg" href="tel:+15162267969" data-call-spot="home"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call (516) 226-7969</a></div>
   </div>
-</section>
-
-<div class="m-home m-only">
-<section class="m-block">
-  <div class="wrap">
-    <p class="m-h">Five<span class="b">practices.</span></p>
-    <div class="m-tiles"><a class="m-tile sleek-rise" data-rise href="new-york-building-insurance/"><img src="photos/estate-800.webp?v=5" srcset="photos/estate-800.webp?v=5 800w, photos/estate-1200.webp?v=5 1200w, photos/estate-1600.webp?v=5 1600w" sizes="(max-width: 768px) 46vw, 240px" alt="Looking up a modern white tower" width="1600" height="1067" loading="lazy" decoding="async"><span>Real estate</span></a><a class="m-tile sleek-rise" data-rise href="new-york-restaurant-insurance/"><img src="photos/hospitality-800.webp?v=5" srcset="photos/hospitality-800.webp?v=5 800w, photos/hospitality-1200.webp?v=5 1200w, photos/hospitality-1600.webp?v=5 1600w" sizes="(max-width: 768px) 46vw, 240px" alt="A wide, sharp view of an upscale restaurant dining room" width="1600" height="1067" loading="lazy" decoding="async"><span>Hospitality</span></a><a class="m-tile sleek-rise" data-rise href="new-york-contractor-insurance/"><img src="photos/construction-800.webp?v=5" srcset="photos/construction-800.webp?v=5 800w, photos/construction-1200.webp?v=5 1200w, photos/construction-1600.webp?v=5 1600w" sizes="(max-width: 768px) 46vw, 240px" alt="Tower cranes over a building site in low evening light" width="1600" height="1067" loading="lazy" decoding="async"><span>Contractors</span></a><a class="m-tile sleek-rise" data-rise href="coverage/#professional"><img src="photos/professional-800.webp?v=5" srcset="photos/professional-800.webp?v=5 800w, photos/professional-1200.webp?v=5 1200w, photos/professional-1600.webp?v=5 1600w" sizes="(max-width: 768px) 46vw, 240px" alt="A glass conference room in a modern office" width="1600" height="1067" loading="lazy" decoding="async"><span>Offices</span></a><a class="m-tile m-tile-wide sleek-rise" data-rise href="coverage/#personal"><img src="photos/personal-800.webp?v=5" srcset="photos/personal-800.webp?v=5 800w, photos/personal-1200.webp?v=5 1200w, photos/personal-1600.webp?v=5 1600w" sizes="(max-width: 768px) 46vw, 240px" alt="A modern house exterior in the evening" width="1600" height="1067" loading="lazy" decoding="async"><span>Personal</span></a></div>
-  </div>
-</section>
-</div>
-<section class="client-result client-result-grays" id="grays" aria-labelledby="grays-h">
-  <figure class="result-photo rise-photo only-1024"><img src="photos/counter-800.webp?v=5" srcset="photos/counter-800.webp?v=5 800w, photos/counter-1200.webp?v=5 1200w, photos/counter-1600.webp?v=5 1600w" sizes="(min-width: 1024px) 58vw, 100vw" alt="Gray&#x27;s Papaya storefront at 72nd Street and Broadway" width="1600" height="2400" loading="lazy" decoding="async"></figure>
-  <div class="wrap">
-    <p class="result-name" data-rise>Gray's Papaya</p>
-    <h2 id="grays-h" data-rise>One account.</h2>
-    <ul class="points" data-rise>
-      <li>Umbrella from $1M to $5M</li>
-      <li>Employment practices added</li>
-      <li>At least 42% less, fee included</li>
-    </ul>
-    <p class="result-foot" data-rise>Versus last year's premium. $3,000 deductible.</p>
-  </div>
-</section>
-<div class="m-home m-only">
-<section class="m-block">
-  <div class="wrap">
-    <p class="m-h">How it<span class="b">works.</span></p>
-    <ol class="m-num m-num-notes"><li class="sleek-rise" data-rise><div><span>01</span><div><strong>We read it</strong><em>The policy.</em></div></div></li><li class="sleek-rise" data-rise><div><span>02</span><div><strong>We tell you</strong><em>If it fits.</em></div></div></li><li class="sleek-rise" data-rise><div><span>03</span><div><strong>We shop it</strong><em>If needed.</em></div></div></li><li class="sleek-rise" data-rise><div><span>04</span><div><strong>We switch it</strong><em>Dates lined up.</em></div></div></li></ol>
-  </div>
-</section>
-</div>
-
-<section class="section work" id="work" aria-labelledby="work-h">
-  <div class="wrap work-grid">
-    <div class="work-intro">
-      <h2 class="rise" id="work-h" data-rise><span class="line"><span>How it</span></span><span class="line"><span>works.</span></span></h2>
-    </div>
-    <ol class="work-steps">
-      <li data-rise><div><h3>We read it</h3><p>The policy.</p></div></li>
-      <li data-rise><div><h3>We tell you</h3><p>If it fits.</p></div></li>
-      <li data-rise><div><h3>We shop it</h3><p>If needed.</p></div></li>
-      <li data-rise><div><h3>We switch it</h3><p>Dates lined up.</p></div></li>
-    </ol>
-  </div>
-</section>
-<section class="section home-cb" id="call-back" aria-labelledby="home-cb-h"><div class="wrap home-cb-grid">
-  <div class="home-cb-copy">
-    <h2 id="home-cb-h">Talk to a broker</h2>
-    <p class="lede">Leave your name and number, or call us. A licensed broker in Garden City picks up.</p>
-    <a class="btn lp-call" href="tel:+15162267969" data-call-spot="home"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (516) 226-7969</a>
-    <p class="lp-hours">Mon to Fri, 9 to 6 ET</p>
-  </div>
-<form class="wizard qf" id="call-back" method="post" data-subject="Website call back request" data-subject-exact data-final="Call me back" data-fallback-email="remy@simpleinsure.co" novalidate>
+  <form class="wizard qf" id="call-back" method="post" data-subject="Website call back request" data-subject-exact data-final="Call me back" data-fallback-email="remy@simpleinsure.co" novalidate>
   <noscript><p class="qf-sub">If the form does not send, email <a href="mailto:remy@simpleinsure.co?subject=Website%20call%20back%20request">remy@simpleinsure.co</a> or call <a href="tel:+15162267969">(516) 226-7969</a>.</p></noscript>
   <div data-step="1" data-label="Call back" data-error="Add your name and a phone number so we can call you.">
     <p class="qf-h">Get a quick call back</p>
@@ -182,73 +126,24 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
 </form>
 </div></section>
-<section class="close" aria-labelledby="close-h">
-  <div class="hero-media">
-    <div class="ken"><img src="photos/personal-800.webp?v=5" srcset="photos/personal-800.webp?v=5 800w, photos/personal-1200.webp?v=5 1200w, photos/personal-1600.webp?v=5 1600w" sizes="(max-width: 1023px) 400px, 100vw" alt="A modern house exterior in the evening" width="1600" height="1067" loading="lazy" fetchpriority="low" decoding="async"></div>
-    <div class="hero-shade" aria-hidden="true"></div>
-  </div>
-  <div class="wrap close-inner">
-    <h2 class="rise" id="close-h" data-rise><span class="line"><span>Bring the policy</span></span><span class="line"><span><em>you have.</em></span></span></h2>
-    <div class="cta-row">
-      <a class="btn btn-light magnet" href="policy-review/">Request a review <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="text-link on-dark" href="tel:+15162267969">(516) 226-7969</a>
-    </div>
-  </div>
-</section>
+<section class="sec-sm"><div class="wrap"><div class="band"><div><h2>Bring the policy you have.</h2><p>We read it first. If it is right, we say so.</p></div><div class="btns"><a class="btn-light btn-lg" href="policy-review/">Request a review</a><a class="btn-onDark btn-lg" href="tel:+15162267969"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call (516) 226-7969</a></div></div></div></section>
 </main>
-<footer class="site-footer">
-  <div class="wrap foot-grid">
+<footer class="ft site-footer"><div class="wrap">
+  <div class="ft-grid">
     <div>
-      <a class="logo" href="./" aria-label="SimpleINSURE home"><img src="simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-      <p class="addr">Commercial and personal insurance.</p>
-      <p class="addr">900 Stewart Ave, Suite 210<br>Garden City, NY 11530</p>
-      <p class="addr">Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</p>
+      <a class="logo" href="./" aria-label="SimpleINSURE home"><img src="img/simpleinsure-wordmark-560.png" alt="SimpleINSURE" width="560" height="120" loading="lazy"></a>
+      <p class="ft-addr">900 Stewart Ave, Suite 210<br>Garden City, NY 11530<br>Mon to Fri, 9 to 6 ET</p>
+      <p class="ft-addr"><a href="tel:+15162267969">(516) 226-7969</a><br><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></p>
     </div>
-    <div><p class="foot-h">Coverage</p><ul><li><a href="coverage/#real-estate">Real estate</a></li><li><a href="coverage/#hospitality">Hospitality</a></li><li><a href="coverage/#construction">Contractors</a></li><li><a href="coverage/#professional">Offices</a></li><li><a href="coverage/#personal">Personal</a></li></ul></div>
-    <div><p class="foot-h">Advisory</p><ul>
-      <li><a href="get-a-quote/">Get a quote</a></li>
-      <li><a href="policy-review/">Policy review</a></li>
-      <li><a href="client-center/">Client Center</a></li>
-      <li><a href="contact/">Contact</a></li>
-    </ul></div>
-    <div><p class="foot-h">Firm</p><ul>
-      <li><a href="about/">The firm</a></li>
-    </ul></div>
-    <div><p class="foot-h">Office</p><ul>
-      <li><a href="tel:+15162267969">(516) 226-7969</a></li>
-      <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
-    </ul></div>
-  </div>
-    <div class="wrap desk-foot-links"><p class="foot-links"><a href="new-york-contractor-insurance/">Contractor insurance</a> · <a href="new-york-building-insurance/">Building insurance</a> · <a href="landlord-insurance/">Landlord insurance</a> · <a href="new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="business-owners-policy/">Businessowners policy</a> · <a href="nassau-county-commercial-insurance/">Nassau County</a></p></div>
-  <div class="wrap legal-line">
-    <span>© 2026 SimpleINSURE Brokerage LLC · NY License BR-1984615 · Garden City, NY · <a href="legal/">Privacy and licenses</a></span>
-  </div>
-  <div class="m-foot m-only">
-    <div class="wrap">
-      <a class="logo" href="./" aria-label="SimpleINSURE home"><img src="simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-      <div class="m-foot-cols">
-        <div><p class="foot-h">Coverage</p><ul><li><a href="coverage/#real-estate">Real estate</a></li><li><a href="coverage/#hospitality">Hospitality</a></li><li><a href="coverage/#construction">Contractors</a></li><li><a href="coverage/#professional">Offices</a></li><li><a href="coverage/#personal">Personal</a></li></ul></div>
-        <div><p class="foot-h">Advisory</p><ul>
-          <li><a href="get-a-quote/">Get a quote</a></li>
-          <li><a href="policy-review/">Policy review</a></li>
-          <li><a href="client-center/">Client Center</a></li>
-          <li><a href="contact/">Contact</a></li>
-        </ul></div>
-        <div><p class="foot-h">Firm</p><ul>
-          <li><a href="about/">The firm</a></li>
-        </ul></div>
-        <div><p class="foot-h">Office</p><ul>
-          <li><a href="tel:+15162267969">(516) 226-7969</a></li>
-          <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
-          <li>900 Stewart Ave, Suite 210, Garden City, NY 11530</li>
-          <li>Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</li>
-        </ul></div>
-      </div>
-      <p class="m-legal foot-links"><a href="new-york-contractor-insurance/">Contractor insurance</a> · <a href="new-york-building-insurance/">Building insurance</a> · <a href="landlord-insurance/">Landlord insurance</a> · <a href="new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="business-owners-policy/">Businessowners policy</a> · <a href="nassau-county-commercial-insurance/">Nassau County</a></p>
-      <p class="m-legal">© 2026 SimpleINSURE Brokerage LLC · NY License BR-1984615 · Garden City, NY · <a href="legal/">Privacy and licenses</a></p>
+    <div class="ft-cols">
+      <div><h2>Insurance</h2><ul><li><a href="landlord-insurance/">Landlords</a></li><li><a href="new-york-building-insurance/">Apartment buildings</a></li><li><a href="nyc-mixed-use-building-insurance/">Mixed-use buildings</a></li><li><a href="new-york-restaurant-insurance/">Restaurants</a></li><li><a href="new-york-contractor-insurance/">Contractors</a></li><li><a href="business-owners-policy/">Businessowners policy</a></li><li><a href="coverage/#personal">Home and personal</a></li></ul></div>
+      <div><h2>Local</h2><ul><li><a href="nassau-suffolk-landlord-insurance/">Long Island landlords</a></li><li><a href="landlord-insurance-requirements-nyc/">NYC landlord requirements</a></li><li><a href="long-island-restaurant-insurance/">Long Island restaurants</a></li><li><a href="nyc-restaurant-insurance-requirements/">NYC restaurant requirements</a></li><li><a href="nassau-county-commercial-insurance/">Nassau County business</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="get-a-quote/">Get a quote</a></li><li><a href="policy-review/">Policy review</a></li><li><a href="client-center/">Client Center</a></li><li><a href="about/">About us</a></li><li><a href="partners/">Partners</a></li><li><a href="contact/">Contact</a></li></ul></div>
     </div>
   </div>
-</footer>
-<script src="site.js?v=44" defer></script>
+  <div class="ft-legal"><span>© 2026 SimpleINSURE Brokerage LLC · NY License BR-1984615 · Garden City, NY · <a href="legal/">Privacy and licenses</a></span><span class="badge-lic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>Licensed NY insurance broker</span></div>
+</div></footer>
+<div class="mbar"><a class="btn-ghost" href="tel:+15162267969"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call</a><a class="btn" href="#call-back">Get a quick call back</a></div>
+<script src="site.js?v=45" defer></script>
 </body>
 </html>
