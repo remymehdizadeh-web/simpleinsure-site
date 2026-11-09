@@ -94,7 +94,7 @@ if (window.top === window.self) {
     reason = new URLSearchParams(location.search).get("reason") || sessionStorage.getItem("si_reason") || "";
     sessionStorage.removeItem("si_reason");
   } catch (e) {}
-  if (reason === "landlord-checkup" || reason === "building-checkup") {
+  if (reason === "landlord-checkup" || reason === "building-checkup" || /-callback$/.test(reason)) {
     var lede = document.getElementById("thanks-lede");
     if (lede) lede.textContent = "A licensed broker will reply the same business day when the request is received before 4 PM ET.";
   }
