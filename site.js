@@ -115,7 +115,7 @@
   }
 
   function pinHeader() {
-    if (!header) return;
+    if (!header || header.classList.contains("hdr")) return;
     if (!mobileQ.matches || d.documentElement.classList.contains("nav-open")) {
       if (headerShift) {
         headerShift = 0;
