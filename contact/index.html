@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="../fonts/franklin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../site.css?v=44">
+<link rel="stylesheet" href="../site.css?v=45">
 <style>
 .m-only{display:none}
 @media (max-width:980px){
@@ -79,77 +79,70 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 <main id="main"><header class="page-head contact-head fold"><div class="wrap"><h1 class="kicker">Contact our Garden City office</h1><p class="page-title rise"><span class="line"><span>Call, or send a note.</span></span></p><p class="lede">A broker replies Mon to Fri, 9 to 6 ET.</p><div class="cta-row"><a class="btn only-1024" href="#desk-note">Send a note</a><a class="btn hide-1024" href="#mobile-note">Send a note</a><a class="fold-call" href="tel:+15162267969">(516) 226-7969</a></div></div></header>
 <section class="contact-desk only-1024" id="desk-note" aria-label="Office">
   <div class="contact-split">
-    <div class="contact-form" data-rise><form class="wizard" method="post" data-subject="Contact" data-final="Send this note" novalidate>
-      <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
-      <div class="meter" aria-hidden="true"><i></i></div>
-      
-<div data-step="1" data-label="Message" data-error="Add your name, and an email or a phone number.">
-  <h2 class="desk-h">Send a note</h2>
-  <p class="quiet">Sent through FormSubmit. Not stored on this site.</p>
-  <div class="fields">
-    <div class="field full"><label for="chelp5680">Topic</label><select id="chelp5680" name="help_with" required><option value="">Select</option><option>New business</option><option>Renewal</option><option>Landlord</option><option>Contractor</option><option>Auto</option><option>Home</option><option>Certificate</option><option>Referral</option><option>Other</option></select></div><div class="field full"><label for="sname">Name</label><input id="sname" name="sname" type="text" required autocomplete="name"></div>
-    <div class="field"><label for="semail">Email</label><input id="semail" name="semail" type="email" data-need="email" autocomplete="email"></div>
-    <div class="field"><label for="sphone">Phone</label><input id="sphone" name="sphone" type="tel" data-need="phone" autocomplete="tel"></div>
-    <div class="field full"><label for="snotes">Notes</label><textarea id="snotes" name="snotes"></textarea></div>
+    <div class="contact-form" data-rise><form class="wizard qf qf-wide" id="contact-form-desk" method="post" data-subject="Contact" data-final="Send" data-fallback-email="remy@simpleinsure.co" novalidate>
+  <noscript><p class="qf-sub">If the form does not send, email <a href="mailto:remy@simpleinsure.co?subject=Contact">remy@simpleinsure.co</a> or call <a href="tel:+15162267969">(516) 226-7969</a>.</p></noscript>
+  <div data-step="1" data-label="Message" data-error="Add your name and a phone number or email.">
+    <p class="qf-h">Send us a quick note</p>
+    <p class="qf-sub">A broker gets back to you Mon to Fri, 9 to 6 ET.</p>
+    <input type="hidden" name="reason" value="contact-note">
+    <div class="qf-field"><label for="cd-name">Your name</label><input id="cd-name" name="name" type="text" required autocomplete="name" placeholder="First and last name"></div>
+    <div class="qf-field"><label for="cd-reach">Phone or email</label><input id="cd-reach" name="phone_or_email" type="text" required autocomplete="tel" placeholder="How should we reach you?"></div>
+    <div class="qf-field"><label for="cd-note">How can we help? <span>Optional</span></label><textarea id="cd-note" name="note" rows="3" placeholder="A line or two is plenty"></textarea></div>
+    <p class="form-error" role="alert" hidden></p>
   </div>
-  <div class="field full consent-field"><label class="choice" for="cconsent1"><input id="cconsent1" name="consent" type="checkbox" value="yes"><span>You may call, text, or email me about this request.</span></label>
-  <p class="quiet">Not required to buy. Reply STOP to opt out. <a href="../legal/#privacy">Privacy</a>.</p>
-  <p class="quiet">NY DFS License BR-1984615.</p></div>
-</div>
-      <p class="form-error" role="alert" hidden></p>
-      <div class="wizard-nav"><button type="button" class="btn-ghost" data-back hidden>Back</button><button type="submit" class="btn" data-next>Continue</button></div>
-      <div class="done" hidden>
-      <p class="done-title">Your note is ready to send.</p>
-      <p class="lede">Use the button if no draft opens.</p>
-      <div class="summary"></div>
-      <div class="done-actions">
-        <a class="btn" data-mailto href="mailto:info@simpleinsure.co">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
-        <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
-        <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
-      </div>
+  <div class="wizard-nav"><button type="submit" class="btn qf-btn" data-next>Send</button></div>
+  <p class="qf-trust"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Licensed NY insurance broker · Garden City, NY</span></p>
+  <div class="done" hidden>
+    <p class="done-title">The form did not send.</p>
+    <p class="lede">Email the note below, or call (516) 226-7969.</p>
+    <div class="summary"></div>
+    <div class="done-actions">
+      <a class="btn" data-mailto href="mailto:remy@simpleinsure.co?subject=Contact">Email remy@simpleinsure.co <span class="arr" aria-hidden="true">→</span></a>
+      <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
+      <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
     </div>
-    </form></div>
+  </div>
+</form></div>
     <figure class="contact-visual rise-photo">
       <img src="../photos/facade-800.webp?v=5" srcset="../photos/facade-800.webp?v=5 800w, ../photos/facade-1200.webp?v=5 1200w, ../photos/facade-1600.webp?v=5 1600w" sizes="(min-width: 1024px) 58vw, 100vw" alt="A dark colonnade of a modern building at night" width="1600" height="1404" fetchpriority="high" decoding="async">
       <figcaption>
         <a class="reach-call" href="tel:+15162267969">(516) 226-7969</a>
         <a class="reach-mail" href="mailto:info@simpleinsure.co">info@simpleinsure.co</a>
-        <p class="reach-addr">Garden City, NY</p>
+        <p class="reach-addr">900 Stewart Ave, Suite 210, Garden City, NY 11530</p>
         <p class="reach-addr">Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</p>
       </figcaption>
     </figure>
   </div>
 </section>
-<section class="section hide-1024" id="mobile-note" style="padding-top:28px"><div class="wrap layout"><form class="wizard" method="post" data-subject="Contact" data-final="Send this note" novalidate>
-      <p class="progress"><span data-steplabel>Start</span><span data-stepcount></span></p>
-      <div class="meter" aria-hidden="true"><i></i></div>
-      
-<div data-step="1" data-label="Message" data-error="Add your name, and an email or a phone number.">
-  <h2 style="font-size:32px;margin-bottom:14px">Send a note</h2>
-  <p class="quiet">Sent through FormSubmit. Not stored on this site.</p>
-  <div class="fields" style="margin-top:16px"><div class="field full"><label for="chelp4165">Topic</label><select id="chelp4165" name="help_with" required><option value="">Select</option><option>New business</option><option>Renewal</option><option>Landlord</option><option>Contractor</option><option>Auto</option><option>Home</option><option>Certificate</option><option>Referral</option><option>Other</option></select></div><div class="field full"><label for="cname">Name</label><input id="cname" name="cname" type="text" required autocomplete="name"></div><div class="field"><label for="cbiz">Business</label><input id="cbiz" name="cbiz" type="text" autocomplete="organization"></div><div class="field"><label for="cemail">Email</label><input id="cemail" name="cemail" type="email" data-need="email" autocomplete="email"></div><div class="field"><label for="cphone">Phone</label><input id="cphone" name="cphone" type="tel" data-need="phone" autocomplete="tel"></div><div class="field"><label for="creach">Reply by</label><select id="creach" name="creach"><option value="">Select</option><option>Phone</option><option>Email</option><option>Either</option></select></div><div class="field full"><label for="cnotes">Notes</label><textarea id="cnotes" name="cnotes"></textarea></div></div>
-  <div class="field full consent-field"><label class="choice" for="cconsent2"><input id="cconsent2" name="consent" type="checkbox" value="yes"><span>You may call, text, or email me about this request.</span></label>
-  <p class="quiet">Not required to buy. Reply STOP to opt out. <a href="../legal/#privacy">Privacy</a>.</p>
-  <p class="quiet">NY DFS License BR-1984615.</p></div>
-</div>
-      <p class="form-error" role="alert" hidden></p>
-      <div class="wizard-nav"><button type="button" class="btn-ghost" data-back hidden>Back</button><button type="submit" class="btn" data-next>Continue</button></div>
-      <div class="done" hidden>
-      <p class="done-title">Your note is ready to send.</p>
-      <p class="lede">Use the button if no draft opens.</p>
-      <div class="summary"></div>
-      <div class="done-actions">
-        <a class="btn" data-mailto href="mailto:info@simpleinsure.co">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
-        <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
-        <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
-      </div>
+<section class="section hide-1024" id="mobile-note" style="padding-top:28px"><div class="wrap layout"><form class="wizard qf qf-wide" id="contact-form-mobile" method="post" data-subject="Contact" data-final="Send" data-fallback-email="remy@simpleinsure.co" novalidate>
+  <noscript><p class="qf-sub">If the form does not send, email <a href="mailto:remy@simpleinsure.co?subject=Contact">remy@simpleinsure.co</a> or call <a href="tel:+15162267969">(516) 226-7969</a>.</p></noscript>
+  <div data-step="1" data-label="Message" data-error="Add your name and a phone number or email.">
+    <p class="qf-h">Send us a quick note</p>
+    <p class="qf-sub">A broker gets back to you Mon to Fri, 9 to 6 ET.</p>
+    <input type="hidden" name="reason" value="contact-note">
+    <div class="qf-field"><label for="cm-name">Your name</label><input id="cm-name" name="name" type="text" required autocomplete="name" placeholder="First and last name"></div>
+    <div class="qf-field"><label for="cm-reach">Phone or email</label><input id="cm-reach" name="phone_or_email" type="text" required autocomplete="tel" placeholder="How should we reach you?"></div>
+    <div class="qf-field"><label for="cm-note">How can we help? <span>Optional</span></label><textarea id="cm-note" name="note" rows="3" placeholder="A line or two is plenty"></textarea></div>
+    <p class="form-error" role="alert" hidden></p>
+  </div>
+  <div class="wizard-nav"><button type="submit" class="btn qf-btn" data-next>Send</button></div>
+  <p class="qf-trust"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Licensed NY insurance broker · Garden City, NY</span></p>
+  <div class="done" hidden>
+    <p class="done-title">The form did not send.</p>
+    <p class="lede">Email the note below, or call (516) 226-7969.</p>
+    <div class="summary"></div>
+    <div class="done-actions">
+      <a class="btn" data-mailto href="mailto:remy@simpleinsure.co?subject=Contact">Email remy@simpleinsure.co <span class="arr" aria-hidden="true">→</span></a>
+      <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
+      <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
     </div>
-    </form><aside class="aside">
+  </div>
+</form><aside class="aside">
       <div class="panel"><h2>What happens next</h2>
         <p>A broker replies by phone or email.</p>
         <div class="row"><span>Call</span><a href="tel:+15162267969">(516) 226-7969</a></div>
         <div class="row"><span>Email</span><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
-        <div class="row"><span>Place</span>Garden City, NY</div>
+        <div class="row"><span>Office</span>900 Stewart Ave, Suite 210, Garden City, NY</div>
         <p>Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</p>
       </div>
     </aside></div></section></main>
@@ -158,7 +151,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div>
       <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
       <p class="addr">Commercial and personal insurance.</p>
-      <p class="addr">Garden City, NY</p>
+      <p class="addr">900 Stewart Ave, Suite 210<br>Garden City, NY 11530</p>
       <p class="addr">Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</p>
     </div>
     <div><p class="foot-h">Coverage</p><ul><li><a href="../coverage/#real-estate">Real estate</a></li><li><a href="../coverage/#hospitality">Hospitality</a></li><li><a href="../coverage/#construction">Contractors</a></li><li><a href="../coverage/#professional">Offices</a></li><li><a href="../coverage/#personal">Personal</a></li></ul></div>
@@ -177,7 +170,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
     <div class="wrap desk-foot-links"><p class="foot-links"><a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a></p></div>
   <div class="wrap legal-line">
-    <span>© 2026 SimpleINSURE Brokerage LLC, licensed New York property and casualty insurance broker, <span class="keep-line">NY DFS License No. BR-1984615</span>. Coverage descriptions are general summaries. The issued policy governs. <a href="../legal/">Licenses and disclosures</a>.</span>
+    <span>© 2026 SimpleINSURE Brokerage LLC · NY License BR-1984615 · Garden City, NY · <a href="../legal/">Privacy and licenses</a></span>
   </div>
   <div class="m-foot m-only">
     <div class="wrap">
@@ -195,12 +188,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
         <div><p class="foot-h">Office</p><ul>
           <li><a href="tel:+15162267969">(516) 226-7969</a></li>
           <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
-          <li>Garden City, NY</li>
+          <li>900 Stewart Ave, Suite 210, Garden City, NY 11530</li>
           <li>Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</li>
         </ul></div>
       </div>
       <p class="m-legal foot-links"><a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a></p>
-      <p class="m-legal">© 2026 SimpleINSURE Brokerage LLC, licensed New York property and casualty insurance broker, <span class="keep-line">NY DFS License No. BR-1984615</span>. Coverage descriptions are general summaries. The issued policy governs. <a href="../legal/">Licenses and disclosures</a>.</p>
+      <p class="m-legal">© 2026 SimpleINSURE Brokerage LLC · NY License BR-1984615 · Garden City, NY · <a href="../legal/">Privacy and licenses</a></p>
     </div>
   </div>
 </footer>

@@ -28,7 +28,7 @@
   html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
 }
 </style>
-<link rel="stylesheet" href="../site.css?v=41">
+<link rel="stylesheet" href="../site.css?v=45">
 <link rel="stylesheet" href="../mobile.css?v=27">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
@@ -72,34 +72,31 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 <header class="page-head"><div class="wrap">
   <h1 class="rise"><span class="line"><span>Landlord insurance requirements in New York City</span></span></h1>
   <p class="lede">Most insurance requirements for a New York City landlord come from three places: the lender, the law on employees, and your contracts. Here is what each one usually asks for.</p>
-  <p class="trust-strip">SimpleINSURE Brokerage LLC · NY DFS License BR-1984615 · 900 Stewart Ave Ste 210, Garden City, NY 11530 · Mon-Fri 9-6 ET.</p>
-  <p class="form-note">Free coverage review for one property.</p>
-  <form class="wizard lead-form" id="checkup" method="post" enctype="multipart/form-data" data-subject="Landlord policy checkup request" data-subject-exact data-final="Send for a checkup" novalidate>
-    <div data-step="1" data-label="Checkup" data-error="Add your name, email, and property address.">
-      <input type="hidden" name="reason" value="landlord-checkup">
-      <div class="fields">
-        <div class="field full"><label for="li-name">Name</label><input id="li-name" name="name" type="text" required autocomplete="name"></div>
-        <div class="field"><label for="li-email">Email</label><input id="li-email" name="email" type="email" required autocomplete="email"></div>
-        <div class="field"><label for="li-phone">Phone</label><input id="li-phone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="field full"><label for="li-address">Property address</label><input id="li-address" name="property_address" type="text" required autocomplete="street-address"></div>
-        <div class="field full"><label for="li-declarations">Declarations page (optional)</label><input id="li-declarations" name="declarations" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"><p class="quiet">PDF, JPG, or PNG, up to 10 MB. Black out Social Security, driver's license, birth date, and bank or card numbers first. More than one address or file? <a href="../landlord-checkup/">Use the full checkup</a>.</p></div>
-        <div class="field full consent-field"><label class="choice" for="li-consent"><input id="li-consent" name="consent" type="checkbox" value="yes"><span>I agree that SimpleINSURE Brokerage LLC may contact me by phone, text, or email about this request.</span></label>
-          <p class="quiet">Consent is not a condition of any purchase. Message and data rates may apply. Reply STOP to opt out of texts; reply HELP for help. See our <a href="../legal/#privacy">Privacy notice</a>.</p></div>
-      </div>
-      <p class="form-error" role="alert" hidden></p>
+  <form class="wizard qf" id="checkup" method="post" data-subject="Landlord call back request" data-subject-exact data-final="Call me back" data-fallback-email="remy@simpleinsure.co" novalidate>
+  <noscript><p class="qf-sub">If the form does not send, email <a href="mailto:remy@simpleinsure.co?subject=Landlord%20call%20back%20request">remy@simpleinsure.co</a> or call <a href="tel:+15162267969">(516) 226-7969</a>.</p></noscript>
+  <div data-step="1" data-label="Call back" data-error="Add your name and a phone number so we can call you.">
+    <p class="qf-h">Get a quick call back</p>
+    <p class="qf-sub">A licensed broker calls you back the same business day if you send this before 4 PM ET.</p>
+    <input type="hidden" name="reason" value="landlord-callback">
+    <div class="qf-field"><label for="s1-name">Your name</label><input id="s1-name" name="name" type="text" required autocomplete="name" placeholder="First and last name"></div>
+    <div class="qf-field"><label for="s1-phone">Phone number</label><input id="s1-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555"></div>
+    <fieldset class="qf-chips"><legend>What kind of property? <span>Optional</span></legend><div class="qf-chip-row"><input type="radio" name="line" id="s1-c1" value="rental-1-4"><label for="s1-c1">1 to 4 family</label><input type="radio" name="line" id="s1-c2" value="apartment"><label for="s1-c2">Apartment building</label><input type="radio" name="line" id="s1-c3" value="mixed-use"><label for="s1-c3">Mixed-use</label><input type="radio" name="line" id="s1-c4" value="other"><label for="s1-c4">Other</label></div></fieldset>
+    <p class="form-error" role="alert" hidden></p>
+  </div>
+  <div class="wizard-nav"><button type="submit" class="btn qf-btn" data-next><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call me back</button></div>
+  <p class="qf-trust"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Licensed NY insurance broker · Garden City, NY</span></p>
+  <p class="qf-alt">Have your declarations page? <a href="../landlord-checkup/">Upload it here</a></p>
+  <div class="done" hidden>
+    <p class="done-title">The form did not send.</p>
+    <p class="lede">Email the note below, or call (516) 226-7969.</p>
+    <div class="summary"></div>
+    <div class="done-actions">
+      <a class="btn" data-mailto href="mailto:remy@simpleinsure.co?subject=Landlord%20call%20back%20request">Email remy@simpleinsure.co <span class="arr" aria-hidden="true">→</span></a>
+      <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
+      <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
     </div>
-    <div class="wizard-nav"><button type="submit" class="btn" data-next>Send for a checkup</button></div>
-    <div class="done" hidden>
-      <p class="done-title">Your note is ready to send.</p>
-      <p class="lede">An email draft to <a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a> should be open. If not, use the button below. Email is not encrypted, so leave out Social Security, driver's license, birth date, and bank or card numbers, including in attachments, or call (516) 226-7969.</p>
-      <div class="summary"></div>
-      <div class="done-actions">
-        <a class="btn" data-mailto href="mailto:info@simpleinsure.co">Open the email draft <span class="arr" aria-hidden="true">→</span></a>
-        <button type="button" class="btn-ghost" data-copy>Copy the summary</button>
-        <a class="btn-ghost" href="tel:+15162267969">Call (516) 226-7969</a>
-      </div>
-    </div>
-  </form>
+  </div>
+</form>
 </div></header>
 <section class="section" style="padding-top:12px"><div class="wrap prose narrow">
 
@@ -148,12 +145,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
 
   <h2>Talk to a broker</h2>
-  <p><a class="btn" href="../landlord-checkup/">Get a free policy checkup</a> <a class="btn btn-ghost" href="../get-a-quote/?line=real-estate">Get a quote</a></p>
-  <p>Or call <a href="tel:+15162267969">(516) 226-7969</a>, Mon to Fri, 9 to 6 ET. SimpleINSURE Brokerage LLC, 900 Stewart Ave Ste 210, Garden City, NY 11530. NY DFS License BR-1984615.</p>
+  <p><a class="btn" href="../landlord-checkup/">Get a policy checkup</a> <a class="btn btn-ghost" href="../get-a-quote/?line=real-estate">Get a quote</a></p>
+  <p>Or call <a href="tel:+15162267969">(516) 226-7969</a>, Mon to Fri, 9 to 6 ET.</p>
 
   <h2>Related</h2>
   <ul>
-    <li><a href="../landlord-checkup/">Free landlord policy checkup</a></li>
+    <li><a href="../landlord-checkup/">Landlord policy checkup</a></li>
     <li><a href="../landlord-insurance/">Landlord insurance in NYC and Long Island</a></li>
     <li><a href="../nassau-suffolk-landlord-insurance/">Landlord insurance in Nassau and Suffolk</a></li>
     <li><a href="../nyc-mixed-use-building-insurance/">NYC mixed-use building insurance</a></li>
@@ -164,8 +161,6 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <li><a href="../nyc-restaurant-insurance-requirements/">NYC restaurant insurance requirements</a></li>
     <li><a href="../legal/#how-we-are-paid">How we are paid</a></li>
   </ul>
-
-<p>Coverage descriptions are general summaries. The issued policy governs. Coverage is subject to the insurer's underwriting and the terms of the policy.</p>
 </div></section>
 </main>
 <footer class="site-footer">
@@ -173,7 +168,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div>
       <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
       <p class="addr">Commercial and personal insurance.</p>
-      <p class="addr">Garden City, NY</p>
+      <p class="addr">900 Stewart Ave, Suite 210<br>Garden City, NY 11530</p>
       <p class="addr">Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</p>
     </div>
     <div><p class="foot-h">Coverage</p><ul><li><a href="../coverage/#real-estate">Real estate</a></li><li><a href="../coverage/#hospitality">Hospitality</a></li><li><a href="../coverage/#construction">Contractors</a></li><li><a href="../coverage/#professional">Offices</a></li><li><a href="../coverage/#personal">Personal</a></li></ul></div>
@@ -193,7 +188,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
     <div class="wrap desk-foot-links"><p class="foot-links"><a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a></p></div>
   <div class="wrap legal-line">
-    <span>© 2026 SimpleINSURE Brokerage LLC, licensed New York property and casualty insurance broker, <span class="keep-line">NY DFS License No. BR-1984615</span>. Coverage descriptions are general summaries. The issued policy governs. <a href="../legal/">Licenses and disclosures</a>.</span>
+    <span>© 2026 SimpleINSURE Brokerage LLC · NY License BR-1984615 · Garden City, NY · <a href="../legal/">Privacy and licenses</a></span>
   </div>
   <div class="m-foot m-only">
     <div class="wrap">
@@ -212,18 +207,18 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
         <div><p class="foot-h">Office</p><ul>
           <li><a href="tel:+15162267969">(516) 226-7969</a></li>
           <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
-          <li>Garden City, NY</li>
+          <li>900 Stewart Ave, Suite 210, Garden City, NY 11530</li>
           <li>Hours Mon to Fri, 9 to 6 ET, by phone, email or appointment</li>
         </ul></div>
       </div>
       <p class="m-legal foot-links"><a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a></p>
-      <p class="m-legal">© 2026 SimpleINSURE Brokerage LLC, licensed New York property and casualty insurance broker, <span class="keep-line">NY DFS License No. BR-1984615</span>. Coverage descriptions are general summaries. The issued policy governs. <a href="../legal/">Licenses and disclosures</a>.</p>
+      <p class="m-legal">© 2026 SimpleINSURE Brokerage LLC · NY License BR-1984615 · Garden City, NY · <a href="../legal/">Privacy and licenses</a></p>
     </div>
   </div>
 </footer>
 <div class="call-bar" role="region" aria-label="Call or request a checkup">
   <a class="btn" href="tel:+15162267969">Call (516) 226-7969</a>
-  <a class="btn btn-ghost" href="../landlord-checkup/">Free checkup</a>
+  <a class="btn btn-ghost" href="#checkup">Get a call back</a>
 </div>
 <script src="../site.js?v=44" defer></script>
 </body>
