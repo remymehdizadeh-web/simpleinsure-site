@@ -1797,3 +1797,42 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
 @media (max-width: 380px) {
   .call-bar .btn, .call-bar .btn-ghost { font-size: 12.5px; padding: 0 6px; }
 }
+
+/* Coverage page: every practice stays open. No accordion. */
+@media (max-width: 1023px) {
+  .cover-list { padding: 4px 0 36px; background: #fff; }
+  .cover-seg {
+    margin: 0;
+    padding: 22px 0 12px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #e4ebf2;
+    border-radius: 0;
+    box-shadow: none;
+    scroll-margin-top: 112px;
+  }
+  .cover-seg h2 {
+    margin: 0;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -.03em;
+    line-height: 1.05;
+    color: #1B365D;
+  }
+  .cover-line { margin: 8px 0 0; font-size: 16.5px; line-height: 1.45; color: #3E4854; }
+  .cover-links { display: flex; flex-wrap: wrap; gap: 0 18px; margin: 2px 0 0; }
+  .cover-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 8px 0;
+    color: #1B365D;
+    font-size: 16px;
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    border: 0;
+  }
+}
