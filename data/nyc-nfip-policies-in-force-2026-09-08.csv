@@ -1,0 +1,19 @@
+metric,value,notes
+community_number,360497,"NEW YORK, CITY OF"
+as_of,2026-09-08T00:00:00.000Z,asOfDate on the OpenFEMA file
+dataset,OpenFEMA NfipPolicies v3,https://www.fema.gov/api/open/v3/NfipPolicies
+source_records_with_effective_date_in_prior_year,34590,nfipCommunityNumberCurrent eq '360497' and policyEffectiveDate ge '2025-09-08T00:00:00.000Z'
+older_contracts_still_open,0,Should be 0 if the one-year window covers every in-force contract
+contracts_in_force,32273,In force means policyEffectiveDate on or before the file as-of date and policyTerminationDate after that date. Insured units are the sum of policyCount. A condo association contract can cover more than one unit. Contracts with an earlier effective date still open on the as-of date: 0.
+insured_units_in_force,62421,Sum of policyCount
+rental_flagged_insured_units,7497,rentalPropertyIndicator is true. Other records are not treated as owner-occupied.
+sfha_zone_insured_units,16706,floodZoneCurrent starts with A or V. Blank zones are excluded.
+blank_flood_zone_insured_units,28054,floodZoneCurrent empty
+occupancy_11_insured_units,17504,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
+occupancy_12_insured_units,7057,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
+occupancy_13_insured_units,2477,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
+occupancy_15_insured_units,30899,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
+occupancy_16_insured_units,1444,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
+occupancy_17_insured_units,14,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
+occupancy_18_insured_units,2808,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
+occupancy_19_insured_units,218,"OpenFEMA occupancyType. 11 single family, 12 is a 2 to 4 unit residential building."
