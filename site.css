@@ -1181,3 +1181,21 @@ form.wizard .field label{font-size:14.5px;color:var(--navy)}
   form.wizard .field input,form.wizard .field select,form.wizard .field textarea{border-radius:12px !important}
 }
 @media (max-width:980px){.qf-trust{font-size:12.5px !important;white-space:nowrap}.qf-trust span{overflow:hidden;text-overflow:ellipsis}}
+
+/* Desktop polish only. Same sections, a little more air and a clearer crop. */
+@media (min-width:1024px){
+  html.rail .h-intro{padding-bottom:88px}
+  html.rail .slide-copy{left:40px;right:40px;bottom:40px}
+  .client-result.client-result-grays{padding-top:96px;box-sizing:border-box}
+  .client-result-grays .result-photo img{object-position:center 58%}
+  .client-result-grays .points{margin-top:32px}
+  .client-result-grays .points li{font-size:18px;line-height:1.35;padding:18px 22px;border-color:transparent}
+  .client-result-grays .result-foot{margin-top:16px}
+  .home-cb .lp-hours{margin-top:18px;color:var(--muted);font-size:16px}
+  #grays,.home-cb{scroll-margin-top:12px}
+}
+@media (min-width:1024px) and (hover:hover){
+  html.rail .slide-copy strong{transition:transform .45s var(--ease)}
+  html.rail .slide:hover .slide-copy strong,
+  html.rail .slide:focus-within .slide-copy strong{transform:translateY(-3px) !important}
+}
