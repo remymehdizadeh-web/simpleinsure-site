@@ -1080,6 +1080,7 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .bar{backgro
 }
 /* The big line keeps its size. The H1 is the smaller line above it. Footer labels are not headings. */
 .hero h1.kicker{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.3;letter-spacing:0;text-transform:none;max-width:20em;margin:0 0 14px;color:#E7F1FB}
+.hero h1.kicker:before{display:none}
 .hero .brand-line,.hero-copy .brand-line{font-family:var(--serif);font-size:clamp(64px,6.4vw,92px);font-weight:500;line-height:.96;letter-spacing:-.03em;color:#fff;max-width:9em;margin:0}
 .hero .brand-line .line,.hero .brand-line .line>span{display:block}
 .page-head h1.kicker{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.3;letter-spacing:0;text-transform:none;max-width:24em;margin:0 0 12px;color:#C5DFF6}
@@ -1114,6 +1115,7 @@ ul.points,ol.points,.prose ul.points,.prose ol.points{list-style:none;display:gr
 .page-head.lp-fold{padding-bottom:64px}
 .page-head.lp-fold h1{font-size:clamp(38px,4vw,58px);max-width:13em}
 .lp-call{margin-top:28px;min-height:60px;padding:0 30px;font-size:19px;font-weight:650;gap:12px}
+.prose > a.lp-call{display:flex;width:min(100%,560px);margin-bottom:16px;box-sizing:border-box}
 .lp-call svg{width:20px;height:20px;flex:none}
 .lp-hours{margin:12px 0 0;color:#C5DFF6;font-size:15px}
 
