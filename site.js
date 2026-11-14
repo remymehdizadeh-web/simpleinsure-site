@@ -355,11 +355,14 @@
     filter();
   }
 
+  function cleanLabel(text) {
+    return String(text || "").replace(/\s+/g, " ").replace(/\s+Optional$/i, "").trim();
+  }
   function lineLabel(form) {
     var checked = form.querySelector('input[name="line"]:checked');
     if (!checked) return "";
     var lab = form.querySelector('label[for="' + checked.id + '"]');
-    return lab ? lab.textContent.replace(/\s+/g, " ").trim() : checked.value;
+    return lab ? cleanLabel(lab.textContent) : checked.value;
   }
   function applyLine(form) {
     var checked = form.querySelector('input[name="line"]:checked');
@@ -372,6 +375,8 @@
         input.disabled = !ok;
       });
     });
+    var title = form.querySelector("[data-line-title]");
+    if (title) title.textContent = lineLabel(form) || "Details";
   }
   function offForm(el, form) {
     for (var n = el.parentNode; n && n !== form; n = n.parentNode) {
@@ -382,15 +387,23 @@
   function collect(form) {
     var lines = [];
     var label = lineLabel(form);
-    if (label) lines.push("Account: " + label);
+    if (label) lines.push((form.getAttribute("data-line-key") || "Account") + ": " + label);
     var seen = {};
     form.querySelectorAll("input, select, textarea").forEach(function (el) {
-      if (el.disabled || el.type === "radio" || el.type === "checkbox" || el.type === "file" || !el.name || el.name.charAt(0) === "_") return;
+      if (el.disabled || el.type === "checkbox" || el.type === "file" || el.type === "submit" || el.type === "button" || !el.name || el.name.charAt(0) === "_") return;
+      if (el.type === "radio" && (el.name === "line" || !el.checked)) return;
       if (offForm(el, form)) return;
       var val = String(el.value || "").trim();
+      if (el.type === "radio") {
+        var rlab = form.querySelector('label[for="' + el.id + '"]');
+        val = rlab ? cleanLabel(rlab.textContent) : val;
+      }
       if (!val) return;
-      var lab = form.querySelector('label[for="' + el.id + '"]');
-      var name = lab ? lab.textContent.trim() : el.name;
+      var name = el.getAttribute("data-field");
+      if (!name) {
+        var lab = form.querySelector('label[for="' + el.id + '"]');
+        name = lab ? cleanLabel(lab.textContent) : el.name;
+      }
       if (seen[el.id]) return;
       seen[el.id] = 1;
       lines.push(name + ": " + val);
@@ -806,15 +819,27 @@
       showFallback(form, subject, mailLines, "timeout");
     }, FALLBACK_WAIT_MS);
     attempt.hard = setTimeout(giveUp, files.length ? FALLBACK_UPLOAD_GIVE_UP_MS : FALLBACK_GIVE_UP_MS);
+    function landedOnThanks() {
+      var info = frameLocation(frame);
+      if (!info || info.unreadable) return false;
+      var path = info.path || "";
+      return path === "/thank-you" || path.indexOf("/thank-you/") === 0;
+    }
     frame.addEventListener("load", function () {
       if (!attempt.posted || attempt.settled) return;
       var info = frameLocation(frame);
       if (isBlankFrame(info)) return;
-      // Thank-you, a cross-origin document, or an unreadable location (null, or still
-      // on formsubmit.co). A 200 HTML page, interstitial, or redirect counts as a
-      // likely success. A browser error page is opaque as well, so a failed navigation
-      // that still fires load is counted here. A request that never loads, or an error
-      // event, uses the fallback. A later load still counts after that fallback is shown.
+      if (form.hasAttribute("data-require-thanks")) {
+        // Quote requests count only when the frame reaches /thank-you/.
+        // A Cloudflare error page or a challenge is not a sent request.
+        // The timeout still shows the email and phone fallback.
+        // A later load of /thank-you/ still counts, including after that fallback.
+        if (landedOnThanks()) succeed();
+        return;
+      }
+      // Other forms: a thank-you page, a cross-origin document, or an unreadable
+      // location counts as a likely success. A later load still counts after the
+      // fallback is shown.
       succeed();
     });
     frame.addEventListener("error", function () {
@@ -839,6 +864,7 @@
     var label = form.querySelector("[data-steplabel]");
     addHoney(form);
     function show(n) {
+      var prev = step;
       step = n;
       panes.forEach(function (p) { p.hidden = Number(p.getAttribute("data-step")) !== n; });
       if (back) back.hidden = n === 1;
@@ -847,34 +873,107 @@
       if (count) count.textContent = n + " of " + total;
       if (label) label.textContent = (panes[n - 1] && panes[n - 1].getAttribute("data-label")) || "";
       if (err) err.hidden = true;
+      if (form.hasAttribute("data-focus-step") && form.__ready && prev !== n) {
+        var head = panes[n - 1] && panes[n - 1].querySelector("[data-step-heading]");
+        if (head) {
+          if (!head.hasAttribute("tabindex")) head.setAttribute("tabindex", "-1");
+          head.focus();
+        }
+        if (form.scrollIntoView) {
+          try { form.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" }); } catch (e1) {}
+        }
+      }
+    }
+    function errorSlot(el) {
+      var box = el.closest && el.closest(".q-field");
+      if (box) {
+        var own = box.querySelector(".field-error");
+        if (own) return own;
+      }
+      if (el.type === "radio") {
+        var fs = el.closest && el.closest("fieldset");
+        var inSet = fs && fs.querySelector(".field-error");
+        if (inSet) return inSet;
+      }
+      var pane = el.closest && el.closest("[data-step]");
+      return pane ? pane.querySelector(".q-step-error") : null;
+    }
+    function fieldMessage(el) {
+      var val = String(el.value || "").trim();
+      var check = el.getAttribute("data-check") || "";
+      if (el.type === "radio") return "";
+      if (!val) {
+        if (!el.required) return "";
+        return el.getAttribute("data-error") || null;
+      }
+      if (check === "zip" && !/^\d{5}(?:-\d{4})?$/.test(val)) return "Use a 5-digit ZIP code.";
+      if (check === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return "Check the email address.";
+      if (check === "phone") {
+        var digits = val.replace(/\D/g, "");
+        if (digits.length === 11 && digits.charAt(0) === "1") digits = digits.slice(1);
+        if (digits.length !== 10) return "Use a 10-digit phone number.";
+      }
+      return "";
+    }
+    function clearFieldErrors(scope) {
+      (scope || form).querySelectorAll("[aria-invalid]").forEach(function (el) { el.removeAttribute("aria-invalid"); });
+      (scope || form).querySelectorAll(".field-error").forEach(function (slot) { slot.hidden = true; slot.textContent = ""; });
     }
     function validate(pane) {
+      clearFieldErrors(pane);
       var problem = null;
+      var problemMsg = "";
       var radios = {};
+      function fail(el, msg) {
+        if (!problem) {
+          problem = el;
+          problemMsg = msg;
+        }
+        el.setAttribute("aria-invalid", "true");
+        if (el === problem) {
+          var slot = errorSlot(el);
+          if (slot) {
+            slot.textContent = msg;
+            slot.hidden = false;
+          }
+        }
+      }
       pane.querySelectorAll("input, select, textarea").forEach(function (el) {
-        if (el.disabled || el.closest("[hidden]")) return;
+        if (el.disabled || el.type === "hidden" || el.type === "file" || !el.name || el.name.charAt(0) === "_") return;
         if (el.type === "radio") {
-          if (el.required) radios[el.name] = el;
+          if (el.required) radios[el.name] = radios[el.name] || el;
           return;
         }
         if (el.type === "checkbox") {
           if (el.name === "consent") return;
-          if (el.required && !el.checked) problem = problem || el;
+          if (el.required && !el.checked) fail(el, el.getAttribute("data-error") || pane.getAttribute("data-error") || "Please complete the required fields.");
           return;
         }
-        if (el.required && !String(el.value || "").trim()) problem = problem || el;
+        var msg = fieldMessage(el);
+        if (msg === null) msg = pane.getAttribute("data-error") || "Please complete the required fields.";
+        if (msg) fail(el, msg);
       });
       Object.keys(radios).forEach(function (name) {
-        if (!pane.querySelector('input[name="' + name + '"]:checked')) problem = problem || radios[name];
+        if (pane.querySelector('input[name="' + name + '"]:checked')) return;
+        var el = radios[name];
+        fail(el, el.getAttribute("data-error") || pane.getAttribute("data-error") || "Choose one.");
       });
       var email = pane.querySelector("[data-need='email']");
       var phone = pane.querySelector("[data-need='phone']");
       var needContact = email && phone && !email.disabled && !String(email.value || "").trim() && !String(phone.value || "").trim();
-      if (needContact) problem = problem || email;
+      if (needContact && !problem) {
+        problem = email;
+        problemMsg = "Add an email or a phone number so a broker can reply.";
+        email.setAttribute("aria-invalid", "true");
+        var contactSlot = errorSlot(email);
+        if (contactSlot) { contactSlot.textContent = problemMsg; contactSlot.hidden = false; }
+      }
       if (problem && err) {
-        if (needContact && problem === email) err.textContent = "Add an email or a phone number so a broker can reply.";
-        else err.textContent = pane.getAttribute("data-error") || "Please complete the required fields.";
-        err.hidden = false;
+        if (errorSlot(problem)) err.hidden = true;
+        else {
+          err.textContent = problemMsg || pane.getAttribute("data-error") || "Please complete the required fields.";
+          err.hidden = false;
+        }
       }
       if (problem && problem.focus) problem.focus();
       return !problem;
@@ -890,6 +989,11 @@
       if (!validate(pane)) return;
       if (step < total) { show(step + 1); return; }
       var subject = (form.getAttribute("data-subject") || "Request") + (lineLabel(form) ? ": " + lineLabel(form) : "");
+      if (form.hasAttribute("data-subject-with-name")) {
+        var nameInput = form.querySelector('input[name="name"]');
+        var who = nameInput ? String(nameInput.value || "").replace(/\s+/g, " ").trim() : "";
+        if (who) subject += " - " + who.slice(0, 80);
+      }
       sendForm(form, subject, collect(form));
     });
     if (total === 1) {
@@ -898,10 +1002,36 @@
       if (prog) prog.hidden = true;
       if (met) met.hidden = true;
     }
+    form.addEventListener("input", function (e) {
+      var el = e.target;
+      if (!el || !el.removeAttribute) return;
+      el.removeAttribute("aria-invalid");
+      var slot = errorSlot(el);
+      if (slot) { slot.hidden = true; slot.textContent = ""; }
+    });
+    form.addEventListener("change", function (e) {
+      var el = e.target;
+      if (!el || el.type !== "radio" || !el.name) return;
+      paneRadios(el);
+    });
+    function paneRadios(el) {
+      var pane = el.closest("[data-step]") || form;
+      pane.querySelectorAll('input[name="' + el.name + '"]').forEach(function (r) { r.removeAttribute("aria-invalid"); });
+      var slot = errorSlot(el);
+      if (slot) { slot.hidden = true; slot.textContent = ""; }
+    }
     var params = new URLSearchParams(location.search);
-    var preset = params.get("line") || params.get("type");
-    if (preset && /^(real-estate|hospitality|construction|professional|personal|unsure)$/.test(preset)) {
+    var presetRaw = params.get("line") || params.get("type") || "";
+    var preset = /^[a-z0-9-]{1,40}$/.test(presetRaw) ? presetRaw : "";
+    if (preset) {
       var radio = form.querySelector('input[name="line"][value="' + preset + '"]');
+      if (!radio) {
+        var aliasRadios = form.querySelectorAll("input[name='line'][data-alias]");
+        for (var ai = 0; ai < aliasRadios.length; ai++) {
+          var aliases = (aliasRadios[ai].getAttribute("data-alias") || "").split(/\s+/);
+          if (aliases.indexOf(preset) !== -1) { radio = aliasRadios[ai]; break; }
+        }
+      }
       if (radio) {
         radio.checked = true;
         applyLine(form);
@@ -911,6 +1041,7 @@
       }
     }
     show(step);
+    form.__ready = true;
     var copy = form.querySelector("[data-copy]");
     if (copy) {
       copy.addEventListener("click", function () {
