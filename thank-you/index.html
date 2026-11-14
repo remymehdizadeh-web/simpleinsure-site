@@ -98,8 +98,12 @@ if (window.top === window.self) {
     reason = new URLSearchParams(location.search).get("reason") || sessionStorage.getItem("si_reason") || "";
     sessionStorage.removeItem("si_reason");
   } catch (e) {}
-  if (reason === "landlord-checkup" || reason === "building-checkup" || /-callback$/.test(reason)) {
-    var lede = document.getElementById("thanks-lede");
+  var lede = document.getElementById("thanks-lede");
+  if (reason === "quote") {
+    var title = document.querySelector("#main h1 .line span");
+    if (title) title.textContent = "Thanks, we'll get back to you with quotes shortly.";
+    if (lede) lede.hidden = true;
+  } else if (reason === "landlord-checkup" || reason === "building-checkup" || /-callback$/.test(reason)) {
     if (lede) lede.textContent = "A licensed broker will reply the same business day when the request is received before 4 PM ET.";
   }
 })();
