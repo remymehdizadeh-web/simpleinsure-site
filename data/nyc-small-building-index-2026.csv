@@ -1,0 +1,38 @@
+record_type,key,value,notes
+meta,dataset,NYC DCP PLUTO via NYC Open Data 64uk-42ks,https://data.cityofnewyork.us/City-Government/Primary-Land-Use-Tax-Lot-Output-PLUTO-/64uk-42ks
+meta,pulled_utc,2026-11-10T05:22:14Z,Time this script requested the file
+meta,open_data_rows_updated_utc,2026-08-24T20:48:51Z,rowsUpdatedAt on the Socrata view
+meta,version_row_count,858284,26v2
+meta,small_filter,unitsres between 1 and 4 AND numbldgs = 1 AND (lot < 1001 OR lot > 6999),Index lots
+meta,residential_filter,unitsres >= 1 AND numbldgs = 1 AND (lot < 1001 OR lot > 6999),Denominator for the share
+borough_summary,MN,9396,Manhattan; residential_one_building_lots=30463; share_pct=30.8
+borough_summary,BX,52016,Bronx; residential_one_building_lots=60827; share_pct=85.5
+borough_summary,BK,166838,Brooklyn; residential_one_building_lots=193204; share_pct=86.4
+borough_summary,QN,163310,Queens; residential_one_building_lots=173377; share_pct=94.2
+borough_summary,SI,94804,Staten Island; residential_one_building_lots=95172; share_pct=99.6
+by_units,BK:1,42071,Brooklyn
+by_units,BK:2,82624,Brooklyn
+by_units,BK:3,31058,Brooklyn
+by_units,BK:4,11085,Brooklyn
+by_units,BX:1,16515,Bronx
+by_units,BX:2,24581,Bronx
+by_units,BX:3,9258,Bronx
+by_units,BX:4,1662,Bronx
+by_units,MN:1,2824,Manhattan
+by_units,MN:2,2629,Manhattan
+by_units,MN:3,2213,Manhattan
+by_units,MN:4,1730,Manhattan
+by_units,QN:1,78830,Queens
+by_units,QN:2,61280,Queens
+by_units,QN:3,19447,Queens
+by_units,QN:4,3753,Queens
+by_units,SI:1,67261,Staten Island
+by_units,SI:2,26602,Staten Island
+by_units,SI:3,664,Staten Island
+by_units,SI:4,277,Staten Island
+citywide_by_units,1,207501,Sum of the by_units rows for this residential unit count
+citywide_by_units,2,197716,Sum of the by_units rows for this residential unit count
+citywide_by_units,3,62640,Sum of the by_units rows for this residential unit count
+citywide_by_units,4,18507,Sum of the by_units rows for this residential unit count
+citywide,small_lots,486364,share_of_residential_one_building_lots_pct=87.9
+citywide,residential_one_building_lots,553043,Denominator
