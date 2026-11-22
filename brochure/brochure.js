@@ -1,137 +1,134 @@
-/* Reader for the two-page agency overview.
-   page-flip (MIT) draws the curl. Wide screens open on both pages.
-   A phone shows one page, and a swipe or the arrows turns it. */
+/* page-flip (MIT) turns the pages.
+   Wide screens show a spread. A narrow screen shows one page.
+   Page shape comes from the first image, so a square booklet works
+   the same way as the current letter-size placeholder.
+   Add a .brochure-page for each new page. Leave src off after the first
+   and set data-src so later pages load when the reader reaches them. */
 (function () {
-  var shell = document.getElementById("shell");
   var book = document.getElementById("book");
   var prev = document.getElementById("prev");
   var next = document.getElementById("next");
-  var spreadBtn = document.getElementById("spread");
   var status = document.getElementById("status");
-  if (!shell || !book || !window.St || !window.St.PageFlip) return;
+  if (!book || !window.St || !window.St.PageFlip) return;
 
   var pages = book.querySelectorAll(".brochure-page");
+  if (!pages.length) return;
+  var firstImg = pages[0].querySelector("img");
+  var pageW = parseInt(firstImg && firstImg.getAttribute("width"), 10) || 1000;
+  var pageH = parseInt(firstImg && firstImg.getAttribute("height"), 10) || 1000;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   var flip = new St.PageFlip(book, {
-    width: 612,
-    height: 792,
+    width: pageW,
+    height: pageH,
     size: "stretch",
-    minWidth: 250,
-    maxWidth: 680,
-    minHeight: 320,
-    maxHeight: 920,
-    drawShadow: true,
-    flippingTime: reduce ? 1 : 750,
+    minWidth: 260,
+    maxWidth: 640,
+    minHeight: 260,
+    maxHeight: 900,
+    drawShadow: false,
+    flippingTime: reduce ? 1 : 700,
     usePortrait: true,
     startPage: 0,
     autoSize: true,
-    maxShadowOpacity: 0.35,
+    maxShadowOpacity: 0,
     showCover: false,
     mobileScrollSupport: true,
     swipeDistance: 28,
     clickEventForward: true,
     useMouseEvents: true,
-    showPageCorners: true,
-    disableFlipByClick: false,
+    showPageCorners: false,
+    disableFlipByClick: true,
     startZIndex: 2
   });
 
   flip.loadFromHTML(pages);
   book.classList.add("is-ready");
 
-  var later = document.getElementById("page-2");
-  function loadLater() {
-    if (!later || later.getAttribute("src")) return;
-    later.src = later.getAttribute("data-src");
-    later.srcset = later.getAttribute("data-srcset");
-    later.sizes = later.getAttribute("data-sizes");
-  }
-  if (flip.getOrientation() !== "portrait") loadLater();
-  else {
-    var kick = function () { loadLater(); };
-    setTimeout(kick, 600);
-    book.addEventListener("touchstart", kick, { passive: true, once: true });
-    next.addEventListener("pointerdown", kick, { once: true });
-  }
-
   function portrait() {
     return flip.getOrientation() === "portrait";
   }
-  function single() {
-    return shell.classList.contains("is-single");
+  function count() {
+    return flip.getPageCount();
+  }
+  function index() {
+    return flip.getCurrentPageIndex();
   }
   function busy() {
     return flip.getState() === "flipping";
   }
-  function layout() {
-    flip.getUI().update();
-    mark();
+  function canPrev() {
+    return index() > 0;
+  }
+  function canNext() {
+    var i = index();
+    var n = count();
+    if (portrait()) return i < n - 1;
+    return i + 2 < n;
+  }
+  function loadPage(i) {
+    var page = pages[i];
+    if (!page) return;
+    var img = page.querySelector("img");
+    if (!img || img.getAttribute("src") || !img.getAttribute("data-src")) return;
+    img.src = img.getAttribute("data-src");
+    if (img.getAttribute("data-srcset")) img.srcset = img.getAttribute("data-srcset");
+    if (img.getAttribute("data-sizes")) img.sizes = img.getAttribute("data-sizes");
+  }
+  function visibleLast() {
+    var i = index();
+    if (portrait()) return i;
+    return Math.min(count() - 1, i + 1);
+  }
+  function ensureVisible() {
+    var last = visibleLast();
+    var p;
+    for (p = 0; p <= last; p++) loadPage(p);
+  }
+  function preloadNext() {
+    var i = visibleLast();
+    loadPage(i + 1);
+    loadPage(i + 2);
   }
   function mark() {
-    var spread = !portrait() && !single();
-    shell.classList.toggle("is-spread", spread);
-    shell.classList.toggle("is-portrait", !spread);
-    var index = flip.getCurrentPageIndex();
-    if (spread) {
-      status.textContent = "Pages 1 and 2 of 2";
-      prev.disabled = true;
-      next.disabled = false;
-    } else {
-      status.textContent = "Page " + (index + 1) + " of 2";
-      prev.disabled = index <= 0 && !single();
-      next.disabled = index >= flip.getPageCount() - 1;
-    }
-    spreadBtn.hidden = !single();
-    book.setAttribute("aria-label", status.textContent + ". Agency overview brochure.");
+    var n = count();
+    var i = index();
+    var alone = portrait() || i + 1 >= n;
+    var text = alone
+      ? "Page " + (i + 1) + " of " + n
+      : "Pages " + (i + 1) + " and " + (i + 2) + " of " + n;
+    status.textContent = text;
+    prev.disabled = !canPrev();
+    next.disabled = !canNext();
+    book.setAttribute("aria-label", text + ". Our brochure.");
   }
   function goNext() {
-    if (busy()) return;
-    loadLater();
-    if (!portrait() && !single()) {
-      loadLater();
-      shell.classList.add("is-single");
-      layout();
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () { flip.flipNext("bottom"); });
-      });
-      return;
-    }
+    if (busy() || !canNext()) return;
+    preloadNext();
     flip.flipNext("bottom");
   }
   function goPrev() {
-    if (busy()) return;
-    if (!portrait() && !single()) return;
-    if (single() && flip.getCurrentPageIndex() <= 0) {
-      shell.classList.remove("is-single");
-      layout();
-      return;
-    }
+    if (busy() || !canPrev()) return;
     flip.flipPrev("bottom");
-  }
-  function showSpread() {
-    if (busy()) return;
-    shell.classList.remove("is-single");
-    layout();
-    book.focus();
   }
 
   prev.addEventListener("click", goPrev);
   next.addEventListener("click", goNext);
-  spreadBtn.addEventListener("click", showSpread);
-
   book.addEventListener("click", function (e) {
     if (e.target.closest("a, button")) return;
-    if (portrait() || single()) return;
     var rect = book.getBoundingClientRect();
     if (e.clientX > rect.left + rect.width / 2) goNext();
+    else goPrev();
   });
+  book.addEventListener("touchstart", function () { preloadNext(); }, { passive: true });
+  next.addEventListener("pointerdown", function () { preloadNext(); });
 
   document.addEventListener("keydown", function (e) {
     if (e.altKey || e.metaKey || e.ctrlKey) return;
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft" && e.key !== "Home" && e.key !== "End") return;
     var target = e.target;
     if (target && target.closest("input, textarea, select, summary, a")) return;
-    if (target && target.closest("button") && !target.closest(".brochure-turn")) return;
+    if (target && target.closest("button") && !target.closest(".brochure-nav")) return;
     if (target && target.closest("header, footer")) return;
     if (e.key === "ArrowRight") {
       e.preventDefault();
@@ -141,20 +138,28 @@
       goPrev();
     } else if (e.key === "Home") {
       e.preventDefault();
-      if (single()) showSpread();
-      else flip.turnToPage(0);
+      flip.turnToPage(0);
     } else if (e.key === "End") {
       e.preventDefault();
-      if (!portrait() && !single()) goNext();
-      else flip.flip(flip.getPageCount() - 1, "bottom");
+      var p;
+      for (p = 0; p < count(); p++) loadPage(p);
+      flip.turnToPage(count() - 1);
     }
   });
 
-  flip.on("flip", mark);
-  flip.on("changeOrientation", mark);
-  flip.on("init", mark);
-  window.addEventListener("load", function () {
-    layout();
+  flip.on("flip", function () {
+    ensureVisible();
+    mark();
   });
+  flip.on("changeOrientation", function () {
+    ensureVisible();
+    mark();
+  });
+  flip.on("init", function () {
+    ensureVisible();
+    mark();
+  });
+  ensureVisible();
+  setTimeout(preloadNext, 700);
   mark();
 })();
