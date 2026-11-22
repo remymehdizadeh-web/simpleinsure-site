@@ -1,0 +1,239 @@
+/* Brochure reader. The page images are the brochure. This file only
+   frames them so the flipbook sits in the same header and footer as
+   the rest of the site. */
+
+@media (min-width: 1024px){
+  .page-brochure .page-head{
+    padding: calc(var(--header) + 28px) 0 18px;
+  }
+  .page-brochure .page-head h1{
+    font-size: clamp(40px, 4vw, 56px);
+  }
+  .page-brochure .page-head .lede{ margin-top: 8px; }
+  .page-brochure .page-head .cta-row{ margin-top: 14px; }
+}
+
+.brochure-stage{
+  position: relative;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 38%, #f8fbfd 0%, #e6eef6 52%, #d5e2ef 100%);
+  padding: 18px 0 28px;
+}
+.book-shell{
+  position: relative;
+  width: min(1040px, calc(100% - 64px));
+  margin: 0 auto;
+}
+@media (min-width: 780px) and (min-height: 720px){
+  .book-shell{
+    width: min(1040px, calc(100% - 64px), calc((100svh - 380px) * 1.5455));
+  }
+}
+.book-shell.is-single{
+  width: min(460px, calc(100% - 36px));
+  width: min(460px, calc(100% - 36px), calc((100svh - 230px) / 1.2941));
+}
+.book{
+  position: relative;
+  margin: 0 auto;
+  outline: none;
+}
+.book:focus-visible{
+  outline: 2px solid var(--navy);
+  outline-offset: 6px;
+}
+.book:not(.is-ready){
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.brochure-page{
+  background: #0c1c33;
+  overflow: hidden;
+}
+.brochure-page.is-inside{ background: #f4f1ea; }
+.brochure-page img{
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.book.is-ready{
+  display: block;
+  filter: drop-shadow(0 22px 34px rgba(6, 24, 47, .28)) drop-shadow(0 2px 4px rgba(6, 24, 47, .12));
+}
+.book.is-ready .brochure-page img{
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+}
+.spine{
+  display: none;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 34px;
+  margin-left: -17px;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(6, 16, 32, 0) 0%,
+    rgba(6, 16, 32, .16) 38%,
+    rgba(255, 255, 255, .28) 50%,
+    rgba(6, 16, 32, .2) 62%,
+    rgba(6, 16, 32, 0) 100%);
+}
+.book-shell.is-spread .spine{ display: block; }
+
+.brochure-tools{
+  width: min(1120px, calc(100% - 48px));
+  margin: 22px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 18px;
+}
+.brochure-turn{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.turn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid #c5d3e2;
+  background: #fff;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 620;
+  letter-spacing: .01em;
+  cursor: pointer;
+}
+.turn svg{ width: 18px; height: 18px; display: block; }
+.turn:hover{ border-color: var(--navy); color: var(--navy); }
+.turn:disabled{
+  opacity: .38;
+  cursor: default;
+  border-color: #d5deea;
+}
+.turn[hidden]{ display: none; }
+.brochure-status{
+  min-width: 9.5em;
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 640;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.brochure-hint{
+  width: min(1120px, calc(100% - 48px));
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.brochure-read{
+  background: #fff;
+  padding: 8px 0 36px;
+}
+.brochure-read summary{
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 18px 0;
+  cursor: pointer;
+  font-weight: 640;
+  color: var(--navy);
+  list-style: none;
+}
+.brochure-read summary::-webkit-details-marker{ display: none; }
+.brochure-read summary:before{
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg) translateY(-2px);
+}
+.brochure-read[open] summary:before{
+  transform: rotate(45deg) translateY(-2px);
+}
+.brochure-read .prose{ padding-bottom: 12px; }
+.brochure-read .prose h2{ font-family: var(--serif); font-weight: 500; }
+.brochure-read .fine{
+  margin-top: 22px;
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.brochure-read address{
+  font-style: normal;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.static-fallback{ margin-top: 18px; }
+.static-fallback img{ width: min(640px, 100%); height: auto; }
+
+@media (min-width: 780px){
+  .book:not(.is-ready){ grid-template-columns: 1fr 1fr; gap: 0; }
+}
+@media (max-width: 1023px){
+  .page-brochure .page-head{ padding: 104px 0 2px; }
+}
+@media (max-width: 779px){
+  .brochure-stage{ padding: 10px 0 20px; }
+  .book-shell,
+  .book-shell.is-single{
+    width: min(520px, calc(100% - 28px));
+  }
+  .brochure-tools,
+  .brochure-hint,
+  .brochure-read summary{
+    width: calc(100% - 28px);
+  }
+  .brochure-tools{ gap: 12px; }
+  .brochure-turn{ width: 100%; justify-content: space-between; }
+  .brochure-status{ min-width: 0; flex: 1; }
+  .turn span{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+  .turn{ width: 44px; padding: 0; }
+  .brochure-tools .btn{ width: 100%; }
+}
+@media (prefers-reduced-motion: reduce){
+  .book.is-ready{ filter: drop-shadow(0 12px 20px rgba(6, 24, 47, .2)); }
+}
+@media print{
+  .site-header, .brochure-tools, .brochure-hint, .spine, .site-footer{ display: none !important; }
+  .brochure-stage{ background: #fff; padding: 0; }
+  .book-shell, .book-shell.is-single{ width: 100% !important; }
+  .book, .book.is-ready{ display: block !important; filter: none !important; }
+  .brochure-page{
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    page-break-after: always;
+    break-after: page;
+  }
+  .brochure-page img{
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  .brochure-read{ display: block; }
+}
