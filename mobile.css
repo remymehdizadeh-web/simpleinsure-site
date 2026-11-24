@@ -1982,3 +1982,17 @@ body{background:#f4f8fc}
 #sheet .sheet-cta a,#sheet .sheet-cta a.btn{color:#fff}
 #sheet,#sheet:before,#sheet:after{background:#071525 !important;opacity:1}
 #sheet:before,#sheet:after{content:none !important;display:none !important}
+
+.site-header{top:0 !important;padding:10px 0 0 !important;background:transparent !important;transform:none !important}
+.site-header:before,.site-header:after{content:none !important;display:none !important;background:transparent !important}
+.bar,html.scrolled .bar,html:not(.scrolled) body.page-home:not(.nav-open) .bar{
+  width:calc(100% - 16px) !important;height:60px !important;margin:0 auto !important;
+  border-radius:999px !important;background:#fff !important;color:#1B365D !important;
+  box-shadow:0 10px 24px rgba(10,37,64,.14) !important;
+}
+.logo img,html.scrolled .logo img{height:28px !important;filter:none !important}
+.sheet{top:calc(78px + env(safe-area-inset-top)) !important}
+@media (max-width: 800px) {
+  .who-grid { grid-template-columns: 1fr 1fr; }
+  .who-grid .img-card { min-height: 220px; }
+}

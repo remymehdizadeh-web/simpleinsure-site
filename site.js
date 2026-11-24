@@ -1347,4 +1347,49 @@
     if (next) next.addEventListener("click", function () { show(i + 1); });
     show(0);
   });
+
+  d.querySelectorAll("[data-line-pick]").forEach(function (root) {
+    var buttons = root.querySelectorAll("[data-pick]");
+    var img = root.querySelector("[data-pick-img]");
+    var title = root.querySelector("[data-pick-title]");
+    var text = root.querySelector("[data-pick-text]");
+    function apply(btn) {
+      buttons.forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle("is-on", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      if (img) {
+        img.src = btn.getAttribute("data-img");
+        var srcset = btn.getAttribute("data-srcset");
+        if (srcset) img.setAttribute("srcset", srcset);
+        img.alt = btn.getAttribute("data-alt") || "";
+      }
+      if (title) title.textContent = btn.getAttribute("data-title") || btn.textContent;
+      if (text) text.textContent = btn.getAttribute("data-text") || "";
+    }
+    buttons.forEach(function (btn) {
+      btn.addEventListener("mouseenter", function () { apply(btn); });
+      btn.addEventListener("focus", function () { apply(btn); });
+      btn.addEventListener("click", function () { apply(btn); });
+    });
+    if (buttons[0]) apply(buttons[0]);
+  });
+
+  d.querySelectorAll("[data-faq-board]").forEach(function (board) {
+    var tabs = board.querySelectorAll("[data-faq-tab]");
+    var panels = board.querySelectorAll("[data-faq-panel]");
+    function open(i) {
+      tabs.forEach(function (tab, n) {
+        var on = n === i;
+        tab.classList.toggle("is-on", on);
+        tab.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      panels.forEach(function (panel, n) { panel.classList.toggle("is-on", n === i); });
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { open(i); });
+    });
+    open(0);
+  });
 })();
