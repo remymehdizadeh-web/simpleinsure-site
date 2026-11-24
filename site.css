@@ -1442,7 +1442,8 @@ html.motion.js .reveal:not(.is-in){opacity:0;transform:translate3d(0,18px,0)}
 html.motion.js .reveal{transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
 html.motion.js .reveal.is-in{opacity:1;transform:none}
 html.motion .lift{transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
-html.motion .lift:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(6,24,47,.12)}
+html.motion .lift:hover,
+html.motion.js .reveal.lift.is-in:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(6,24,47,.12)}
 html.motion .hero .ken{animation:ken-drift 32s ease-in-out alternate infinite}
 @keyframes ken-drift{from{transform:scale(1.06)}to{transform:scale(1.14) translate3d(-1.2%,-1%,0)}}
 html.motion .hero-media:after{content:"";position:absolute;inset:-8%;z-index:1;pointer-events:none;background:radial-gradient(circle at 28% 40%,rgba(156,201,240,.16),transparent 46%);animation:shade-drift 18s ease-in-out infinite alternate}
