@@ -23,13 +23,13 @@
 <style>
 .m-only{display:none}
 @media (max-width:980px){
-  .site-header{position:fixed !important;top:calc(12px + env(safe-area-inset-top)) !important;left:0 !important;right:0 !important;padding-top:0 !important;z-index:80 !important;transform:translate3d(0,var(--header-shift,0px),0)}
-  .site-header:before{content:"";position:absolute;left:0;right:0;bottom:100%;height:calc(12px + env(safe-area-inset-top));background:transparent;pointer-events:none}
-  html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
+  .site-header{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;padding-top:0 !important;z-index:80 !important;transform:none !important}
+  .site-header:before{content:none !important;display:none !important;background:transparent !important}
+  html.veil .site-header:before{content:none !important;display:none !important;background:transparent !important}
 }
 </style>
-<link rel="stylesheet" href="../site.css?v=54">
-<link rel="stylesheet" href="../mobile.css?v=34">
+<link rel="stylesheet" href="../site.css?v=56">
+<link rel="stylesheet" href="../mobile.css?v=36">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -49,12 +49,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 <header class="site-header">
   <div class="bar">
     <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-    <nav class="nav-desk" aria-label="Primary"><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+    <nav class="nav-desk" aria-label="Primary"><div class="drop mega is-here"><button type="button" aria-expanded="true" aria-controls="menu-coverage" aria-current="page">Coverage</button><div class="mega-panel" id="menu-coverage" role="region" aria-label="Coverage"><div class="mega-grid"><div><p class="mega-k">Coverage</p><a href="../real-estate-program/"><b>Real Estate Program</b><small>The specialty. New York, Queens, and Long Island.</small></a><a href="../coverage/#property"><b>Property</b><small>The building, the contents, and loss of rents.</small></a><a href="../coverage/#liability"><b>General liability</b><small>Premises and operations.</small></a><a href="../coverage/#workers-compensation"><b>Workers compensation</b><small>For employees in New York.</small></a><a href="../business-owners-policy/"><b>Businessowners policy</b><small>Property and liability, for some firms.</small></a></div><div><p class="mega-k">Also</p><a href="../coverage/#umbrella"><b>Umbrella and excess</b><small>Limits above the policy underneath.</small></a><a href="../coverage/#professional"><b>Professional and cyber</b><small>Offices, and cyber when the form includes it.</small></a><a href="../coverage/#builders-risk"><b>Builders risk</b><small>Property coverage during the job.</small></a><a href="../coverage/#personal"><b>Personal</b><small>Homes, condos, co-ops, and a personal umbrella.</small></a><a href="../coverage/"><b>All coverage</b><small>Personal and commercial, many industries.</small></a></div><div class="mega-note"><p>What is covered depends on the policy.</p><a class="btn btn-sm" href="../quote/">Get a quote</a></div></div></div></div><div class="drop mega"><button type="button" aria-expanded="false" aria-controls="menu-who">Who we help</button><div class="mega-panel" id="menu-who" role="region" aria-label="Who we help"><div class="mega-grid"><div><p class="mega-k">Who we help</p><a href="../real-estate-program/"><b>Real estate owners</b><small>Apartments, mixed-use, and rentals.</small></a><a href="../new-york-building-insurance/"><b>NYC buildings</b><small>Apartment and mixed-use buildings</small></a><a href="../landlord-insurance/"><b>Landlord insurance</b><small>Rentals in New York City and on Long Island.</small></a><a href="../nassau-suffolk-landlord-insurance/"><b>Long Island landlords</b><small>Houses, two-family homes, and small buildings.</small></a><a href="../nyc-mixed-use-building-insurance/"><b>NYC mixed-use</b><small>A store below, apartments above.</small></a></div><div><p class="mega-k">Also</p><a href="../new-york-restaurant-insurance/"><b>Restaurants</b><small>Restaurants, cafes, and delis.</small></a><a href="../long-island-restaurant-insurance/"><b>Long Island restaurants</b><small>Nassau and Suffolk.</small></a><a href="../new-york-contractor-insurance/"><b>Contractors</b><small>Trades and general contractors.</small></a><a href="../nassau-county-commercial-insurance/"><b>Nassau County</b></a><a href="../coverage/#personal"><b>Personal</b><small>Home and umbrella.</small></a></div><div class="mega-note"><p>What is covered depends on the policy.</p><a class="btn btn-sm" href="../quote/">Get a quote</a></div></div></div></div><div class="drop mega"><button type="button" aria-expanded="false" aria-controls="menu-guides">Guides</button><div class="mega-panel" id="menu-guides" role="region" aria-label="Guides"><div class="mega-grid"><div><p class="mega-k">Guides</p><a href="../about/#guides"><b>Guides</b><small>Pages already on this site. Each one stays on its subject.</small></a><a href="../coverage/#faq"><b>FAQ</b></a><a href="../articles/replacement-cost-versus-actual-cash-value/"><b>Replacement cost versus actual cash value</b></a><a href="../articles/the-coinsurance-clause-nobody-explains/"><b>The coinsurance clause nobody explains</b></a><a href="../articles/does-your-deductible-pay-for-your-lawyer/"><b>Does your deductible pay for your lawyer</b></a></div><div><p class="mega-k">Also</p><a href="../articles/old-buildings-and-new-codes/"><b>Old buildings and new codes</b></a><a href="../landlord-insurance-requirements-nyc/"><b>NYC landlord requirements</b><small>What lenders, the law, and contracts ask for.</small></a><a href="../nyc-restaurant-insurance-requirements/"><b>NYC restaurant requirements</b></a><a href="../claims/"><b>Report a claim</b><small>How to notify the insurer. We do not decide the claim.</small></a><a href="../client-center/"><b>Client center</b><small>Certificates, ID cards, changes, bills, and renewals.</small></a></div><div class="mega-note"><p>What is covered depends on the policy.</p><a class="btn btn-sm" href="../quote/">Get a quote</a></div></div></div></div><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
     <div class="nav-actions"><a class="phone-full" href="tel:+15162267969">(516) 226-7969</a><a class="btn btn-sm" href="../quote/">Get a quote</a><button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button></div>
   </div>
 </header>
 <div class="sheet" id="sheet" hidden>
-  <nav aria-label="Mobile"><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+  <nav aria-label="Mobile"><details><summary>Coverage</summary><a href="../real-estate-program/">Real Estate Program</a><a href="../coverage/#property">Property</a><a href="../coverage/#liability">General liability</a><a href="../coverage/#workers-compensation">Workers compensation</a><a href="../business-owners-policy/">Businessowners policy</a><a href="../coverage/#umbrella">Umbrella and excess</a><a href="../coverage/#professional">Professional and cyber</a><a href="../coverage/#builders-risk">Builders risk</a><a href="../coverage/#personal">Personal</a><a href="../coverage/">All coverage</a></details><details><summary>Who we help</summary><a href="../real-estate-program/">Real estate owners</a><a href="../new-york-building-insurance/">NYC buildings</a><a href="../landlord-insurance/">Landlord insurance</a><a href="../nassau-suffolk-landlord-insurance/">Long Island landlords</a><a href="../nyc-mixed-use-building-insurance/">NYC mixed-use</a><a href="../new-york-restaurant-insurance/">Restaurants</a><a href="../long-island-restaurant-insurance/">Long Island restaurants</a><a href="../new-york-contractor-insurance/">Contractors</a><a href="../nassau-county-commercial-insurance/">Nassau County</a><a href="../coverage/#personal">Personal</a></details><details><summary>Guides</summary><a href="../about/#guides">Guides</a><a href="../coverage/#faq">FAQ</a><a href="../articles/replacement-cost-versus-actual-cash-value/">Replacement cost versus actual cash value</a><a href="../articles/the-coinsurance-clause-nobody-explains/">The coinsurance clause nobody explains</a><a href="../articles/does-your-deductible-pay-for-your-lawyer/">Does your deductible pay for your lawyer</a><a href="../articles/old-buildings-and-new-codes/">Old buildings and new codes</a><a href="../landlord-insurance-requirements-nyc/">NYC landlord requirements</a><a href="../nyc-restaurant-insurance-requirements/">NYC restaurant requirements</a><a href="../claims/">Report a claim</a><a href="../client-center/">Client center</a></details><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
   <div class="sheet-cta"><a class="btn" href="../quote/">Get a quote</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
 </div>
 <main id="main" class="card-flow"><header class="page-head fold"><div class="wrap"><h1 class="rise"><span class="line"><span>What a businessowners policy (BOP) covers in New York</span></span></h1><p class="lede">Property, lost income, and liability in one policy.</p><div class="cta-row"><a class="btn" href="../quote/">Send your policy</a><a class="fold-call" href="tel:+15162267969">(516) 226-7969</a></div></div></header>
@@ -72,6 +72,30 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
   <p class="sub"><a href="../new-york-restaurant-insurance/">Restaurant insurance</a></p>
 </div></section>
+<section class="area-band" aria-labelledby="area-h">
+  <div class="wrap">
+    <h2 id="area-h">New York</h2>
+    <p>New York is the home market.</p>
+    <p class="area-links"><a href="../real-estate-program/">Queens and Long Island</a><a href="../new-york-building-insurance/">NYC buildings</a><a href="../nassau-suffolk-landlord-insurance/">Nassau and Suffolk landlords</a><a href="../nassau-county-commercial-insurance/">Nassau County</a></p>
+  </div>
+</section>
+<section class="section send-band" aria-labelledby="send-h">
+  <div class="wrap send-split">
+    <h2 id="send-h">What to send</h2>
+    <ol class="check-list">
+      <li>Add the declarations page if you have it.</li>
+      <li>Your name and a phone number.</li>
+      <li>The line you want us to look at.</li>
+    </ol>
+  </div>
+</section>
+<section class="end-band">
+  <div class="wrap">
+    <h2>Get a quote</h2>
+    <p>A broker follows up.</p>
+    <p class="cta-row"><a class="btn btn-light" href="../quote/">Get a quote</a><a class="end-phone" href="tel:+15162267969">(516) 226-7969</a></p>
+  </div>
+</section>
 </main>
 <footer class="site-footer">
   <div class="wrap foot-grid">
@@ -125,6 +149,6 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
 </footer>
 <a class="quote-sticky" href="../quote/">Get a quote</a>
-<script src="../site.js?v=50" defer></script>
+<script src="../site.js?v=52" defer></script>
 </body>
 </html>

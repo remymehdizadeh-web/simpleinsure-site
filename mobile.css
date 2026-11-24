@@ -1057,25 +1057,8 @@ html.motion.js .client-result-grays .result-foot[data-rise]:not(.is-in) {
     background: #040f1e;
     padding-top: calc(env(safe-area-inset-top) + 100px);
   }
-  #sheet:before, #sheet:after {
-    content: "";
-    position: fixed;
-    pointer-events: none;
-    z-index: -1;
-  }
-  #sheet:before {
-    inset: -6%;
-    background: url("photos/facade-800.webp") 50% 50% / cover no-repeat;
-    filter: grayscale(.45) brightness(.5) contrast(1.05);
-    opacity: .42;
-    transform: scale(1.06);
-  }
-  #sheet:after {
-    inset: 0;
-    background:
-      linear-gradient(180deg, rgba(4,15,30,.80) 0%, rgba(5,19,37,.70) 34%, rgba(4,15,30,.90) 64%, #040f1e 100%),
-      radial-gradient(90% 55% at 100% 0%, rgba(45,125,210,.16) 0%, rgba(45,125,210,0) 60%);
-  }
+  #sheet { background: #071525 !important; }
+  #sheet:before, #sheet:after { content: none !important; display: none !important; background: none !important; }
 
   /* Numbered list with a side rule on its left edge */
   #sheet nav {
@@ -1977,3 +1960,25 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
   .feature-card:has(img) p { color: #1B365D !important; }
   .feature-card:has(img) .kicker { color: #1A6EC8 !important; }
 }
+
+/* Header stays flush and the same height after scroll. */
+.site-header{top:0 !important;padding-top:0 !important;transform:none !important;background:#fff}
+.site-header:before,.site-header:after{content:none !important;display:none !important;background:transparent !important;height:0 !important}
+.bar,html.scrolled .bar,html:not(.scrolled) body.page-home:not(.nav-open) .bar{height:64px !important;background:#fff !important;color:#1B365D !important;border-radius:0 !important;width:100% !important}
+.logo img,html.scrolled .logo img,html:not(.scrolled) body.page-home:not(.nav-open) .logo img{height:30px !important;filter:none !important}
+body{background:#f4f8fc}
+@media (max-width:1023px){
+  .site-header{top:0 !important;padding-top:env(safe-area-inset-top) !important}
+  .sheet{top:calc(64px + env(safe-area-inset-top)) !important}
+  html.veil .site-header:before,html.veil body.page-home .site-header:before,html.veil body.page-inner .site-header:before{content:none !important;display:none !important;background:transparent !important}
+}
+
+#sheet{background:#071525 !important;color:#fff}
+#sheet nav>details{border-bottom:1px solid rgba(255,255,255,.16);padding:4px 0}
+#sheet summary{color:#fff;font-family:Newsreader,Georgia,serif;font-size:26px;font-weight:500;padding:14px 0}
+#sheet details a{color:#d7e6f5 !important;font-size:16px !important;font-weight:500 !important;display:block !important;padding:7px 0 7px 2px !important;border:0 !important;grid-template-columns:none !important}
+#sheet details a:before,#sheet details a:after{content:none !important}
+#sheet nav>a{color:#fff !important}
+#sheet .sheet-cta a,#sheet .sheet-cta a.btn{color:#fff}
+#sheet,#sheet:before,#sheet:after{background:#071525 !important;opacity:1}
+#sheet:before,#sheet:after{content:none !important;display:none !important}
