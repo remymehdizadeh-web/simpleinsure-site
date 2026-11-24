@@ -1251,11 +1251,6 @@ ul.points,ol.points{align-items:stretch}
   .section{padding:120px 0}
   .page-head{padding:calc(var(--header) + 88px) 0 88px}
 }
-.stat-strip{background:#fff;border-bottom:1px solid var(--line)}
-.stat-strip .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:28px 0}
-.stat-strip p{margin:0;display:flex;flex-direction:column;gap:4px}
-.stat-strip b{font-family:var(--serif);font-weight:500;font-size:clamp(36px,3vw,52px);line-height:1;letter-spacing:-.03em;color:var(--navy)}
-.stat-strip span{color:var(--muted);font-size:15px}
 .quote-sticky{display:none}
 .slide,.m-tile,.btn,.btn-ghost,.btn-light{transition:transform .35s var(--ease),background .25s ease,color .25s ease,border-color .25s ease}
 @media (prefers-reduced-motion:no-preference){
@@ -1264,21 +1259,19 @@ ul.points,ol.points{align-items:stretch}
   html.motion .hero-copy .cta-row{animation:fade-up .8s var(--ease) both}
   html.motion .hero-copy .lede{animation-delay:.08s}
   html.motion .hero-copy .cta-row{animation-delay:.16s}
-  html.motion .stat-strip b{animation:fade-up .7s var(--ease) both}
   html.motion .slide:hover img{transform:scale(1.04)}
   html.motion .m-tile:hover{transform:translateY(-3px)}
   html.motion .btn:hover,html.motion .btn-light:hover{transform:translateY(-1px)}
 }
 @keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media (max-width:1023px){
-  .stat-strip .wrap{grid-template-columns:1fr;gap:16px;padding:22px 0}
   .quote-sticky{position:fixed;z-index:58;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 18px;border-radius:999px;background:#1A6EC8;color:#fff;text-decoration:none;font-weight:650;box-shadow:0 12px 28px rgba(6,24,47,.22)}
   body:has(.call-bar) .quote-sticky{display:none}
   body:has(.quote-sticky):not(:has(.call-bar)){padding-bottom:calc(84px + env(safe-area-inset-bottom))}
   html.nav-open .quote-sticky{visibility:hidden}
 }
 @media (prefers-reduced-motion:reduce){
-  .hero .ken,.hero-copy .brand-line,.hero-copy .lede,.hero-copy .cta-row,.stat-strip b,.slide,.m-tile,.btn{animation:none !important;transition:none !important}
+  .hero .ken,.hero-copy .brand-line,.hero-copy .lede,.hero-copy .cta-row,.slide,.m-tile,.btn{animation:none !important;transition:none !important}
 }
 
 /* Brokerage navigation and hubs. Same navy, white, and serif. */
@@ -1328,8 +1321,6 @@ html{scroll-padding-top:110px}
 .program-feature .kicker{margin:0 0 8px}
 .program-feature h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,3vw,48px);color:var(--navy);line-height:1.05}
 .program-feature p{margin-top:12px;color:var(--muted);max-width:36em}
-.stat-strip a{color:inherit;text-decoration:none}
-.stat-strip a:hover b{color:#1A6EC8}
 @media (max-width:800px){
   .program-feature{grid-template-columns:1fr}
   .program-feature img{height:210px;min-height:0}

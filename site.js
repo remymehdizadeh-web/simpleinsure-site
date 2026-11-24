@@ -1252,28 +1252,6 @@
     });
   })();
 
-  d.querySelectorAll("[data-count]").forEach(function (el) {
-    var target = parseInt(el.getAttribute("data-count"), 10);
-    if (!target || reduce) return;
-    var started = false;
-    function run() {
-      if (started) return;
-      var r = el.getBoundingClientRect();
-      if (r.top > innerHeight * 0.92) return;
-      started = true;
-      var t0 = performance.now();
-      function step(now) {
-        var p = Math.min(1, (now - t0) / 720);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = String(Math.round(target * eased));
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-    addEventListener("scroll", run, { passive: true });
-    run();
-  });
-
   var revealNodes = Array.prototype.slice.call(d.querySelectorAll(".reveal"));
   var graysPanel = d.getElementById("grays");
   function showMotion(el) { el.classList.add("is-in"); }
