@@ -1795,5 +1795,83 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
   html.nav-open .call-bar { visibility: hidden; }
 }
 @media (max-width: 380px) {
-  .call-bar .btn, .call-bar .btn-ghost { font-size: 12.5px; padding: 0 6px; }
+  .call-bar .btn, .call-bar .btn-ghost { font-size: 13.5px; padding: 8px 8px; white-space: normal; }
+}
+
+/* Polish loaded last so it wins over earlier phone rules.
+   Keeps the current type, color, and layout. Fixes clipping,
+   the navy sliver above the header, and controls that overflow. */
+@media (max-width: 1023px) {
+  html:not(.nav-open) body.page-inner .site-header:before,
+  html:not(.nav-open) body.page-inner:not(:has(.photo-hero)) .site-header:before {
+    background: #fff !important;
+  }
+  html:not(.nav-open) body.page-home .site-header:before {
+    background: transparent;
+  }
+
+  .page-head h1,
+  .page-head h1 span,
+  .page-head .page-title,
+  .page-head .page-title span,
+  .photo-hero h1,
+  .cc-hero h1,
+  .hero .brand-line,
+  .close h2,
+  .m-block .m-h,
+  .m-block h2,
+  .section h2,
+  .prose h2,
+  .panel h2,
+  #faq h2,
+  .cover-seg button b {
+    line-height: 1.15;
+    overflow: visible;
+  }
+  #faq h2 {
+    margin-top: 28px;
+    text-wrap: balance;
+  }
+  #faq h2:first-child { margin-top: 0; }
+  .prose p, #faq p { line-height: 1.55; }
+
+  .section { padding: 48px 0 !important; }
+  .fold-call {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .cc-item summary { align-items: start; }
+  .cc-main { min-width: 0; }
+  .cc-item summary b,
+  .cc-item summary em { overflow-wrap: break-word; text-wrap: balance; }
+  .cc-item summary:after { align-self: start; margin-top: 2px; }
+
+  .contact-visual {
+    height: auto;
+    min-height: 280px;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .contact-visual figcaption { position: relative; }
+
+  .call-bar .btn,
+  .call-bar .btn-ghost {
+    white-space: normal;
+    min-width: 0;
+    min-height: 48px;
+    height: auto;
+  }
+  body:has(.call-bar) { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
+
+  .m-foot-cols { align-items: start; }
+  .m-foot a:focus-visible,
+  .call-bar a:focus-visible,
+  .sheet a:focus-visible {
+    outline: 2px solid #1B365D;
+    outline-offset: 3px;
+  }
+  .chips a, .cover-detail .more { min-height: 44px; align-items: center; }
 }

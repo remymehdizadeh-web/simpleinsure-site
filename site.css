@@ -1180,4 +1180,65 @@ form.wizard .field label{font-size:14.5px;color:var(--navy)}
   .home-cb h2{font-size:34px}
   form.wizard .field input,form.wizard .field select,form.wizard .field textarea{border-radius:12px !important}
 }
-@media (max-width:980px){.qf-trust{font-size:12.5px !important;white-space:nowrap}.qf-trust span{overflow:hidden;text-overflow:ellipsis}}
+/* Polish. Same colors, type, and pages. These rules stop clipping,
+   sideways scroll, and uneven rhythm. They do not restyle the brand. */
+
+.qf-trust{white-space:normal}
+.qf-trust span{display:inline;white-space:normal;overflow:visible;text-overflow:clip}
+
+.lp-grid,.home-cb-grid,.layout,.split,.foot-grid,.contact-split,.firm-split,.work-grid,.fields,.cc-layout{min-width:0}
+.lp-grid>*,.home-cb-grid>*,.layout>*,.split>*,.foot-grid>*,form.wizard,form.wizard.qf,.panel,.qf-field,.qf-chip-row,.qf-chips{min-width:0;max-width:100%}
+.lp-call,.qf .qf-btn,.field input,.field select,.field textarea,.qf-field input,.qf-field textarea{max-width:100%}
+.btn svg,.qf-btn svg,.lp-call svg,.ico,.nav-ic{max-width:none}
+
+.panel .row{flex-wrap:wrap;align-items:baseline}
+.panel .row a{min-width:0;overflow-wrap:anywhere}
+
+.foot-links{line-height:1.7}
+.foot-links a{white-space:nowrap}
+.legal-line{line-height:1.55}
+
+#faq h2{line-height:1.25;text-wrap:balance;max-width:28em}
+#faq>h2{margin-top:32px}
+#faq>h2:first-child{margin-top:0}
+#faq p{margin-top:8px}
+
+ul.points,ol.points{align-items:stretch}
+.points li{min-width:0}
+.chips a{min-height:44px}
+
+.hero .brand-line,.hero-copy .brand-line,.page-head .page-title,.page-head h1,.firm-head h1,.cc-hero h1,.photo-hero h1,.cover-head h1,.cover-head .page-title,.close h2,.work-intro h2,.client-result h2,.client-result-grays h2,.firm-panel-place,.firm-copy h2,.h-intro h2,.stage h2,.m-block .m-h,.section h2,.prose h2,.rise,.rise .line,.rise .line>span{overflow:visible}
+.hero .brand-line,.hero-copy .brand-line,.page-head .page-title,.firm-head h1,.cc-hero h1,.photo-hero h1,.cover-head .page-title,.close h2,.work-intro h2,.client-result h2,.h-intro h2,.stage h2{line-height:1.08}
+
+@media (min-width:1024px){
+  .cover-detail{display:block;opacity:1}
+  .cover-detail>div{overflow:visible;min-height:0;padding-bottom:18px}
+  .cover-detail .more{display:inline-flex;align-items:center;min-height:44px;margin:8px 18px 0 0}
+  .bar{overflow:visible}
+  .nav-actions,.nav-actions .btn,.phone-full,.logo{flex-shrink:0}
+  .nav-desk{min-width:0}
+}
+@media (min-width:1024px) and (max-width:1180px){
+  .bar{width:calc(100% - 28px);padding:0 8px 0 16px;gap:6px}
+  .logo img{height:28px}
+  .nav-desk>a,.drop>button{padding:8px 8px}
+  .nav-actions{gap:8px}
+  .nav-actions .btn{padding:0 12px}
+  .phone-full{font-size:13px}
+}
+
+@media (max-width:1180px){
+  .client-result .result-line span{white-space:normal}
+}
+@media (max-width:980px){
+  .home-cb-grid,.lp-grid,.layout{grid-template-columns:minmax(0,1fr)}
+  .qf-trust{font-size:13.5px;white-space:normal}
+  .qf-trust span{overflow:visible;text-overflow:clip;white-space:normal}
+  .page-head.lp-fold h1,.page-head.lp-fold h1 span,.page-head.lp-fold .page-title,.page-head.lp-fold .page-title span{font-size:clamp(36px,9vw,48px) !important;line-height:1.12 !important;max-width:16em}
+  .call-bar .btn,.call-bar .btn-ghost{white-space:normal;min-width:0;line-height:1.2;padding:8px 10px}
+  .keep-line{white-space:normal}
+}
+@media (max-width:1023px){
+  .cover-seg.is-open .cover-detail{display:block;grid-template-rows:none;opacity:1}
+  .cover-seg.is-open .cover-detail>div{overflow:visible;min-height:auto}
+}
