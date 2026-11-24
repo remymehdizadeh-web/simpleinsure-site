@@ -24,7 +24,7 @@ Builders risk
 Property coverage during the job.
 Personal
 Home and umbrella.
-Personal and commercial, every industry. What is covered depends on the policy.
+Personal and commercial, many industries. What is covered depends on the policy.
 Get a quote
 Tell us the line. A broker follows up.
 Send a policy
@@ -36,7 +36,7 @@ Certificates, changes, and claims.
 PAGE: Real Estate Program
 Specialty
 Real Estate Program.
-Habitational property and general liability for owners in New York, including Queens and Long Island. Personal and commercial lines are still placed, for every industry.
+Habitational property and general liability for owners in New York, including Queens and Long Island. Personal and commercial lines are still placed, for many industries.
 Get a quote
 (516) 226-7969
 Who it is for
@@ -70,13 +70,13 @@ Long Island
 Nassau and Suffolk. Houses, two-families, and small apartment buildings. Long Island landlords
 .
 What is the Real Estate Program?
-It is the specialty for habitational accounts: landlords, mixed-use buildings, apartment buildings, co-ops, and condos. SimpleINSURE also places personal and commercial lines for other industries. What a policy covers depends on the form.
+It is the specialty for habitational accounts: landlords, mixed-use buildings, apartment buildings, co-ops, and condos. It is our specialty practice, not a program from a single insurer. SimpleINSURE also places personal and commercial lines for other industries. What a policy covers depends on the form.
 Do you place building insurance in Queens?
 Yes. Queens is part of the New York work, with the other boroughs. Lender and lease requirements follow the loan, the lease, and New York City and state rules. The policy controls what is covered.
 Is Long Island part of the program?
 Yes. Nassau and Suffolk landlords and small buildings are part of it. A rental needs a landlord or building policy, not a homeowners policy. What is paid depends on the policy.
 Does the program replace the other lines?
-No. Personal and commercial lines are still placed, for every industry. Real estate is the specialty, not the only account.
+No. Personal and commercial lines are still placed, for many industries. Real estate is the specialty, not the only account.
 Get a quote
 All lines
 
@@ -84,7 +84,7 @@ All lines
 PAGE: Coverage
 Coverage
 Lines we place.
-Personal and commercial, every industry. Real estate is the specialty. Firm license: New York, NY DFS BR-1984615.
+Personal and commercial, many industries. Real estate is the specialty. Licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California.
 Get a quote
 (516) 226-7969
 Specialty
@@ -146,7 +146,7 @@ A certificate shows the policy on the day it is issued. It does not change the p
 What insurance does a New York business need?
 It depends on the business, the lease, and whether there are employees. Most commercial accounts look at property, liability, and workers compensation when there are employees. We read what you have. The policy that is issued controls the coverage.
 Do you only work in New York?
-New York is the home market. The firm license published here is New York, NY DFS BR-1984615. The principal also holds individual producer licenses in Pennsylvania, Florida, and California. Those numbers are not published here. If an account needs a license we do not hold, we say so before a placement.
+New York is the home market. SimpleINSURE Brokerage LLC is licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California. Those other license numbers are not published here. If an account needs a license we do not hold, we say so before a placement.
 Does a businessowners policy include workers compensation?
 Usually no. A businessowners policy packages property and liability for some smaller firms. Workers compensation, disability benefits, and Paid Family Leave are separate. Whether a firm qualifies depends on the insurer.
 Is a certificate the same as coverage?
@@ -158,7 +158,7 @@ Send a policy
 PAGE: Industries
 Industries
 Who we work with.
-Personal and commercial, every industry. Real estate is the specialty. The home market is New York.
+Personal and commercial, many industries. Real estate is the specialty. The home market is New York.
 Get a quote
 (516) 226-7969
 Buildings and landlords
@@ -186,7 +186,7 @@ Personal
 Homes, condos, co-ops, and a personal umbrella. A rental is a landlord policy.
 Personal lines
 Get a quote
-Where we are licensed
+Licenses
 New York
 Resident license. Home market. NY DFS BR-1984615.
 Pennsylvania
@@ -194,13 +194,13 @@ Licensed.
 Florida
 Licensed.
 California
-Licensed.
+Principal's individual producer license.
 Leases, loans, and permits in New York often name a limit, an additional insured, or a mortgagee. We read the document and compare it with the policy. What can be added depends on the insurer.
 NYC landlord requirements
 NYC restaurant requirements
 Coverage in New York
 Do you insure buildings outside New York?
-The core market is New York. The firm license published here is New York, NY DFS BR-1984615. The principal also holds individual producer licenses in Pennsylvania, Florida, and California. Those numbers are not published here. A placement still depends on the insurer and on the license.
+The core market is New York. SimpleINSURE Brokerage LLC is licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California. Those other license numbers are not published here. A placement still depends on the insurer and on the license.
 Can one broker handle the building and the business in it?
 Often, yes. A mixed-use building and the business in it are usually separate policies. Each policy stands on its own. What each one covers depends on that policy.
 
@@ -310,7 +310,7 @@ Q: Can you insure a mixed-use building on Long Island?
 A: Yes, we place coverage for mixed-use and rental buildings in Nassau County and Suffolk County as well as in New York City. The same questions apply: what the commercial tenant does, the building's construction and updates, and what the lender asks for.
 
 Q: In New York City, is the building owner responsible for the sidewalk?
-A: For most buildings, yes. New York City Administrative Code section 7-210 generally makes the owner responsible for keeping the sidewalk in front of the building reasonably safe. Sidewalk falls are a common liability claim on city buildings. Whether a policy responds depends on its terms. This is a plain summary, not legal advice.
+A: For most buildings, yes. New York City Administrative Code section 7-210 generally makes the owner responsible for keeping the sidewalk in front of the building reasonably safe. One-, two-, and three-family houses that are owner-occupied and used only as residences are treated differently. Sidewalk falls are a common liability claim on city buildings. Whether a policy responds depends on its terms. This is a plain summary, not legal advice.
 
 
 PAGE: /landlord-insurance/
@@ -377,4 +377,41 @@ A: Lead sentence: On private jobs in New York, the construction contract usually
 
 PAGE: /legal/
 
-The firm license published here is New York, NY DFS License BR-1984615. The principal also holds individual producer licenses in Pennsylvania, Florida, and California. Those license numbers are not published here.
+SimpleINSURE Brokerage LLC is an insurance broker licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California. Those other license numbers are not published here.
+
+
+COMPLIANCE FIXES, 24 NOV 2026
+Firm license: SimpleINSURE Brokerage LLC is an insurance broker licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California. Only the New York license number is published. areaServed stays New York.
+
+PAGE: /about/
+SimpleINSURE Brokerage LLC is an independent insurance broker licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California.
+Licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California.
+How we are paid is on the licenses page.
+
+PAGE: /partners/
+Realtors, lenders, and property managers: introduce a client to SimpleINSURE Brokerage LLC, a broker licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California.
+
+PAGE: /legal/
+SimpleINSURE Brokerage LLC is a property and casualty insurance broker licensed in New York, Pennsylvania, and Florida (NY DFS License No. BR-1984615). Principal also licensed in California.
+SimpleINSURE Brokerage LLC is licensed in New York, Pennsylvania, and Florida (NY DFS License BR-1984615). Principal also licensed in California. Those other license numbers are not published here.
+SimpleINSURE Brokerage LLC is an insurance broker licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California. When you work with us, we act as your insurance broker: we represent you in finding coverage and presenting options from insurers, and we do not act for any single insurer.
+
+PAGE: /nassau-county-commercial-insurance/
+Who places commercial insurance in Nassau County?
+Yes. SimpleINSURE Brokerage LLC is an independent insurance broker licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California. We work for you, not for any one insurance company. Call (516) 226-7969.
+How is a broker paid?
+How we are paid, and how to ask about your own policy, is on Licenses and disclosures.
+
+PAGE: /nassau-suffolk-landlord-insurance/
+SimpleINSURE Brokerage LLC is an insurance broker licensed in New York, Pennsylvania, and Florida (NY DFS BR-1984615). Principal also licensed in California.
+
+PAGE: /llms.txt
+How we are paid is described at https://www.simpleinsure.co/legal/.
+
+PAGE: Home, Gray's Papaya
+Gray's Papaya
+One account.
+The savings points and the premium comparison line are removed.
+
+Shared menu and form trust line
+Licensed in NY, PA, and FL (NY DFS BR-1984615). Principal also licensed in California.
