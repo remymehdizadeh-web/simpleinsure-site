@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /compliance-review.txt
 
 Sitemap: https://www.simpleinsure.co/sitemap.xml
 Sitemap: https://www.simpleinsure.co/sitemap-local.xml

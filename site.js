@@ -216,14 +216,7 @@
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
     d.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
 
-    d.querySelectorAll("[data-count]").forEach(function (el) {
-      el.textContent = "$" + (+el.getAttribute("data-count")).toLocaleString("en-US");
-    });
-
   } else {
-    d.querySelectorAll("[data-count]").forEach(function (el) {
-      el.textContent = "$" + (+el.getAttribute("data-count")).toLocaleString("en-US");
-    });
     d.querySelectorAll(".money").forEach(function (el) { el.classList.add("is-in"); });
   }
 
@@ -1204,6 +1197,12 @@
         var r = s.getBoundingClientRect();
         var c = (r.left + r.width / 2 - vw / 2) / vw;
         if (imgs[i]) imgs[i].style.transform = "translate3d(" + (c * -5).toFixed(2) + "%,0,0)";
+        var copy = s.querySelector(".slide-copy");
+        if (copy) {
+          var box = copy.getBoundingClientRect();
+          var fully = box.width > 8 && box.left >= laneLeft + 8 && box.right <= vw - 12;
+          copy.style.visibility = fully ? "visible" : "hidden";
+        }
         if (r.right < laneLeft + 40) return;
         var dd = Math.abs(r.left + r.width / 2 - laneMid);
         if (dd < bestD) { bestD = dd; best = i; }
@@ -1226,6 +1225,10 @@
         pin.style.removeProperty("height");
         track.style.transform = "";
         imgs.forEach(function (im) { if (im) im.style.transform = ""; });
+        slides.forEach(function (s) {
+          var copy = s.querySelector(".slide-copy");
+          if (copy) copy.style.visibility = "";
+        });
         return;
       }
       dist = Math.max(0, track.offsetLeft + track.scrollWidth - sticky.clientWidth + 48);
