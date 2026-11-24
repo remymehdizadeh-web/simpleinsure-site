@@ -74,6 +74,54 @@
       });
     }
   });
+  d.querySelectorAll(".drop.mega").forEach(function (drop) {
+    var timer = 0;
+    var top = drop.querySelector(".nav-top");
+    function open() {
+      clearTimeout(timer);
+      d.querySelectorAll(".drop.mega.is-open").forEach(function (other) {
+        if (other !== drop) {
+          other.classList.remove("is-open");
+          var t = other.querySelector(".nav-top");
+          if (t) t.setAttribute("aria-expanded", "false");
+        }
+      });
+      drop.classList.add("is-open");
+      if (top) top.setAttribute("aria-expanded", "true");
+    }
+    function close() {
+      drop.classList.remove("is-open");
+      if (top) top.setAttribute("aria-expanded", "false");
+    }
+    function later() {
+      clearTimeout(timer);
+      timer = setTimeout(close, 280);
+    }
+    if (top) {
+      top.setAttribute("aria-haspopup", "true");
+      top.setAttribute("aria-expanded", drop.classList.contains("is-open") ? "true" : "false");
+    }
+    drop.addEventListener("mouseenter", open);
+    drop.addEventListener("mouseleave", later);
+    drop.addEventListener("focusin", open);
+    drop.addEventListener("focusout", function (e) {
+      if (!drop.contains(e.relatedTarget)) later();
+    });
+    drop.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        close();
+        if (top) top.focus();
+      }
+      if (e.key === "ArrowDown" && e.target === top) {
+        var first = drop.querySelector(".mega-panel a");
+        if (first) {
+          e.preventDefault();
+          open();
+          first.focus();
+        }
+      }
+    });
+  });
   d.querySelectorAll(".drop > button").forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       e.stopPropagation();

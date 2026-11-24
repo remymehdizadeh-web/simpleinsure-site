@@ -1225,7 +1225,7 @@ ul.points,ol.points{align-items:stretch}
   .nav-desk>a,.drop>button{padding:8px 8px}
   .nav-actions{gap:8px}
   .nav-actions .btn{padding:0 12px}
-  .phone-full{display:none}
+  .phone-full{display:inline-flex}
 }
 
 @media (max-width:1180px){
@@ -1978,3 +1978,85 @@ html.motion .guide-large:hover img{transform:scale(1.05)}
 }
 
 .page-head .result-name{color:#fff;font-size:22px;margin:0 0 8px}
+
+/* Compact floating pill. Hugs the links, stays under 1040px. */
+@media (min-width:981px){
+  .site-header{padding:14px 0 0 !important;background:transparent !important}
+  .bar,html.scrolled .bar,html:not(.scrolled) body.page-home:not(.nav-open) .bar{
+    width:max-content !important;
+    max-width:min(1040px,calc(100% - 32px)) !important;
+    height:56px !important;
+    margin:0 auto !important;
+    padding:0 8px 0 14px !important;
+    gap:2px !important;
+  }
+  .nav-desk{flex:0 1 auto;gap:0;margin-left:2px;justify-content:flex-start}
+  .nav-desk>a,.drop>a.nav-top{padding:6px 8px !important;min-height:40px;font-size:14px !important}
+  .nav-actions{gap:8px !important;margin-left:4px}
+  .nav-actions .btn{height:36px !important;min-height:36px !important;padding:0 12px !important;font-size:13.5px !important}
+  .phone-full{font-size:13.5px !important;min-height:36px}
+  .logo img,html.scrolled .logo img{height:26px !important}
+}
+@media (min-width:981px) and (max-width:1100px){
+  .nav-desk>a,.drop>a.nav-top{padding:6px 6px !important;font-size:13px !important}
+  .phone-full{font-size:12.5px !important}
+  .nav-actions .btn{padding:0 10px !important;font-size:12.5px !important}
+}
+section:has(.who-grid)>.wrap{width:min(1280px,calc(100% - 32px))}
+.who-grid{gap:18px}
+.who-grid .img-card{min-height:430px}
+@media (max-width:1100px){
+  .who-grid .img-card{min-height:340px}
+}
+
+/* Menu bridge: the panel starts at the trigger, with invisible padding so the pointer never falls through. */
+.mega-panel{
+  top:100% !important;
+  padding:12px 0 0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  overflow:visible !important;
+  transform:none !important;
+}
+.mega-panel:before{content:"";position:absolute;left:-24px;right:-24px;bottom:100%;height:22px}
+.mega-panel .mega-grid{background:#fff;border:1px solid rgba(27,54,93,.1);border-radius:16px;box-shadow:0 18px 44px rgba(10,37,64,.16);padding:8px}
+.drop.mega.is-open>.mega-panel,.drop.mega:hover>.mega-panel,.drop.mega:focus-within>.mega-panel{
+  opacity:1 !important;visibility:visible !important;pointer-events:auto !important;transform:none !important;
+}
+
+.how-plain{background:#eef5fc;padding:72px 0}
+.how-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;list-style:none;margin:22px 0 0;padding:0}
+.how-steps li{background:#fff;border-radius:18px;overflow:hidden}
+.how-steps img{display:block;width:100%;height:168px;object-fit:cover}
+.how-steps b{display:block;margin:16px 18px 0;color:#1A6EC8;font-size:13px;letter-spacing:.14em}
+.how-steps h3{margin:4px 18px 0;font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);font-weight:500;color:#1B365D}
+.how-steps p{margin:6px 18px 20px;font-size:18px;line-height:1.4;color:#243044}
+
+.grays-teaser a{grid-template-columns:.82fr 1.18fr !important;min-height:0 !important}
+.grays-teaser img{height:400px !important;min-height:0 !important}
+.grays-teaser span{padding:28px 36px !important}
+.grays-who{margin:8px 0 0 !important;font-family:var(--serif);font-size:clamp(22px,2vw,30px) !important;color:#fff !important}
+.grays-facts{list-style:none;margin:14px 0 0;padding:0}
+.grays-facts li{padding:10px 0;border-top:1px solid rgba(255,255,255,.22);font-size:16.5px;line-height:1.4;color:#e7f1fb}
+.grays-teaser b{margin-top:14px}
+
+.guide-small{padding:0 !important;min-height:0 !important;overflow:hidden;justify-content:flex-start}
+.guide-small img{width:100%;height:148px;object-fit:cover;display:block}
+.guide-small>span{display:block;padding:16px 18px 18px;margin:0}
+.guide-small small{display:block;margin-top:6px;color:#e7f1fb;font-size:15px;line-height:1.4}
+.guide-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 36px;margin-top:28px;padding:0;list-style:none}
+.guide-list li{padding:0}
+.guide-list a{display:block;padding:16px 0;border-top:1px solid rgba(27,54,93,.12)}
+
+.cc-services{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cc-services a{display:block;padding:24px;background:#fff;border-radius:18px;border:1px solid rgba(27,54,93,.12);border-top:3px solid #1A6EC8;text-decoration:none;color:#1B365D}
+.cc-services b{display:block;font-family:var(--serif);font-size:clamp(24px,2vw,32px);font-weight:500}
+.cc-services span,.cc-services p{display:block;margin-top:8px;color:#243044;font-size:16px;line-height:1.45}
+.cc-contact{background:#1B365D;color:#fff}
+.cc-contact a{color:#fff}
+@media (max-width:800px){
+  .how-steps,.cc-services,.guide-list{grid-template-columns:1fr}
+  .grays-teaser img{height:220px !important}
+}
