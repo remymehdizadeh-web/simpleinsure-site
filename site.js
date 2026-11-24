@@ -1197,11 +1197,15 @@
       cur = Math.abs(diff) < 0.5 ? target : cur + diff * 0.22;
       track.style.transform = "translate3d(" + (-cur).toFixed(1) + "px,0,0)";
       var vw = innerWidth, p = dist ? cur / dist : 0, best = 0, bestD = 1e9;
+      var intro = pin.querySelector(".h-intro");
+      var laneLeft = intro ? intro.getBoundingClientRect().right + 24 : vw * 0.28;
+      var laneMid = laneLeft + Math.max(120, (vw - laneLeft) * 0.38);
       slides.forEach(function (s, i) {
         var r = s.getBoundingClientRect();
         var c = (r.left + r.width / 2 - vw / 2) / vw;
         if (imgs[i]) imgs[i].style.transform = "translate3d(" + (c * -5).toFixed(2) + "%,0,0)";
-        var dd = Math.abs(r.left + r.width / 2 - vw * 0.62);
+        if (r.right < laneLeft + 40) return;
+        var dd = Math.abs(r.left + r.width / 2 - laneMid);
         if (dd < bestD) { bestD = dd; best = i; }
       });
       if (bar) bar.style.setProperty("--p", p.toFixed(3));
@@ -1244,4 +1248,26 @@
       });
     });
   })();
+
+  d.querySelectorAll("[data-count]").forEach(function (el) {
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    if (!target || reduce) return;
+    var started = false;
+    function run() {
+      if (started) return;
+      var r = el.getBoundingClientRect();
+      if (r.top > innerHeight * 0.92) return;
+      started = true;
+      var t0 = performance.now();
+      function step(now) {
+        var p = Math.min(1, (now - t0) / 720);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = String(Math.round(target * eased));
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    addEventListener("scroll", run, { passive: true });
+    run();
+  });
 })();
