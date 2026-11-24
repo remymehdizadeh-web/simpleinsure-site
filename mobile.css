@@ -1888,3 +1888,5 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
   body.page-home .client-result.client-result-grays { padding-bottom: calc(120px + env(safe-area-inset-bottom)); }
   .segment-marquee { display: block; }
 }
+
+.btn,a.btn,button.btn,.btn-ghost,.btn-light,.qf-btn,.quote-sticky{display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.15}

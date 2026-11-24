@@ -447,3 +447,31 @@ California: Principal's individual producer license.
 The industries FAQ answers moved here, word for word, into collapsed questions.
 
 Real Estate Program: the lede dropped the second sentence (it remains in the FAQ). Who it is for, what we place, and the three places are one line each, using the previous sentences. FAQ answers are unchanged.
+
+
+PREMIUM REBUILD COPY NOTES
+Removed from the home hero: "New York insurance broker" and "Insurance, made simple."
+Kept in the home title and meta: New York.
+Home hero now: SimpleINSURE. Personal and commercial insurance. Real estate is the specialty. What is covered depends on the policy.
+Removed the home stats strip and every word ticker.
+Removed the fourth how-it-works line from the home row: We switch it. Dates lined up.
+Removed the coverage license list from the body. The same four lines now sit in the footer and stay on /legal/.
+Removed "Licensed in NY, PA, and FL..." trust lines from forms.
+FAQ answers were not rewritten.
+Gray's credit still ends with ", cropped."
+Coverage lede is unchanged.
+nyc-restaurant-insurance-requirements/index.html: shortened a paragraph to: New York law requires a restaurant with employees to carry workers compensation and disability benefits coverage, which includes paid family leave.
+nyc-restaurant-insurance-requirements/index.html: shortened a paragraph to: New York's dram shop law can hold a business that sells alcohol responsible in some cases for harm caused by an intoxicated customer.
+nassau-suffolk-landlord-insurance/index.html: shortened a paragraph to: If you own a house or small building on Long Island and rent it to someone else, the building usually belongs on a landlord policy, not a homeowners policy.
+landlord-insurance-requirements-nyc/index.html: shortened a paragraph to: New York law does not require every landlord to buy property or liability insurance.
+landlord-insurance-requirements-nyc/index.html: shortened a paragraph to: Ask the lender for the insurance requirements in writing.
+landlord-insurance-requirements-nyc/index.html: shortened a paragraph to: If anyone is on your payroll, such as a superintendent, porter or handyman, New York requires workers compensation and disability benefits coverage, which includes paid family leave.
+new-york-restaurant-insurance/index.html: shortened a paragraph to: Delis, bodegas, and sandwich shops in New York usually need the same core coverage as a restaurant.
+new-york-restaurant-insurance/index.html: shortened a paragraph to: A lease often asks for general liability with the landlord named as additional insured, property coverage on your improvements and equipment, and a certificate that matches the lease language.
+long-island-restaurant-insurance/index.html: shortened a paragraph to: Most Long Island restaurants carry a package of property and general liability, often written as a businessowners policy, plus New York workers compensation and disability benefits for employees.
+long-island-restaurant-insurance/index.html: shortened a paragraph to: Most restaurant leases set liability limits and ask you to name the landlord as additional insured.
+nyc-mixed-use-building-insurance/index.html: shortened a paragraph to: A mixed-use building is usually insured on a commercial package: the building, the owner's liability, and loss of rents, often with an umbrella on top.
+nyc-mixed-use-building-insurance/index.html: shortened a paragraph to: Your lease should ask each commercial tenant to carry its own liability policy and to name you, and often your managing agent, as additional insured.
+nyc-mixed-use-building-insurance/index.html: shortened a paragraph to: In New York City, the owner of a building is generally responsible for keeping the sidewalk in front of it safe.
+nyc-mixed-use-building-insurance/index.html: shortened a paragraph to: We place insurance for mixed-use buildings in Queens and the other New York City boroughs, and for similar buildings on Long Island.
+nyc-mixed-use-building-insurance/index.html: shortened a paragraph to: The program is usually a commercial package.

@@ -1485,3 +1485,86 @@ html.motion.js .client-result-grays.is-in .result-photo img{transform:none;trans
 @media (prefers-reduced-motion:reduce){
   .nav-desk>a:after,.reveal,.lift,.hero .ken,.hero-media:after,.segment-marquee .marquee-track,.client-result-grays .result-photo img{animation:none !important;transition:none !important;transform:none !important;opacity:1 !important}
 }
+
+/* Premium system. Talk-to-a-broker cards, one nav CTA, no ticker. */
+html{scroll-behavior:smooth}
+.btn,.btn-ghost,.btn-light,.btn-sm,.btn-line,.qf-btn,button.btn,a.btn,button.btn-ghost,a.btn-ghost{
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  line-height:1.15;height:auto;min-height:48px;padding:12px 22px;box-sizing:border-box;gap:8px;
+}
+.btn-sm{min-height:44px;padding:10px 16px}
+.nav-actions .btn{min-height:44px}
+html.scrolled .bar{height:58px}
+html.scrolled .logo img{height:28px}
+:focus-visible{outline:2px solid #1A6EC8;outline-offset:3px}
+.segment-marquee,.marquee{display:none !important}
+
+body.page-home .hero-copy{display:flex;flex-direction:column;align-items:flex-start;max-width:18em;grid-template-columns:1fr}
+body.page-home .hero h1,body.page-home .brand-line{font-family:var(--serif);font-weight:500;font-size:clamp(52px,6.4vw,96px);line-height:1.02;letter-spacing:-.03em;color:#fff;max-width:11em;margin:0}
+body.page-home .hero .lede{color:#e7eef4;max-width:22em}
+
+.page-hero-photo{margin:0}
+.page-hero-photo img,.img-card img,.feature-card img,.story-img,.contact-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.page-hero-photo img{height:min(62vh,640px)}
+.who-cards,.icon-grid,.guide-grid,.step-cards{display:grid;gap:18px}
+.who-cards{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:22px}
+.icon-grid,.step-cards{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px}
+.guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.img-card,.feature-card,.broker-card,.guide-card{
+  background:#fff;color:var(--ink);border-radius:22px;box-shadow:0 18px 44px rgba(6,24,47,.1);
+  min-width:0;overflow:hidden;text-decoration:none;
+}
+.img-card{display:flex;flex-direction:column}
+.img-card img{height:190px}
+.img-card span,.feature-card span{display:block;padding:16px 18px 18px}
+.img-card b,.guide-card b{display:block;font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15;color:var(--navy)}
+.img-card small,.guide-card span{display:block;margin-top:6px;color:var(--muted);font-size:15px;line-height:1.4}
+.feature-card{display:grid;grid-template-columns:1.1fr .9fr;margin:0 0 22px;min-height:280px}
+.feature-card img{min-height:280px}
+.feature-card h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,3vw,48px);color:var(--navy);line-height:1.05}
+.broker-card{padding:22px 22px 18px}
+.broker-card h2,.broker-card h3{font-family:var(--serif);font-weight:500;color:var(--navy);line-height:1.15}
+.broker-card h2{font-size:clamp(26px,2vw,34px)}
+.broker-card h3{font-size:22px;margin:0}
+.broker-card p{color:var(--muted);margin:8px 0 0}
+.broker-card>b{display:block;color:#1A6EC8;font-size:13px;letter-spacing:.14em}
+.step-cards{list-style:none;padding:0;margin:18px 0 0}
+.guide-card{display:block;padding:18px 18px 16px}
+.broker-band{align-items:stretch}
+.broker-band .broker-card{height:100%}
+.on-dark.broker-card{background:transparent;box-shadow:none;color:#f4f7fb;border-top:2px solid rgba(255,255,255,.35);border-radius:0}
+.ny-band .on-dark h3,.ny-band .on-dark p{color:#f4f7fb}
+.split-story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:center}
+.split-story .story-img,.split-story img{border-radius:22px;height:min(420px,56vw);object-fit:cover}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.7fr);gap:22px;align-items:start}
+.contact-photo{border-radius:22px;overflow:hidden;grid-column:1 / -1}
+.contact-photo img{height:min(46vh,420px)}
+.contact-facts p{margin:8px 0}
+.pick-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.pick{width:100%;font:inherit;text-align:left;cursor:pointer;border:0}
+.pick.is-on{box-shadow:0 18px 44px rgba(26,110,200,.28);outline:2px solid #1A6EC8}
+.pick-pane{padding:8px 8px 18px}
+.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.review-grid .broker-card,.review-grid form{background:#fff;border-radius:22px;box-shadow:0 18px 44px rgba(6,24,47,.1);padding:18px}
+.foot-lic{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;margin:14px 0 0;padding:0}
+.foot-lic li{min-width:0}
+.foot-lic b{display:block;color:#d5e4f2;font-size:13px}
+.foot-lic span{display:block;color:#b7c5d6;font-size:12.5px;line-height:1.35;max-width:28em}
+.faq-list details{background:#fff;border-radius:16px;box-shadow:0 10px 28px rgba(6,24,47,.06);margin:0 0 12px;padding:4px 18px}
+.faq-list{border:0}
+.faq-list details{border:0}
+html.motion .lift{transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+html.motion .lift:hover,html.motion.js .reveal.lift.is-in:hover{transform:translateY(-6px)}
+@media (max-width:1024px){
+  .who-cards,.guide-grid{grid-template-columns:1fr 1fr}
+  .icon-grid,.step-cards,.feature-card,.split-story,.review-grid,.contact-grid{grid-template-columns:1fr}
+  .feature-card img{min-height:200px;height:220px}
+}
+@media (max-width:640px){
+  .who-cards,.guide-grid,.pick-row{grid-template-columns:1fr}
+  body.page-home .hero h1,body.page-home .brand-line{font-size:clamp(40px,12vw,56px)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .lift:hover{transform:none}
+}

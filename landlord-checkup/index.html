@@ -28,7 +28,7 @@
   html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
 }
 </style>
-<link rel="stylesheet" href="../site.css?v=52">
+<link rel="stylesheet" href="../site.css?v=53">
 <link rel="stylesheet" href="../mobile.css?v=33">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
@@ -49,21 +49,15 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 <header class="site-header">
   <div class="bar">
     <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-    <nav class="nav-desk" aria-label="Primary"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../resources/">Resources</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
-    <div class="nav-actions">
-      <a class="phone-full" href="tel:+15162267969">(516) 226-7969</a>
-      <a class="btn btn-sm" href="../get-a-quote/?line=landlord">Get a quote</a>
-      <a class="btn btn-sm btn-alt" href="../policy-review/">Request a review</a>
-      <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button>
-    </div>
+    <nav class="nav-desk" aria-label="Primary"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+    <div class="nav-actions"><a class="phone-full" href="tel:+15162267969">(516) 226-7969</a><a class="btn btn-sm" href="../quote/">Get a quote</a><button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button></div>
   </div>
 </header>
 <div class="sheet" id="sheet" hidden>
-  <nav aria-label="Mobile"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../resources/">Resources</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
-  <div class="sheet-cta"><a class="btn" href="../get-a-quote/?line=landlord">Get a quote</a><a class="btn" href="../policy-review/">Request a review</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
-  <p class="sheet-meta"><span>New York</span><span>NY License BR-1984615</span></p>
+  <nav aria-label="Mobile"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+  <div class="sheet-cta"><a class="btn" href="../quote/">Get a quote</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
 </div>
-<main id="main">
+<main id="main" class="card-flow">
 <header class="page-head fold"><div class="wrap">
   <p class="lede">Shop your landlord insurance with a licensed NY broker and see if you can save.</p>
   <h1 class="rise"><span class="line"><span>Landlord policy checkup</span></span></h1>
@@ -73,6 +67,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <a class="fold-call" href="tel:+15162267969">(516) 226-7969</a>
   </div>
 </div></header>
+<figure class="page-hero-photo"><img src="../photos/shot-shop-1200.webp" srcset="../photos/shot-shop-1200.webp 1200w, ../photos/shot-shop-2000.webp 2000w" sizes="(max-width: 800px) 100vw, 50vw" alt="A shop interior with clothing racks" width="2000" height="1333" fetchpriority="high" decoding="async"></figure>
 <section class="section" style="padding-top:12px"><div class="wrap prose narrow">
   <a class="btn lp-call" href="tel:+15162267969" data-call-spot="hero"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (516) 226-7969</a>
   <form class="wizard qf qf-wide" id="checkup-form" method="post" enctype="multipart/form-data" data-subject="Landlord policy checkup request" data-subject-exact data-final="Send it" data-fallback-email="info@simpleinsure.co" novalidate>
@@ -88,7 +83,6 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <p class="form-error" role="alert" hidden></p>
   </div>
   <div class="wizard-nav"><button type="submit" class="btn qf-btn" data-next>Send it</button></div>
-  <p class="qf-trust"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Licensed in NY, PA, and FL (NY DFS BR-1984615). Principal also licensed in California.</span></p>
   <div class="done" hidden>
     <p class="done-title">The form did not send.</p>
     <p class="lede">Email the note below, or call (516) 226-7969.</p>
@@ -113,7 +107,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     </div>
     <div><p class="foot-h">Coverage</p><ul><li><a href="../real-estate-program/">Real Estate Program</a></li><li><a href="../coverage/#property">Property</a></li><li><a href="../coverage/#liability">Liability</a></li><li><a href="../coverage/#workers-compensation">Workers comp</a></li><li><a href="../coverage/#personal">Personal</a></li><li><a href="../coverage/">All coverage</a></li></ul></div>
     <div><p class="foot-h">Who we serve</p><ul><li><a href="../coverage/#real-estate">Buildings</a></li><li><a href="../coverage/#restaurants">Restaurants</a></li><li><a href="../coverage/#contractors">Contractors</a></li><li><a href="../coverage/#offices">Offices</a></li><li><a href="../new-york-building-insurance/">NYC buildings</a></li></ul></div>
-    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../resources/">Resources</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../get-a-quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
+    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../about/#guides">Guides</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
     <div><p class="foot-h">Office</p><ul>
       <li><a href="tel:+15162267969">(516) 226-7969</a></li>
       <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
@@ -122,6 +116,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div class="wrap desk-foot-links"><p class="foot-links"><a href="../real-estate-program/">Real Estate Program</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../nassau-suffolk-landlord-insurance/">Nassau and Suffolk landlords</a> · <a href="../nyc-mixed-use-building-insurance/">NYC mixed-use buildings</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../long-island-restaurant-insurance/">Long Island restaurants</a> · <a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a> · <a href="../landlord-insurance-requirements-nyc/">NYC landlord requirements</a> · <a href="../claims/">Claims</a></p></div>
   <div class="wrap legal-line">
     <span>SimpleINSURE Brokerage LLC · NY License BR-1984615 · <a href="../legal/">Privacy and licenses</a></span>
+<ul class="foot-lic">
+<li><b>New York</b><span>Resident license. Home market. NY DFS BR-1984615.</span></li>
+<li><b>Pennsylvania</b><span>Licensed.</span></li>
+<li><b>Florida</b><span>Licensed.</span></li>
+<li><b>California</b><span>Principal's individual producer license.</span></li>
+</ul>
   </div>
   <div class="m-foot m-only">
     <div class="wrap">
@@ -129,7 +129,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       <div class="m-foot-cols">
         <div><p class="foot-h">Coverage</p><ul><li><a href="../real-estate-program/">Real Estate Program</a></li><li><a href="../coverage/#property">Property</a></li><li><a href="../coverage/#liability">Liability</a></li><li><a href="../coverage/#workers-compensation">Workers comp</a></li><li><a href="../coverage/#personal">Personal</a></li><li><a href="../coverage/">All coverage</a></li></ul></div>
     <div><p class="foot-h">Who we serve</p><ul><li><a href="../coverage/#real-estate">Buildings</a></li><li><a href="../coverage/#restaurants">Restaurants</a></li><li><a href="../coverage/#contractors">Contractors</a></li><li><a href="../coverage/#offices">Offices</a></li><li><a href="../new-york-building-insurance/">NYC buildings</a></li></ul></div>
-    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../resources/">Resources</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../get-a-quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
+    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../about/#guides">Guides</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
     <div><p class="foot-h">Office</p><ul>
           <li><a href="tel:+15162267969">(516) 226-7969</a></li>
           <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
@@ -139,6 +139,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       </div>
       <p class="m-legal foot-links"><a href="../real-estate-program/">Real Estate Program</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../nassau-suffolk-landlord-insurance/">Nassau and Suffolk landlords</a> · <a href="../nyc-mixed-use-building-insurance/">NYC mixed-use buildings</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../long-island-restaurant-insurance/">Long Island restaurants</a> · <a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a> · <a href="../landlord-insurance-requirements-nyc/">NYC landlord requirements</a> · <a href="../claims/">Claims</a></p>
       <p class="m-legal">SimpleINSURE Brokerage LLC · NY License BR-1984615 · <a href="../legal/">Privacy and licenses</a></p>
+<ul class="foot-lic">
+<li><b>New York</b><span>Resident license. Home market. NY DFS BR-1984615.</span></li>
+<li><b>Pennsylvania</b><span>Licensed.</span></li>
+<li><b>Florida</b><span>Licensed.</span></li>
+<li><b>California</b><span>Principal's individual producer license.</span></li>
+</ul>
     </div>
   </div>
 </footer>
@@ -146,7 +152,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   <a class="btn" href="tel:+15162267969">Call (516) 226-7969</a>
   <a class="btn btn-ghost" href="#checkup-form">Send the page</a>
 </div>
-<a class="quote-sticky" href="../get-a-quote/?line=landlord">Get a quote</a>
-<script src="../site.js?v=49" defer></script>
+<a class="quote-sticky" href="../quote/">Get a quote</a>
+<script src="../site.js?v=50" defer></script>
 </body>
 </html>

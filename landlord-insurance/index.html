@@ -28,7 +28,7 @@
   html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
 }
 </style>
-<link rel="stylesheet" href="../site.css?v=52">
+<link rel="stylesheet" href="../site.css?v=53">
 <link rel="stylesheet" href="../mobile.css?v=33">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
@@ -48,21 +48,15 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 <header class="site-header">
   <div class="bar">
     <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-    <nav class="nav-desk" aria-label="Primary"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../resources/">Resources</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
-    <div class="nav-actions">
-      <a class="phone-full" href="tel:+15162267969">(516) 226-7969</a>
-      <a class="btn btn-sm" href="../get-a-quote/?line=landlord">Get a quote</a>
-      <a class="btn btn-sm btn-alt" href="../policy-review/">Request a review</a>
-      <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button>
-    </div>
+    <nav class="nav-desk" aria-label="Primary"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+    <div class="nav-actions"><a class="phone-full" href="tel:+15162267969">(516) 226-7969</a><a class="btn btn-sm" href="../quote/">Get a quote</a><button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button></div>
   </div>
 </header>
 <div class="sheet" id="sheet" hidden>
-  <nav aria-label="Mobile"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../resources/">Resources</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
-  <div class="sheet-cta"><a class="btn" href="../get-a-quote/?line=landlord">Get a quote</a><a class="btn" href="../policy-review/">Request a review</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
-  <p class="sheet-meta"><span>New York</span><span>NY License BR-1984615</span></p>
+  <nav aria-label="Mobile"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+  <div class="sheet-cta"><a class="btn" href="../quote/">Get a quote</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
 </div>
-<main id="main">
+<main id="main" class="card-flow">
 <header class="page-head fold lp-fold"><div class="wrap">
   <p class="lede">Shop your landlord insurance with a licensed NY broker and see if you can save.</p>
   <div class="lp-grid" style="align-items:start">
@@ -85,7 +79,6 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <p class="form-error" role="alert" hidden></p>
   </div>
   <div class="wizard-nav"><button type="submit" class="btn qf-btn" data-next><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call me back</button></div>
-  <p class="qf-trust"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Licensed in NY, PA, and FL (NY DFS BR-1984615). Principal also licensed in California.</span></p>
   <p class="qf-alt">Have your declarations page? <a href="../landlord-checkup/">Upload it here</a></p>
   <div class="done" hidden>
     <p class="done-title">The form did not send.</p>
@@ -101,6 +94,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
   </div>
 </div></header>
+<figure class="page-hero-photo"><img src="../photos/shot-li-1200.webp" srcset="../photos/shot-li-1200.webp 1200w, ../photos/shot-li-2000.webp 2000w" sizes="(max-width: 800px) 100vw, 50vw" alt="A house with a front walk" width="2000" height="1333" fetchpriority="high" decoding="async"></figure>
 <section class="section scan" style="padding-top:48px"><div class="wrap prose narrow">
   <h2>Who it is for</h2>
   <ul class="points cols">
@@ -123,29 +117,18 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   <p>We place landlord and building insurance for rental houses, two-family homes, mixed-use buildings, and small apartment buildings in Queens and the other boroughs, and in Nassau County and Suffolk County. If you own a building with stores or offices below and apartments above, see also <a href="../nyc-mixed-use-building-insurance/">mixed-use building insurance</a>.</p>
   <p>Long Island rental houses and two-family homes are covered in more detail on <a href="../nassau-suffolk-landlord-insurance/">landlord insurance in Nassau and Suffolk</a>.</p>
     <div id="faq">
-  <h2>Do I need landlord insurance to rent out my house in New York?</h2>
-  <p>New York does not require every landlord to buy a property or liability policy by statute. A lender usually does, and the loan papers say what to carry. If you have employees, workers compensation and disability benefits are required. A homeowners policy is for a home you live in, not a house you rent out.</p>
-  <h2>How much is landlord insurance in New York?</h2>
-  <p>It depends on the building, the limits, how it is built, and past losses. We do not publish a price. Send the declarations page, or the address and the unit count, and we will tell you what insurers will offer.</p>
-  <h2>What are typical landlord insurance requirements in NYC?</h2>
-  <p>A mortgage usually asks for the building to be insured, with the lender listed as mortgagee, and for a liability limit written in the loan. Flood is often a separate policy when the lender requires it. A managing agent is often an additional insured on liability, which is different from the mortgagee. Ask the lender for the requirements in writing.</p>
-  <h2>What insurance does a New York landlord need?</h2>
-  <p>Most landlords need coverage on the building, liability for injuries on the property, and loss of rents after a covered loss. An umbrella can sit over a qualifying liability policy. Workers compensation is separate if you have employees. Add other pieces only when the building or the lender calls for them.</p>
-  <h2>Who is an insurance broker for apartment buildings in New York City?</h2>
-  <p>SimpleINSURE Brokerage LLC is an independent broker in New York. We place landlord and apartment building insurance for buildings in New York City and on Long Island, including mixed-use buildings. See <a href="../new-york-building-insurance/">apartment and mixed-use building insurance</a>, or call (516) 226-7969.</p>
-  <h2>Is a homeowners policy enough for a rental property?</h2>
-  <p>No. A homeowners policy is for a home you live in, and a house or apartment you rent out needs a landlord policy. Tell the insurer the property is a rental. The wrong policy can leave it uncovered.</p>
-  <h2>Does landlord insurance pay rent if a tenant stops paying?</h2>
-  <p>No. Loss of rents pays rent you lose after a covered loss, such as a fire, while repairs are made. It does not pay unpaid rent, a tenant who leaves without paying, or rent lost in an eviction for nonpayment. Unpaid rent is not a covered property loss.</p>
-  <h2>What is the difference between loss of rents and unpaid rent?</h2>
-  <p>Loss of rents is income you lose because a covered property loss, such as a fire, makes the apartment unusable while it is repaired. Unpaid rent is money a tenant owes and does not pay while the apartment is intact. Landlord insurance can cover the first, up to the policy limit. It does not cover the second.</p>
-  <h2>Do New York landlords need workers compensation?</h2>
-  <p>Yes, if someone is on your payroll, such as a superintendent or a handyman. New York also requires disability benefits for employers. The building policy does not replace either one. If you have no employees, you generally do not need workers compensation for yourself.</p>
-  <h2>Can my managing agent be named as an additional insured?</h2>
-  <p>Often yes, on the liability part of the policy, when the management agreement asks for it. The lender is usually the mortgagee on the building coverage, which is a different role. Send the clause and the agent's legal name so the endorsement matches the agreement.</p>
-  <h2>Does landlord insurance cover flood?</h2>
-  <p>A landlord property policy usually does not cover flood. When you need flood coverage, it is a separate policy. A lender will often require that separate policy for a building in a flood zone. The building policy does not fill in for it.</p>
-<h2>Who is an insurance broker for landlords in Queens?</h2><p>SimpleINSURE places landlord and building insurance for rental and mixed-use properties in Queens and across New York City. Send the property address and the current declarations page and a licensed broker will review it.</p><h2>What insurance does a Long Island landlord need?</h2><p>Most Long Island landlords carry a landlord or building policy that can include the structure, liability for covered claims, and loss of rents after a covered loss, subject to the policy terms. Flood is usually separate. A homeowners policy is generally not the right form once the house is a rental you do not live in.</p><h2>What commercial property insurance do landlords on Long Island usually carry?</h2><p>For a rental building, commercial property (or a landlord form, depending on the size and use) can cover the structure against covered causes of loss. It does not usually cover a tenant's belongings. Loss of rents, if included, applies after a covered loss, not when a tenant simply stops paying.</p><h2>What general liability insurance does an apartment building owner in New York City need?</h2><p>Building owners usually carry general liability for covered claims arising from the property, common areas, and, in New York City, often the sidewalk in front of the building. Limits and endorsements depend on the building, the lender, and the policy. We do not publish a standard limit.</p>  </div>
+  <details class="reveal"><summary>Do I need landlord insurance to rent out my house in New York?</summary><p>New York does not require every landlord to buy a property or liability policy by statute. A lender usually does, and the loan papers say what to carry. If you have employees, workers compensation and disability benefits are required. A homeowners policy is for a home you live in, not a house you rent out.</p></details>
+  <details class="reveal"><summary>How much is landlord insurance in New York?</summary><p>It depends on the building, the limits, how it is built, and past losses. We do not publish a price. Send the declarations page, or the address and the unit count, and we will tell you what insurers will offer.</p></details>
+  <details class="reveal"><summary>What are typical landlord insurance requirements in NYC?</summary><p>A mortgage usually asks for the building to be insured, with the lender listed as mortgagee, and for a liability limit written in the loan. Flood is often a separate policy when the lender requires it. A managing agent is often an additional insured on liability, which is different from the mortgagee. Ask the lender for the requirements in writing.</p></details>
+  <details class="reveal"><summary>What insurance does a New York landlord need?</summary><p>Most landlords need coverage on the building, liability for injuries on the property, and loss of rents after a covered loss. An umbrella can sit over a qualifying liability policy. Workers compensation is separate if you have employees. Add other pieces only when the building or the lender calls for them.</p></details>
+  <details class="reveal"><summary>Who is an insurance broker for apartment buildings in New York City?</summary><p>SimpleINSURE Brokerage LLC is an independent broker in New York. We place landlord and apartment building insurance for buildings in New York City and on Long Island, including mixed-use buildings. See <a href="../new-york-building-insurance/">apartment and mixed-use building insurance</a>, or call (516) 226-7969.</p></details>
+  <details class="reveal"><summary>Is a homeowners policy enough for a rental property?</summary><p>No. A homeowners policy is for a home you live in, and a house or apartment you rent out needs a landlord policy. Tell the insurer the property is a rental. The wrong policy can leave it uncovered.</p></details>
+  <details class="reveal"><summary>Does landlord insurance pay rent if a tenant stops paying?</summary><p>No. Loss of rents pays rent you lose after a covered loss, such as a fire, while repairs are made. It does not pay unpaid rent, a tenant who leaves without paying, or rent lost in an eviction for nonpayment. Unpaid rent is not a covered property loss.</p></details>
+  <details class="reveal"><summary>What is the difference between loss of rents and unpaid rent?</summary><p>Loss of rents is income you lose because a covered property loss, such as a fire, makes the apartment unusable while it is repaired. Unpaid rent is money a tenant owes and does not pay while the apartment is intact. Landlord insurance can cover the first, up to the policy limit. It does not cover the second.</p></details>
+  <details class="reveal"><summary>Do New York landlords need workers compensation?</summary><p>Yes, if someone is on your payroll, such as a superintendent or a handyman. New York also requires disability benefits for employers. The building policy does not replace either one. If you have no employees, you generally do not need workers compensation for yourself.</p></details>
+  <details class="reveal"><summary>Can my managing agent be named as an additional insured?</summary><p>Often yes, on the liability part of the policy, when the management agreement asks for it. The lender is usually the mortgagee on the building coverage, which is a different role. Send the clause and the agent's legal name so the endorsement matches the agreement.</p></details>
+  <details class="reveal"><summary>Does landlord insurance cover flood?</summary><p>A landlord property policy usually does not cover flood. When you need flood coverage, it is a separate policy. A lender will often require that separate policy for a building in a flood zone. The building policy does not fill in for it.</p></details>
+<details class="reveal"><summary>Who is an insurance broker for landlords in Queens?</summary><p>SimpleINSURE places landlord and building insurance for rental and mixed-use properties in Queens and across New York City. Send the property address and the current declarations page and a licensed broker will review it.</p></details><details class="reveal"><summary>What insurance does a Long Island landlord need?</summary><p>Most Long Island landlords carry a landlord or building policy that can include the structure, liability for covered claims, and loss of rents after a covered loss, subject to the policy terms. Flood is usually separate. A homeowners policy is generally not the right form once the house is a rental you do not live in.</p></details><details class="reveal"><summary>What commercial property insurance do landlords on Long Island usually carry?</summary><p>For a rental building, commercial property (or a landlord form, depending on the size and use) can cover the structure against covered causes of loss. It does not usually cover a tenant's belongings. Loss of rents, if included, applies after a covered loss, not when a tenant simply stops paying.</p></details><details class="reveal"><summary>What general liability insurance does an apartment building owner in New York City need?</summary><p>Building owners usually carry general liability for covered claims arising from the property, common areas, and, in New York City, often the sidewalk in front of the building. Limits and endorsements depend on the building, the lender, and the policy. We do not publish a standard limit.</p></details>  </div>
 
   <h2>What to send</h2>
   <ul class="points cols">
@@ -177,7 +160,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     </div>
     <div><p class="foot-h">Coverage</p><ul><li><a href="../real-estate-program/">Real Estate Program</a></li><li><a href="../coverage/#property">Property</a></li><li><a href="../coverage/#liability">Liability</a></li><li><a href="../coverage/#workers-compensation">Workers comp</a></li><li><a href="../coverage/#personal">Personal</a></li><li><a href="../coverage/">All coverage</a></li></ul></div>
     <div><p class="foot-h">Who we serve</p><ul><li><a href="../coverage/#real-estate">Buildings</a></li><li><a href="../coverage/#restaurants">Restaurants</a></li><li><a href="../coverage/#contractors">Contractors</a></li><li><a href="../coverage/#offices">Offices</a></li><li><a href="../new-york-building-insurance/">NYC buildings</a></li></ul></div>
-    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../resources/">Resources</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../get-a-quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
+    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../about/#guides">Guides</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
     <div><p class="foot-h">Office</p><ul>
       <li><a href="tel:+15162267969">(516) 226-7969</a></li>
       <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
@@ -186,6 +169,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div class="wrap desk-foot-links"><p class="foot-links"><a href="../real-estate-program/">Real Estate Program</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../nassau-suffolk-landlord-insurance/">Nassau and Suffolk landlords</a> · <a href="../nyc-mixed-use-building-insurance/">NYC mixed-use buildings</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../long-island-restaurant-insurance/">Long Island restaurants</a> · <a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a> · <a href="../landlord-insurance-requirements-nyc/">NYC landlord requirements</a> · <a href="../claims/">Claims</a></p></div>
   <div class="wrap legal-line">
     <span>SimpleINSURE Brokerage LLC · NY License BR-1984615 · <a href="../legal/">Privacy and licenses</a></span>
+<ul class="foot-lic">
+<li><b>New York</b><span>Resident license. Home market. NY DFS BR-1984615.</span></li>
+<li><b>Pennsylvania</b><span>Licensed.</span></li>
+<li><b>Florida</b><span>Licensed.</span></li>
+<li><b>California</b><span>Principal's individual producer license.</span></li>
+</ul>
   </div>
   <div class="m-foot m-only">
     <div class="wrap">
@@ -193,7 +182,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       <div class="m-foot-cols">
         <div><p class="foot-h">Coverage</p><ul><li><a href="../real-estate-program/">Real Estate Program</a></li><li><a href="../coverage/#property">Property</a></li><li><a href="../coverage/#liability">Liability</a></li><li><a href="../coverage/#workers-compensation">Workers comp</a></li><li><a href="../coverage/#personal">Personal</a></li><li><a href="../coverage/">All coverage</a></li></ul></div>
     <div><p class="foot-h">Who we serve</p><ul><li><a href="../coverage/#real-estate">Buildings</a></li><li><a href="../coverage/#restaurants">Restaurants</a></li><li><a href="../coverage/#contractors">Contractors</a></li><li><a href="../coverage/#offices">Offices</a></li><li><a href="../new-york-building-insurance/">NYC buildings</a></li></ul></div>
-    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../resources/">Resources</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../get-a-quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
+    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../about/#guides">Guides</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../quote/?line=landlord">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
     <div><p class="foot-h">Office</p><ul>
           <li><a href="tel:+15162267969">(516) 226-7969</a></li>
           <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
@@ -203,14 +192,20 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       </div>
       <p class="m-legal foot-links"><a href="../real-estate-program/">Real Estate Program</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../nassau-suffolk-landlord-insurance/">Nassau and Suffolk landlords</a> · <a href="../nyc-mixed-use-building-insurance/">NYC mixed-use buildings</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../long-island-restaurant-insurance/">Long Island restaurants</a> · <a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a> · <a href="../landlord-insurance-requirements-nyc/">NYC landlord requirements</a> · <a href="../claims/">Claims</a></p>
       <p class="m-legal">SimpleINSURE Brokerage LLC · NY License BR-1984615 · <a href="../legal/">Privacy and licenses</a></p>
+<ul class="foot-lic">
+<li><b>New York</b><span>Resident license. Home market. NY DFS BR-1984615.</span></li>
+<li><b>Pennsylvania</b><span>Licensed.</span></li>
+<li><b>Florida</b><span>Licensed.</span></li>
+<li><b>California</b><span>Principal's individual producer license.</span></li>
+</ul>
     </div>
   </div>
 </footer>
 <div class="call-bar" role="region" aria-label="Call or ask for a call back">
   <a class="btn" href="tel:+15162267969" data-call-spot="sticky">Call (516) 226-7969</a>
-  <a class="btn btn-ghost" href="../get-a-quote/">Get a quote</a>
+  <a class="btn btn-ghost" href="../quote/">Get a quote</a>
 </div>
-<a class="quote-sticky" href="../get-a-quote/?line=landlord">Get a quote</a>
-<script src="../site.js?v=49" defer></script>
+<a class="quote-sticky" href="../quote/">Get a quote</a>
+<script src="../site.js?v=50" defer></script>
 </body>
 </html>

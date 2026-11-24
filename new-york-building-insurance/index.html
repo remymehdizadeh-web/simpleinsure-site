@@ -28,7 +28,7 @@
   html.veil .site-header:before{background:#fff;height:calc(12px + env(safe-area-inset-top));top:auto;bottom:100%}
 }
 </style>
-<link rel="stylesheet" href="../site.css?v=52">
+<link rel="stylesheet" href="../site.css?v=53">
 <link rel="stylesheet" href="../mobile.css?v=33">
 <script>document.documentElement.classList.toggle("scrolled",(window.scrollY||0)>8);if(matchMedia("(max-width:980px)").matches)document.documentElement.classList.add("is-mobile");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 <link rel="preload" href="../fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
@@ -49,21 +49,15 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 <header class="site-header">
   <div class="bar">
     <a class="logo" href="../" aria-label="SimpleINSURE home"><img src="../simpleinsure-wordmark.png" alt="SimpleINSURE" width="1684" height="360"></a>
-    <nav class="nav-desk" aria-label="Primary"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../resources/">Resources</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
-    <div class="nav-actions">
-      <a class="phone-full" href="tel:+15162267969">(516) 226-7969</a>
-      <a class="btn btn-sm" href="../get-a-quote/?line=commercial-property">Get a quote</a>
-      <a class="btn btn-sm btn-alt" href="../policy-review/">Request a review</a>
-      <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button>
-    </div>
+    <nav class="nav-desk" aria-label="Primary"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+    <div class="nav-actions"><a class="phone-full" href="tel:+15162267969">(516) 226-7969</a><a class="btn btn-sm" href="../quote/">Get a quote</a><button class="nav-btn" type="button" aria-expanded="false" aria-controls="sheet"><span class="nav-ic" aria-hidden="true"></span><span class="sr">Menu</span></button></div>
   </div>
 </header>
 <div class="sheet" id="sheet" hidden>
-  <nav aria-label="Mobile"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../resources/">Resources</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
-  <div class="sheet-cta"><a class="btn" href="../get-a-quote/?line=commercial-property">Get a quote</a><a class="btn" href="../policy-review/">Request a review</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
-  <p class="sheet-meta"><span>New York</span><span>NY License BR-1984615</span></p>
+  <nav aria-label="Mobile"><a href="../real-estate-program/">Real estate</a><a href="../coverage/">Coverage</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+  <div class="sheet-cta"><a class="btn" href="../quote/">Get a quote</a><a href="tel:+15162267969">(516) 226-7969</a><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></div>
 </div>
-<main id="main"><header class="page-head fold lp-fold"><div class="wrap lp-grid">
+<main id="main" class="card-flow"><header class="page-head fold lp-fold"><div class="wrap lp-grid">
   <div class="lp-copy">
     <h1 class="rise"><span class="line"><span>Apartment Building Insurance in NYC and Long Island</span></span></h1>
     <p class="lede">For apartment, mixed-use, and rental buildings in NYC and Long Island. A licensed New York broker.</p>
@@ -82,7 +76,6 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <p class="form-error" role="alert" hidden></p>
   </div>
   <div class="wizard-nav"><button type="submit" class="btn qf-btn" data-next><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call me back</button></div>
-  <p class="qf-trust"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Licensed in NY, PA, and FL (NY DFS BR-1984615). Principal also licensed in California.</span></p>
   <p class="qf-alt">Have your declarations page? <a href="../landlord-checkup/">Upload it here</a></p>
   <div class="done" hidden>
     <p class="done-title">The form did not send.</p>
@@ -96,6 +89,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
   </div>
 </form>
 </div></header>
+<figure class="page-hero-photo"><img src="../photos/shot-night-1200.webp" srcset="../photos/shot-night-1200.webp 1200w, ../photos/shot-night-2000.webp 2000w" sizes="(max-width: 800px) 100vw, 50vw" alt="A lit city skyline at dusk" width="2000" height="1333" fetchpriority="high" decoding="async"></figure>
 <section class="section scan" style="padding-top:48px"><div class="wrap prose narrow">
 
   <h2>Usually included</h2>
@@ -108,27 +102,17 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
 <h2 id="mixed-use-and-queens">Mixed-use buildings and Queens</h2>
   <p>A walk-up or corner building with a store below and apartments above is usually insured as mixed-use, on a commercial package, not as a house. We place that coverage in Queens and the other boroughs, and on Long Island. See <a href="../nyc-mixed-use-building-insurance/">mixed-use building insurance</a> for what the program can include and what to send.</p>
     <div id="faq">
-  <h2>Who is an insurance broker for apartment buildings in New York City?</h2>
-  <p>SimpleINSURE Brokerage LLC is an independent insurance broker in New York. We place property, liability, loss of rents, and umbrella coverage for apartment buildings and mixed-use buildings in New York City, and for rental buildings in Nassau. Send the declarations page and the rent roll, or call (516) 226-7969.</p>
-  <h2>What is the difference between loss of rents and unpaid rent?</h2>
-  <p>Loss of rents is income the building loses because a covered property loss, such as a fire, makes the space unusable while it is repaired. Unpaid rent is money a tenant owes and does not pay while the apartment is intact. A building policy can cover the first, up to its limit. It does not cover the second.</p>
-  <h2>Does landlord insurance cover loss of rent?</h2>
-  <p>It can pay loss of rents while a covered loss, such as a fire, is repaired. It does not pay unpaid rent when a tenant stops paying, leaves without paying, or is evicted for nonpayment. It pays only up to the limit, and only for the time on the policy.</p>
-  <h2>What is loss of rents coverage?</h2>
-  <p>Loss of rents is the rent you lose while covered damage is repaired. It is part of many building policies, with its own limit. It is not coverage for empty units or unpaid rent. Read the declarations page for the limit and how long it lasts.</p>
-  <h2>Does landlord insurance cover tenant damage?</h2>
-  <p>It can cover sudden damage to the building that the policy lists as covered. It does not cover wear and tear or slow maintenance problems. It also does not cover a tenant's furniture or other belongings. Tenants need their own renters policy for their property.</p>
-  <h2>Does landlord insurance cover a tenant's injury?</h2>
-  <p>Premises liability on a landlord or building policy can cover injury to a tenant or a visitor when you are responsible for it. It does not cover every injury, and it does not replace health insurance. What is paid depends on the facts and on the policy.</p>
-  <h2>What is ordinance or law coverage, and why does an older building need it?</h2>
-  <p>After a covered loss, an older New York City building may have to be repaired to the current building code. That work can cost more than putting back what was there. Ordinance or law coverage can pay some of that extra cost, up to its own limit, when the policy includes it. Not every building policy includes it, so ask to see the limit.</p>
-  <h2>Does landlord insurance cover a tenant's belongings?</h2>
-  <p>No. The building policy covers the building, not a tenant's furniture, clothes, or other property. A tenant needs a renters policy for those things. Your policy and theirs are separate.</p>
-  <h2>Landlord vs homeowners insurance: what is the difference?</h2>
-  <p>A homeowners policy is for a home you live in. A rental needs a landlord or building policy, even if you once lived there. Tell the insurer the building is rented. The wrong policy can leave a rental uncovered.</p>
-  <h2>My building insurance was non-renewed. What now?</h2>
-  <p>Send the non-renewal notice and the loss runs, and tell the lender before the policy ends. Start before the expiration date so there is time to place a new policy. We can review what you have and what other insurers will write. Call (516) 226-7969.</p>
-<h2>Who is an insurance broker for a mixed-use or apartment building in Queens?</h2><p>We place commercial property and general liability for apartment and mixed-use buildings in Queens and across New York City. The commercial tenant, the sidewalk exposure, and the building's updates all come up in underwriting. Send the declarations page and a rent roll to start.</p>  </div>
+  <details class="reveal"><summary>Who is an insurance broker for apartment buildings in New York City?</summary><p>SimpleINSURE Brokerage LLC is an independent insurance broker in New York. We place property, liability, loss of rents, and umbrella coverage for apartment buildings and mixed-use buildings in New York City, and for rental buildings in Nassau. Send the declarations page and the rent roll, or call (516) 226-7969.</p></details>
+  <details class="reveal"><summary>What is the difference between loss of rents and unpaid rent?</summary><p>Loss of rents is income the building loses because a covered property loss, such as a fire, makes the space unusable while it is repaired. Unpaid rent is money a tenant owes and does not pay while the apartment is intact. A building policy can cover the first, up to its limit. It does not cover the second.</p></details>
+  <details class="reveal"><summary>Does landlord insurance cover loss of rent?</summary><p>It can pay loss of rents while a covered loss, such as a fire, is repaired. It does not pay unpaid rent when a tenant stops paying, leaves without paying, or is evicted for nonpayment. It pays only up to the limit, and only for the time on the policy.</p></details>
+  <details class="reveal"><summary>What is loss of rents coverage?</summary><p>Loss of rents is the rent you lose while covered damage is repaired. It is part of many building policies, with its own limit. It is not coverage for empty units or unpaid rent. Read the declarations page for the limit and how long it lasts.</p></details>
+  <details class="reveal"><summary>Does landlord insurance cover tenant damage?</summary><p>It can cover sudden damage to the building that the policy lists as covered. It does not cover wear and tear or slow maintenance problems. It also does not cover a tenant's furniture or other belongings. Tenants need their own renters policy for their property.</p></details>
+  <details class="reveal"><summary>Does landlord insurance cover a tenant's injury?</summary><p>Premises liability on a landlord or building policy can cover injury to a tenant or a visitor when you are responsible for it. It does not cover every injury, and it does not replace health insurance. What is paid depends on the facts and on the policy.</p></details>
+  <details class="reveal"><summary>What is ordinance or law coverage, and why does an older building need it?</summary><p>After a covered loss, an older New York City building may have to be repaired to the current building code. That work can cost more than putting back what was there. Ordinance or law coverage can pay some of that extra cost, up to its own limit, when the policy includes it. Not every building policy includes it, so ask to see the limit.</p></details>
+  <details class="reveal"><summary>Does landlord insurance cover a tenant's belongings?</summary><p>No. The building policy covers the building, not a tenant's furniture, clothes, or other property. A tenant needs a renters policy for those things. Your policy and theirs are separate.</p></details>
+  <details class="reveal"><summary>Landlord vs homeowners insurance: what is the difference?</summary><p>A homeowners policy is for a home you live in. A rental needs a landlord or building policy, even if you once lived there. Tell the insurer the building is rented. The wrong policy can leave a rental uncovered.</p></details>
+  <details class="reveal"><summary>My building insurance was non-renewed. What now?</summary><p>Send the non-renewal notice and the loss runs, and tell the lender before the policy ends. Start before the expiration date so there is time to place a new policy. We can review what you have and what other insurers will write. Call (516) 226-7969.</p></details>
+<details class="reveal"><summary>Who is an insurance broker for a mixed-use or apartment building in Queens?</summary><p>We place commercial property and general liability for apartment and mixed-use buildings in Queens and across New York City. The commercial tenant, the sidewalk exposure, and the building's updates all come up in underwriting. Send the declarations page and a rent roll to start.</p></details>  </div>
   <h2>What to send</h2>
   <ul class="points">
     <li>Declarations pages and loss runs</li>
@@ -159,7 +143,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     </div>
     <div><p class="foot-h">Coverage</p><ul><li><a href="../real-estate-program/">Real Estate Program</a></li><li><a href="../coverage/#property">Property</a></li><li><a href="../coverage/#liability">Liability</a></li><li><a href="../coverage/#workers-compensation">Workers comp</a></li><li><a href="../coverage/#personal">Personal</a></li><li><a href="../coverage/">All coverage</a></li></ul></div>
     <div><p class="foot-h">Who we serve</p><ul><li><a href="../coverage/#real-estate">Buildings</a></li><li><a href="../coverage/#restaurants">Restaurants</a></li><li><a href="../coverage/#contractors">Contractors</a></li><li><a href="../coverage/#offices">Offices</a></li><li><a href="../new-york-building-insurance/">NYC buildings</a></li></ul></div>
-    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../resources/">Resources</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../get-a-quote/?line=commercial-property">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
+    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../about/#guides">Guides</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../quote/?line=commercial-property">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
     <div><p class="foot-h">Office</p><ul>
       <li><a href="tel:+15162267969">(516) 226-7969</a></li>
       <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
@@ -168,6 +152,12 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
     <div class="wrap desk-foot-links"><p class="foot-links"><a href="../real-estate-program/">Real Estate Program</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../nassau-suffolk-landlord-insurance/">Nassau and Suffolk landlords</a> · <a href="../nyc-mixed-use-building-insurance/">NYC mixed-use buildings</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../long-island-restaurant-insurance/">Long Island restaurants</a> · <a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a> · <a href="../landlord-insurance-requirements-nyc/">NYC landlord requirements</a> · <a href="../claims/">Claims</a></p></div>
   <div class="wrap legal-line">
     <span>SimpleINSURE Brokerage LLC · NY License BR-1984615 · <a href="../legal/">Privacy and licenses</a></span>
+<ul class="foot-lic">
+<li><b>New York</b><span>Resident license. Home market. NY DFS BR-1984615.</span></li>
+<li><b>Pennsylvania</b><span>Licensed.</span></li>
+<li><b>Florida</b><span>Licensed.</span></li>
+<li><b>California</b><span>Principal's individual producer license.</span></li>
+</ul>
   </div>
   <div class="m-foot m-only">
     <div class="wrap">
@@ -175,7 +165,7 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       <div class="m-foot-cols">
         <div><p class="foot-h">Coverage</p><ul><li><a href="../real-estate-program/">Real Estate Program</a></li><li><a href="../coverage/#property">Property</a></li><li><a href="../coverage/#liability">Liability</a></li><li><a href="../coverage/#workers-compensation">Workers comp</a></li><li><a href="../coverage/#personal">Personal</a></li><li><a href="../coverage/">All coverage</a></li></ul></div>
     <div><p class="foot-h">Who we serve</p><ul><li><a href="../coverage/#real-estate">Buildings</a></li><li><a href="../coverage/#restaurants">Restaurants</a></li><li><a href="../coverage/#contractors">Contractors</a></li><li><a href="../coverage/#offices">Offices</a></li><li><a href="../new-york-building-insurance/">NYC buildings</a></li></ul></div>
-    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../resources/">Resources</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../get-a-quote/?line=commercial-property">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
+    <div><p class="foot-h">Firm</p><ul><li><a href="../about/">The firm</a></li><li><a href="../about/#guides">Guides</a></li><li><a href="../claims/">Claims</a></li><li><a href="../client-center/">Client Center</a></li><li><a href="../quote/?line=commercial-property">Get a quote</a></li><li><a href="../contact/">Contact</a></li></ul></div>
     <div><p class="foot-h">Office</p><ul>
           <li><a href="tel:+15162267969">(516) 226-7969</a></li>
           <li><a href="mailto:info@simpleinsure.co">info@simpleinsure.co</a></li>
@@ -185,14 +175,20 @@ gtag('config', 'G-ZQH2G4PPLQ', { allow_google_signals: false, allow_ad_personali
       </div>
       <p class="m-legal foot-links"><a href="../real-estate-program/">Real Estate Program</a> · <a href="../new-york-building-insurance/">Building insurance</a> · <a href="../landlord-insurance/">Landlord insurance</a> · <a href="../nassau-suffolk-landlord-insurance/">Nassau and Suffolk landlords</a> · <a href="../nyc-mixed-use-building-insurance/">NYC mixed-use buildings</a> · <a href="../new-york-restaurant-insurance/">Restaurant insurance</a> · <a href="../long-island-restaurant-insurance/">Long Island restaurants</a> · <a href="../new-york-contractor-insurance/">Contractor insurance</a> · <a href="../business-owners-policy/">Businessowners policy</a> · <a href="../nassau-county-commercial-insurance/">Nassau County</a> · <a href="../landlord-insurance-requirements-nyc/">NYC landlord requirements</a> · <a href="../claims/">Claims</a></p>
       <p class="m-legal">SimpleINSURE Brokerage LLC · NY License BR-1984615 · <a href="../legal/">Privacy and licenses</a></p>
+<ul class="foot-lic">
+<li><b>New York</b><span>Resident license. Home market. NY DFS BR-1984615.</span></li>
+<li><b>Pennsylvania</b><span>Licensed.</span></li>
+<li><b>Florida</b><span>Licensed.</span></li>
+<li><b>California</b><span>Principal's individual producer license.</span></li>
+</ul>
     </div>
   </div>
 </footer>
 <div class="call-bar" role="region" aria-label="Call or ask for a call back">
   <a class="btn" href="tel:+15162267969" data-call-spot="sticky">Call (516) 226-7969</a>
-  <a class="btn btn-ghost" href="../get-a-quote/">Get a quote</a>
+  <a class="btn btn-ghost" href="../quote/">Get a quote</a>
 </div>
-<a class="quote-sticky" href="../get-a-quote/?line=commercial-property">Get a quote</a>
-<script src="../site.js?v=49" defer></script>
+<a class="quote-sticky" href="../quote/">Get a quote</a>
+<script src="../site.js?v=50" defer></script>
 </body>
 </html>
