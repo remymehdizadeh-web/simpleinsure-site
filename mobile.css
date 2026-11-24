@@ -1876,3 +1876,15 @@ html:not(.scrolled) body.page-inner:has(.photo-hero):not(.nav-open) .m-foot .log
   }
   .chips a, .cover-detail .more { min-height: 44px; align-items: center; }
 }
+
+/* Gray's case study on a phone. The photo stays. The credit stays readable. */
+@media (max-width: 1023px) {
+  .client-result-grays .case-study { max-width: none; }
+  .client-result-grays .case-kicker { letter-spacing: .16em; text-transform: none; }
+  .client-result-grays .case-intro,
+  .client-result-grays .case-problem { font-size: 16px; }
+  .client-result-grays .case-points li { white-space: normal; }
+  .client-result-grays .case-credit { margin-top: 16px; }
+  body.page-home .client-result.client-result-grays { padding-bottom: calc(120px + env(safe-area-inset-bottom)); }
+  .segment-marquee { display: block; }
+}

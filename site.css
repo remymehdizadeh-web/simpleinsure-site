@@ -1430,3 +1430,66 @@ ol.steps-plain li:before{content:counter(step,decimal-leading-zero);position:abs
 @media (prefers-reduced-motion:reduce){
   .ind-photo img,.mega-panel,.line-grid a,.path-grid a{transition:none}
 }
+
+/* Simpler nav, scroll reveal, and the Gray's case study. */
+.nav-desk>a{position:relative;white-space:nowrap}
+.nav-desk>a:after{content:"";position:absolute;left:12px;right:12px;bottom:7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left center;transition:transform .35s var(--ease)}
+.nav-desk>a:hover:after,.nav-desk>a[aria-current="page"]:after{transform:scaleX(1)}
+@media (max-width:1240px){
+  .nav-desk>a{padding:8px 8px;font-size:13.5px}
+}
+html.motion.js .reveal:not(.is-in){opacity:0;transform:translate3d(0,18px,0)}
+html.motion.js .reveal{transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
+html.motion.js .reveal.is-in{opacity:1;transform:none}
+html.motion .lift{transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+html.motion .lift:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(6,24,47,.12)}
+html.motion .hero .ken{animation:ken-drift 32s ease-in-out alternate infinite}
+@keyframes ken-drift{from{transform:scale(1.06)}to{transform:scale(1.14) translate3d(-1.2%,-1%,0)}}
+html.motion .hero-media:after{content:"";position:absolute;inset:-8%;z-index:1;pointer-events:none;background:radial-gradient(circle at 28% 40%,rgba(156,201,240,.16),transparent 46%);animation:shade-drift 18s ease-in-out infinite alternate}
+@keyframes shade-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(3%,2%,0)}}
+.segment-marquee{overflow:hidden;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.segment-marquee .marquee-track{display:flex;width:max-content}
+.segment-marquee span{padding:14px 0;font-size:12px;font-weight:650;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);white-space:nowrap}
+html.motion .segment-marquee .marquee-track{animation:marquee 36s linear infinite}
+html.motion .segment-marquee:hover .marquee-track{animation-play-state:paused}
+.mark{width:28px;height:28px;margin-bottom:10px;color:var(--navy)}
+.who-grid{margin-top:8px}
+@media (min-width:801px){
+  .who-grid .ind-card:last-child{grid-column:auto;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+}
+.line-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.line-note{min-width:0;padding:22px 22px 22px 0;border-bottom:1px solid var(--line)}
+.line-note h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2vw,30px);color:var(--navy);line-height:1.15}
+.line-note p{margin-top:6px;color:var(--muted);font-size:15px;line-height:1.4}
+.anchor{position:relative;display:block;height:0;scroll-margin-top:120px}
+.faq-list{border-top:1px solid var(--line)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-family:var(--serif);font-weight:500;font-size:clamp(22px,2vw,28px);color:var(--navy);line-height:1.25;position:relative}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:after{content:"+";position:absolute;right:0;top:16px;font-family:var(--sans);font-size:22px;color:var(--soft)}
+.faq-list details[open] summary:after{content:"–"}
+.faq-list details p{margin:0 0 18px;max-width:40em}
+.case-study{max-width:40rem}
+.case-kicker{margin:0 0 12px;font-size:12px;font-weight:650;letter-spacing:.16em;text-transform:none;color:#9cc9f0}
+.case-study .result-name{margin:0 0 8px}
+.case-study h2{margin:0}
+.case-intro,.case-problem{margin:14px 0 0;max-width:32em;color:#e7eef4;font-size:17px;line-height:1.45}
+.case-study h3{margin:26px 0 0;font-family:var(--sans);font-size:13px;font-weight:650;letter-spacing:0;text-transform:none;color:#9cc9f0}
+.case-points{list-style:none;margin:8px 0 0;padding:0;max-width:36em}
+.case-points li{margin:0;padding:11px 0;border-top:1px solid rgba(231,238,244,.16);color:#f4f7fb;font-size:16.5px;line-height:1.4}
+.case-note{margin:18px 0 0;max-width:36em;color:#a8bdd4;font-size:13px;line-height:1.45}
+.case-study .btn{margin-top:22px;align-self:flex-start}
+.case-credit{margin:18px 0 0;color:#a8bdd4;font-size:12px;line-height:1.45}
+.case-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+html.motion.js .client-result-grays:not(.is-in) .result-photo img{transform:scale(1.08)}
+html.motion.js .client-result-grays.is-in .result-photo img{transform:none;transition:transform 1.8s var(--ease)}
+@media (max-width:800px){
+  .line-index{grid-template-columns:1fr 1fr}
+  .line-note{padding:16px 12px 16px 0}
+}
+@media (max-width:560px){
+  .line-index{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .nav-desk>a:after,.reveal,.lift,.hero .ken,.hero-media:after,.segment-marquee .marquee-track,.client-result-grays .result-photo img{animation:none !important;transition:none !important;transform:none !important;opacity:1 !important}
+}

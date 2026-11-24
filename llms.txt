@@ -14,8 +14,7 @@ We place personal and commercial insurance for many industries. The specialty is
 
 ## Pages
 - [Real Estate Program](https://www.simpleinsure.co/real-estate-program/): specialty for landlords, mixed-use buildings, apartments, co-ops, and condos in New York, Queens, and Long Island
-- [Coverage](https://www.simpleinsure.co/coverage/): personal and commercial lines, including mixed-use, landlords, homeowners, and personal umbrella
-- [Industries](https://www.simpleinsure.co/industries/): buildings, restaurants, contractors, offices, and personal lines
+- [Coverage](https://www.simpleinsure.co/coverage/): personal and commercial lines, including mixed-use, landlords, homeowners, and personal umbrella. Real estate owners, contractors, restaurants, offices, and personal lines are on this page. /industries/ redirects here.
 - [Resources](https://www.simpleinsure.co/resources/): index of guides already on this site
 - [Report a claim](https://www.simpleinsure.co/claims/): how to notify the insurer. A note to the broker is not notice to the insurer. The insurer decides the claim.
 - [Contractor and builders risk insurance](https://www.simpleinsure.co/new-york-contractor-insurance/): who buys builders risk, Labor Law 240 and action over claims, NYC Buildings permit insurance, and Nassau County contractor certificates
